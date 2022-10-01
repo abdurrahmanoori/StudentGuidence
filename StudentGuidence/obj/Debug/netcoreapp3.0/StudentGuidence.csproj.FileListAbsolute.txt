@@ -136,7 +136,6 @@ C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netc
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Admin\Views\University\Create.cshtml.g.cs
 C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\bin\Debug\netcoreapp3.0\appsettings.Development.json
 C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\bin\Debug\netcoreapp3.0\appsettings.json
-C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\bin\Debug\netcoreapp3.0\StudentGuidence.StaticWebAssets.xml
 C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\bin\Debug\netcoreapp3.0\StudentGuidence.exe
 C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\bin\Debug\netcoreapp3.0\StudentGuidence.deps.json
 C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\bin\Debug\netcoreapp3.0\StudentGuidence.runtimeconfig.json
@@ -240,11 +239,8 @@ C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\bin\Deb
 C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\bin\Debug\netcoreapp3.0\StudentGuidence.Models.dll
 C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\bin\Debug\netcoreapp3.0\StudentGuidence.DataAccess.pdb
 C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\bin\Debug\netcoreapp3.0\StudentGuidence.Models.pdb
-C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Debug\netcoreapp3.0\StudentGuidence.csproj.AssemblyReference.cache
-C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Debug\netcoreapp3.0\StudentGuidence.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Debug\netcoreapp3.0\StudentGuidence.AssemblyInfoInputs.cache
 C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Debug\netcoreapp3.0\StudentGuidence.AssemblyInfo.cs
-C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Debug\netcoreapp3.0\StudentGuidence.csproj.CoreCompileInputs.cache
 C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Debug\netcoreapp3.0\StudentGuidence.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Debug\netcoreapp3.0\StudentGuidence.RazorAssemblyInfo.cache
 C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Debug\netcoreapp3.0\StudentGuidence.RazorAssemblyInfo.cs
@@ -270,7 +266,6 @@ C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Deb
 C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Debug\netcoreapp3.0\StudentGuidence.csproj.CopyComplete
 C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Debug\netcoreapp3.0\StudentGuidence.dll
 C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Debug\netcoreapp3.0\StudentGuidence.pdb
-C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Debug\netcoreapp3.0\StudentGuidence.genruntimeconfig.cache
 C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Visitor\Views\Home\About.cshtml.g.cs
 C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Visitor\Views\Home\Contact.cshtml.g.cs
 C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Visitor\Views\Home\Faculty.cshtml.g.cs
@@ -281,3 +276,6 @@ C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Deb
 C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Visitor\Views\Home\Teacher.cshtml.g.cs
 C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Visitor\Views\Home\Team.cshtml.g.cs
 C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Visitor\Views\Home\Universities.cshtml.g.cs
+C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\bin\Debug\netcoreapp3.0\Properties\launchSettings.json
+C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Debug\netcoreapp3.0\StudentGuidence.csprojAssemblyReference.cache
+C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Debug\netcoreapp3.0\staticwebassets\StudentGuidence.StaticWebAssets.xml
