@@ -9,6 +9,7 @@ namespace StudentGuidence.Models
     public class Department
     {
         [Key]
+
         public int Id { get; set; }
         [Required(ErrorMessageResourceName ="Deparmtent Name Must Not Be Empty!")]
         public string Name { get; set; }
