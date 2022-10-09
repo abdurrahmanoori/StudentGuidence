@@ -20,6 +20,7 @@ namespace StudentGuidenc.DataAccess
         public DbSet<Department> Departments { get; set; }
         public DbSet<Article> Articles { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
+        public DbSet<Student> Students { get; set; }
 
 
 
