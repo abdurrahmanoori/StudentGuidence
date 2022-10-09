@@ -18,13 +18,17 @@ namespace StudentGuidenc.DataAccess
         public DbSet<Faculty> Faculties { get; set; }
         public DbSet<University> Universities { get; set; }
         public DbSet<Department> Departments { get; set; }
-        
+        public DbSet<Article> Articles { get; set; }
+        public DbSet<Teacher> Teachers { get; set; }
+
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<Faculty>().Property(u => u.UniversityId).IsRequired(required: true);
-            modelBuilder.Entity<Department>().Property(u => u.FacultyId).IsRequired();
-
+            modelBuilder.Entity<Department>().Property(u => u.FacultyId).IsRequired();   
+            modelBuilder.Entity<University>().HasIndex(u => u.Name).IsUnique();
+            modelBuilder.Entity<Faculty>().HasIndex(u => u.Name).IsUnique();
+            modelBuilder.Entity<Department>().HasIndex(u => u.Name).IsUnique();
         }
     }
 }

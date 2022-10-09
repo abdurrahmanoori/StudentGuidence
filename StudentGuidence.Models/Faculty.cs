@@ -10,13 +10,13 @@ namespace StudentGuidence.Models
     {
         [Key]
         public int Id { get; set; }
-        [Required,Display(Name ="Faculty Name Must Not Be Empty")]
+        [Required, Display(Name = "Faculty Name Must Not Be Empty")]
         public string Name { get; set; }
         public string History { get; set; }
-        [Required(ErrorMessage ="Please Write Some Pre Reqiremnt Information About Faculty")]
+        [Required(ErrorMessage = "Please Write Some Pre Reqiremnt Information About Faculty")]
         public string PreRequirment { get; set; }
         public string? ImageUrl { get; set; }
-        public int UniversityId { get; set; }
+        public int? UniversityId { get; set; }
         [ForeignKey("UniversityId")]
         public University University { get; set; }
     }
