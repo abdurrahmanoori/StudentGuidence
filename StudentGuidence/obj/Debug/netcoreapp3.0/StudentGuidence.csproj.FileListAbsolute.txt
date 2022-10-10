@@ -44,8 +44,6 @@ C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netc
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
-C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Views\_ViewImports.cshtml.g.cs
-C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Views\_ViewStart.cshtml.g.cs
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\StudentGuidence.RazorTargetAssemblyInfo.cache
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\StudentGuidence.RazorTargetAssemblyInfo.cs
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\StudentGuidence.Views.pdb
@@ -128,13 +126,11 @@ C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\bin\Debug\netc
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\StudentGuidence.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Visitor\Views\Home\Index.cshtml.g.cs
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Visitor\Views\Home\Privacy.cshtml.g.cs
-C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Admin\Views\Shared\Error.cshtml.g.cs
-C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Admin\Views\Shared\_Layout.cshtml.g.cs
-C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Admin\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
-C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Visitor\Views\Shared\Error.cshtml.g.cs
-C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Visitor\Views\Shared\_Layout.cshtml.g.cs
-C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Visitor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Visitor\Views\_ViewImports.cshtml.g.cs
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Admin\Views\_ViewImports.cshtml.g.cs
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Visitor\Views\_ViewStart.cshtml.g.cs
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Admin\Views\_ViewStart.cshtml.g.cs
+C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Admin\Views\University\Index.cshtml.g.cs
+C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Views\Shared\_ViewImports.cshtml.g.cs
+C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Views\Shared\_ViewStart.cshtml.g.cs
+C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Admin\Views\University\Create.cshtml.g.cs
