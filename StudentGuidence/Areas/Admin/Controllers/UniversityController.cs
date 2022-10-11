@@ -23,6 +23,7 @@ namespace StudentGuidence.Areas.Admin.Controllers
         //GET Create
 
         //This is lawda changes
+
         public IActionResult Create()
         {
             return View();
