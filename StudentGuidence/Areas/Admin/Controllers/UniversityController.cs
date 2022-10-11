@@ -21,6 +21,8 @@ namespace StudentGuidence.Areas.Admin.Controllers
             return View(_db.Universities.ToList());
         }
         //GET Create
+
+        //This is lawda changes
         public IActionResult Create()
         {
             return View();
