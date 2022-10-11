@@ -4930,19 +4930,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Abdurrahman\\.nuget\\packages\\": {}
+    "C:\\Users\\khuba\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Abdurrahman\\source\\repos\\StudentGuidence\\StudentGuidence.DataAccess\\StudentGuidence.DataAccess.csproj",
+      "projectUniqueName": "C:\\Users\\khuba\\Desktop\\pro\\StudentGuidence-KhubaibBranch\\StudentGuidence.DataAccess\\StudentGuidence.DataAccess.csproj",
       "projectName": "StudentGuidence.DataAccess",
-      "projectPath": "C:\\Users\\Abdurrahman\\source\\repos\\StudentGuidence\\StudentGuidence.DataAccess\\StudentGuidence.DataAccess.csproj",
-      "packagesPath": "C:\\Users\\Abdurrahman\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Abdurrahman\\source\\repos\\StudentGuidence\\StudentGuidence.DataAccess\\obj\\",
+      "projectPath": "C:\\Users\\khuba\\Desktop\\pro\\StudentGuidence-KhubaibBranch\\StudentGuidence.DataAccess\\StudentGuidence.DataAccess.csproj",
+      "packagesPath": "C:\\Users\\khuba\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\khuba\\Desktop\\pro\\StudentGuidence-KhubaibBranch\\StudentGuidence.DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Abdurrahman\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\khuba\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4954,9 +4954,10 @@
       },
       "frameworks": {
         "netcoreapp3.0": {
+          "targetAlias": "netcoreapp3.0",
           "projectReferences": {
-            "C:\\Users\\Abdurrahman\\source\\repos\\StudentGuidence\\StudentGuidence.Models\\StudentGuidence.Models.csproj": {
-              "projectPath": "C:\\Users\\Abdurrahman\\source\\repos\\StudentGuidence\\StudentGuidence.Models\\StudentGuidence.Models.csproj"
+            "C:\\Users\\khuba\\Desktop\\pro\\StudentGuidence-KhubaibBranch\\StudentGuidence.Models\\StudentGuidence.Models.csproj": {
+              "projectPath": "C:\\Users\\khuba\\Desktop\\pro\\StudentGuidence-KhubaibBranch\\StudentGuidence.Models\\StudentGuidence.Models.csproj"
             }
           }
         }
@@ -4969,6 +4970,7 @@
     },
     "frameworks": {
       "netcoreapp3.0": {
+        "targetAlias": "netcoreapp3.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
@@ -4996,7 +4998,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.104\\RuntimeIdentifierGraph.json"
       }
     }
   }
