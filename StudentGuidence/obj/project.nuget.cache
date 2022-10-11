@@ -1,10 +1,6 @@
 {
   "version": 2,
-<<<<<<< HEAD
   "dgSpecHash": "nwD37P990ctrEFoPA8tEEJfyQJENoUYGmLtZIhNmc+aCpILqnVr+3L1blYN9toPsus0liZ5K1YQ2vg/nxgiRmw==",
-=======
-  "dgSpecHash": "7lgauTsTpEnsuSwihUM5nxuz989+j/3u/emaK/KjtB6ZJueeZ9sSZtTfn2gnKjRQgB8b9/Zk1lA210Dy9aGaNA==",
->>>>>>> 55fe678aa58510ebe1e01849e13813d9fe16adaa
   "success": true,
   "projectFilePath": "C:\\Users\\khuba\\Desktop\\pro\\StudentGuidence-KhubaibBranch\\StudentGuidence\\StudentGuidence.csproj",
   "expectedPackageFiles": [
