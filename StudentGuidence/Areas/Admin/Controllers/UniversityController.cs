@@ -26,7 +26,7 @@ namespace StudentGuidence.Areas.Admin.Controllers
 
         public IActionResult Create()
         {
-            return View();
+            return View();//This is black board. 0k
         }
         //POST Create
         [HttpPost]
