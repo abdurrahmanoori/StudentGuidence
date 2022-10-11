@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+}
+
+ <!-- Pills navs -->
+  <div class="container pt-5">
+    <p  class="text-center  display-5  text-dark"> سیستم ته ننوتل </p>
+<!-- Pills navs -->
+
+<!-- Pills content -->
+<div class="tab-content">
+  <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
+    <form class="container border-primary">
+
+      <!-- Email input -->
+      <div class="form-outline mb-4">
+        <input type="email" id="loginName" class="form-control" placeholder="  بریښنا لیک  " />
+        
+      </div>
+
+      <!-- Password input -->
+      <div class="form-outline mb-4">
+        <input type="password" id="loginPassword" class="form-control" placeholder="  پټ نوم  " />
+        
+      </div>
+
+      <!-- 2 column grid layout -->
+      <div class="row mb-4">
+        <div class="col-md-6 d-flex justify-content-center">
+          <!-- Checkbox -->
+          <div class="form-check mb-3 mb-md-0">
+            <input class="form-check-input" type="checkbox" value="" id="loginCheck" checked />
+            <label class="form-check-label" for="loginCheck"><h4><b> ثبت پاتی کیدل </b></h4></label>
+          </div>
+        </div>
+
+        <div class="col-md-6 d-flex justify-content-center">
+          <!-- Simple link -->
+          <a href="#"><h4><b> پټ نوم مو هیر دي ؟ </b></h4></a>
+        </div>
+      </div>
+
+      <!-- Submit button -->
+      <button type="submit" class="btn btn-primary btn-block mb-4" action="#"><h5><b> ننوتل </b></h5></button>
+
+      <!-- Register buttons -->
+      <div class="text-center">
+        <p>Not a member? <a asp-controller="Home" asp-action="Registration"><h4><b> ثبتونه </b></h4></a></p>
+      </div>
+    </form>
+  </div>
+  
+        
+</div>
+</div>
+<!-- Pills content -->
+
+}
+
+

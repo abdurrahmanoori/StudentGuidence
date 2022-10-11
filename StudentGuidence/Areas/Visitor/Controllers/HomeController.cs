@@ -19,12 +19,77 @@ namespace StudentGuidence.Controllers
             _logger = logger;
         }
 
+        //================= Home Page (Index) ==================//
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult Privacy()
+        //================= Login Page ==================//
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        //================= Registration Page ==================//
+        public IActionResult Registration()
+        {
+            return View();
+        }
+
+        //================= Universities Page ==================//
+        public IActionResult Universities()
+        {
+            return View();
+        }
+
+        //================= Faculty Page ==================//
+        public IActionResult Faculty()
+        {
+            return View();
+        }
+
+        //================= Teacher Page ==================//
+        public IActionResult Teacher()
+        {
+            return View();
+        }
+
+        //================= Student Page ==================//
+        public IActionResult Student()
+        {
+            return View();
+        }
+
+
+        //================= Services Page ==================//
+        public IActionResult Services()
+        {
+            return View();
+        }
+
+        //================= Team Page ==================//
+        public IActionResult Team()
+        {
+            return View();
+        }
+
+        //================= Contact Page ==================//
+        public IActionResult Contact()
+        {
+            return View();
+        }
+
+        //================= About Page ==================//
+        public IActionResult About()
+        {
+            return View();
+        }
+
+
+
+        //================= Waiting Page ==================//
+        public IActionResult Waitingpage()
         {
             return View();
         }
