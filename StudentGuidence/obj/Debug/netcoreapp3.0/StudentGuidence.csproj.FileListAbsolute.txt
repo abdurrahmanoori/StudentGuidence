@@ -125,6 +125,10 @@ C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\bin\Debug\netc
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\bin\Debug\netcoreapp3.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\StudentGuidence.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Visitor\Views\Home\Index.cshtml.g.cs
+<<<<<<< HEAD
+=======
+C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Visitor\Views\Home\Privacy.cshtml.g.cs
+>>>>>>> 55fe678aa58510ebe1e01849e13813d9fe16adaa
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Visitor\Views\_ViewImports.cshtml.g.cs
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Admin\Views\_ViewImports.cshtml.g.cs
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Visitor\Views\_ViewStart.cshtml.g.cs
@@ -270,3 +274,16 @@ C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Deb
 C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Debug\netcoreapp3.0\StudentGuidence.dll
 C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Debug\netcoreapp3.0\StudentGuidence.pdb
 C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Debug\netcoreapp3.0\StudentGuidence.genruntimeconfig.cache
+<<<<<<< HEAD
+=======
+C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Visitor\Views\Home\About.cshtml.g.cs
+C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Visitor\Views\Home\Contact.cshtml.g.cs
+C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Visitor\Views\Home\Faculty.cshtml.g.cs
+C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Visitor\Views\Home\Login.cshtml.g.cs
+C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Visitor\Views\Home\Registration.cshtml.g.cs
+C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Visitor\Views\Home\Services.cshtml.g.cs
+C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Visitor\Views\Home\Student.cshtml.g.cs
+C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Visitor\Views\Home\Teacher.cshtml.g.cs
+C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Visitor\Views\Home\Team.cshtml.g.cs
+C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Visitor\Views\Home\Universities.cshtml.g.cs
+>>>>>>> 55fe678aa58510ebe1e01849e13813d9fe16adaa
