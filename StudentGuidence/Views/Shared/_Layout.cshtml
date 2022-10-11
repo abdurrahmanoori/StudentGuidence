@@ -6,40 +6,105 @@
     <title>@ViewData["Title"] - StudentGuidence</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <!---&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& links &&&&&&&&&&&&&&&&&&&&&&&&&-->
+      <link href="~/img/favicon.png" rel="icon">
+  <link href="~/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  
+  <link href="~/sitfiles/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="~/sitfiles/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="~/sitfiles/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="~/sitfiles/remixicon/remixicon.css" rel="stylesheet">
+  <link href="~/sitfiles/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Main CSS File -->
+  <link href="~/css/style.css" rel="stylesheet">
+  <!--&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&-->
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">StudentGuidence</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
+
+ <header id="header" class="container-fluid header fixed-top bg-white">
+            <div class="container-fluid container-xxl d-flex align-items-center justify-content-between">
+
+              <a asp-controller="Home" asp-action="Index" class="logo d-flex align-items-center">
+                <img src="~/img/logo.png" alt="">
+                <span> د زده کونکو لارښود </span>
+              </a>
+
+              <nav id="navbar" class="navbar">
+                <ul>
+                  <li><a class="nav-link scrollto" asp-controller="Home" asp-action="Student"> زده کونکي </a></li>
+                  <li><a class="nav-link scrollto" asp-controller="Home" asp-action="Teacher"> استاد </a></li>
+                  <li><a class="nav-link scrollto" asp-controller="Home" asp-action="Faculty"> پوهنځی </a></li>
+                  <li><a class="nav-link scrollto" asp-controller="Home" asp-action="About"> زمونږ په اړه </a></li>         
+                  <li><a class="nav-link scrollto" asp-controller="Home" asp-action=""> اړیکه </a></li>
+                  <li><a class="nav-link scrollto" asp-controller="Home" asp-action="Team"> ګروپ </a></li>
+                  <li><a class="nav-link scrollto" asp-controller="home" asp-action="Services"> خدمات </a></li>
+                  <li><a class="nav-link scrollto" asp-controller="Home" asp-action="Universities"> پوهنتونونه </a></li>
+                  <li><a class="nav-link scrollto active" asp-controller="Home" asp-action="Index"> کور </a></li>
+                  <li>
+                  <div class="dropdown dropleft">
+                    <button type="button" class="btn btn-primary dropdown-toggle  mx-2 px-3" data-toggle="dropdown">
+                    <b>  ننوتل  </b>
+                    </button>
+                    <div class="dropdown-menu dropleft">
+                      <button type="button" class="btn btn-primary dropdown-toggle  mx-2 px-3" data-toggle="dropdown">
+                          ثبتول
+                          </button>
+                          <div class="dropdown-menu">
+                              <a class="dropdown-item" asp-controller="Home" asp-action="Registration"> استاد یم </a>
+                              <a class="dropdown-item" asp-controller="Home" asp-action="Registration"> شاګرد یم </a>
+                          </div>
+
+
+                      <a class="dropdown-item" asp-controller="Home" asp-action="Login"> ننوتل </a>
+                      
+                    </div>
+                  </div>
+                      
+                      
+                      
+                      
+                      
+                    <!--  <a class="getstarted scrollto" asp-controller="Home" asp-action="Login"> ننوتل </a></li>-->
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+              </nav><!-- .navbar -->
+
             </div>
+  
         </nav>
     </header>
-    <div class="container">
+
+    <!--===================== End of Header =========================-->
+
+   
+
+
+    <!--****************************************************************************-->
+    <section class="container-fluid py-5">
+
+        <div class="container-fluid">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - StudentGuidence - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    </section>
+    <!--===========Footer of Page-->
+   
+
+    <footer class="footer text-muted py-0">
+        <div class="container-fluid ">
+           <p> &copy; 2022 - STUDENT__GUIDANCE - <a asp-area="" asp-controller="Home" asp-action="Index">WebSite</a></p>
         </div>
     </footer>
+   
+
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

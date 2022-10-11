@@ -1,0 +1,28 @@
+﻿@model IEnumerable<StudentGuidence.Models.University>
+@{
+    ViewData["Title"] = "Index";
+}
+///this is khubab.
+<h1>Index</h1>
+<h1>University</h1>
+<a asp-action="Create" class="btn btn-lg btn-primary float-right">Create University</a>
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Provnce</th>
+        <th>Establish Date</th>
+        <th></th>
+    </tr>
+    @foreach(var university in Model)
+    {
+        <tr>
+            <td>@university.Name</td>
+            <td>@university.Province</td>
+            <td>@university.Establishment.Year</td>
+            <td>
+                <a asp-action="Create" asp-route-id="@university.Id" class="btn btn-danger">Delete</a>
+                <a asp-action="Edit" asp-route-id="@university.Id" class="btn btn-primary">Edit</a>
+            </td>
+        </tr>
+    }
+</table>
