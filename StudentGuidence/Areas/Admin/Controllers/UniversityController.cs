@@ -16,6 +16,13 @@ namespace StudentGuidence.Areas.Admin.Controllers
         {
             _db = db;
         }
+        public IActionResult Test()
+        {
+            return View();
+        }
+
+
+
         public IActionResult Index()
         {
             return View(_db.Universities.ToList());
@@ -67,8 +74,31 @@ namespace StudentGuidence.Areas.Admin.Controllers
             return View(university);
 
         }
-
-
+        //GET Delete
+        //[HttpGet]
+        public IActionResult Delete(int id)
+        {
+            University university = _db.Universities.Find(id);
+            if(university != null)
+            {
+                return View(university);
+            }
+            return NotFound();
+        }
+        //POST Delete
+        [HttpPost]
+        [ActionName("Delete")]
+        public IActionResult DeletePost(int id)
+        {
+            University universityDelete = _db.Universities.Find(id);
+            if(universityDelete != null)
+            {
+                _db.Universities.Remove(universityDelete);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return NotFound();
+        }
 
     }
 }
