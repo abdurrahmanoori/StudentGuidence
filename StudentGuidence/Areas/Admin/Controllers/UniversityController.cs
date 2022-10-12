@@ -22,23 +22,53 @@ namespace StudentGuidence.Areas.Admin.Controllers
         }
         //GET Create
 
-        //This is lawda changes
-
         public IActionResult Create()
         {
-            return View();//This is black board. 0k
+            return View();
         }
         //POST Create
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Create(University university)
         {
             if (ModelState.IsValid)
             {
                 _db.Universities.Add(university);
                 _db.SaveChanges();
+                return RedirectToAction("Index");
             }
-            return RedirectToAction("Index");
+            return View(university);
         }
+        //GET Edit
+        public IActionResult Edit(int id)
+        {
+            University university = _db.Universities.Find(id);
+            if(university != null && university.Id >=0)
+            {
+                return View(university);
+            }
+            return NotFound();
+        }
+        //POST Edit
+        [HttpPost] 
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(University university)
+        {
+            if (ModelState.IsValid)
+            {
+
+                if (university != null)
+                {
+                    _db.Universities.Update(university);
+                    _db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+            }
+            return View(university);
+
+        }
+
+
 
     }
 }
