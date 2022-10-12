@@ -14,25 +14,44 @@
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
-                <input disabled asp-for="Name" class="form-control" />
+                <input disabled asp-for="Name" class="form-control text-danger" />
             </div>
             <div class="form-group">
                 <label asp-for="Province" class="control-label"></label>
-                <input disabled asp-for="Province" class="form-control" />
+                <input disabled asp-for="Province" class="form-control text-danger" />
             </div>
             <div class="form-group">
                 <label asp-for="Establishment" class="control-label"></label>
-                <input disabled asp-for="Establishment" class="form-control" />
+                <input disabled asp-for="Establishment" class="form-control text-danger" />
             </div>
+
             <div class="form-group">
-                <input type="submit" value="Delete" class="btn btn-danger" />
-                <a asp-action="Index" class="btn btn-primary">Cancel</a>
+
+
+                <button type="submit" class="btn btn-danger">
+                     Delete
+                    
+                    <img src="~/img/Icon/cancel_25px.png" />
+                </button>
+                <a asp-action="Index" class="btn btn-primary">
+
+                    Cancel
+                </a>
             </div>
+
+            @*<div class="form-group">
+                        <input type="submit" value="Delete" class="btn btn-danger" />
+
+                    <a asp-action="Index" class="btn btn-primary">
+
+                        Cancel
+                    </a>
+                </div>*@
         </form>
     </div>
 </div>
 
 @*<div>
-    
-</div>*@
+
+    </div>*@
 

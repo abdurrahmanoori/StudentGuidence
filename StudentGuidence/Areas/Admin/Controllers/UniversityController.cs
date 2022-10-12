@@ -21,8 +21,6 @@ namespace StudentGuidence.Areas.Admin.Controllers
             return View();
         }
 
-
-
         public IActionResult Index()
         {
             return View(_db.Universities.ToList());
