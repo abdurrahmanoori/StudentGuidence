@@ -590,6 +590,9 @@
           "lib/netstandard1.0/_._": {}
         }
       },
+      "Microsoft.VisualStudio.Services.NuGet.CredentialProvider/0.37.0": {
+        "type": "package"
+      },
       "Microsoft.VisualStudio.Web.CodeGeneration/3.0.0": {
         "type": "package",
         "dependencies": {
@@ -2502,6 +2505,7 @@
         "framework": ".NETCoreApp,Version=v3.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore.SqlServer": "3.0.0",
+          "Microsoft.VisualStudio.Services.NuGet.CredentialProvider": "0.37.0",
           "StudentGuidence.Models": "1.0.0"
         },
         "compile": {
@@ -2515,7 +2519,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.0",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.SqlServer": "3.0.0"
+          "Microsoft.EntityFrameworkCore.SqlServer": "3.0.0",
+          "Microsoft.VisualStudio.Services.NuGet.CredentialProvider": "0.37.0"
         },
         "compile": {
           "bin/placeholder/StudentGuidence.Models.dll": {}
@@ -3205,6 +3210,21 @@
         "microsoft.netcore.targets.1.1.0.nupkg.sha512",
         "microsoft.netcore.targets.nuspec",
         "runtime.json"
+      ]
+    },
+    "Microsoft.VisualStudio.Services.NuGet.CredentialProvider/0.37.0": {
+      "sha512": "7+ssieaVr+FShzh3lKqOIKk0YTCZcrex/tAY9IbBKlL0trmYTVv7IcaIqzP9GMO5dUi64q7vEkqBt0GBFeGYdg==",
+      "type": "package",
+      "path": "microsoft.visualstudio.services.nuget.credentialprovider/0.37.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "EULA_Microsoft Visual Studio Team Services Credential Provider.docx",
+        "ThirdPartyNotices.txt",
+        "microsoft.visualstudio.services.nuget.credentialprovider.0.37.0.nupkg.sha512",
+        "microsoft.visualstudio.services.nuget.credentialprovider.nuspec",
+        "tools/CredentialProvider.VSS.exe"
       ]
     },
     "Microsoft.VisualStudio.Web.CodeGeneration/3.0.0": {
@@ -8157,25 +8177,26 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.0.0",
       "Microsoft.EntityFrameworkCore.Tools >= 3.0.0",
       "Microsoft.Extensions.Logging.Debug >= 3.0.0",
+      "Microsoft.VisualStudio.Services.NuGet.CredentialProvider >= 0.37.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.0.0",
       "StudentGuidence.DataAccess >= 1.0.0",
       "StudentGuidence.Models >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Abdurrahman\\.nuget\\packages\\": {}
+    "C:\\Users\\khuba\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Abdurrahman\\source\\repos\\StudentGuidence\\StudentGuidence\\StudentGuidence.csproj",
+      "projectUniqueName": "C:\\Users\\khuba\\Desktop\\pro\\StudentGuidence-KhubaibBranch\\StudentGuidence\\StudentGuidence.csproj",
       "projectName": "StudentGuidence",
-      "projectPath": "C:\\Users\\Abdurrahman\\source\\repos\\StudentGuidence\\StudentGuidence\\StudentGuidence.csproj",
-      "packagesPath": "C:\\Users\\Abdurrahman\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Abdurrahman\\source\\repos\\StudentGuidence\\StudentGuidence\\obj\\",
+      "projectPath": "C:\\Users\\khuba\\Desktop\\pro\\StudentGuidence-KhubaibBranch\\StudentGuidence\\StudentGuidence.csproj",
+      "packagesPath": "C:\\Users\\khuba\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\khuba\\Desktop\\pro\\StudentGuidence-KhubaibBranch\\StudentGuidence\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Abdurrahman\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\khuba\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8188,11 +8209,11 @@
       "frameworks": {
         "netcoreapp3.0": {
           "projectReferences": {
-            "C:\\Users\\Abdurrahman\\source\\repos\\StudentGuidence\\StudentGuidence.DataAccess\\StudentGuidence.DataAccess.csproj": {
-              "projectPath": "C:\\Users\\Abdurrahman\\source\\repos\\StudentGuidence\\StudentGuidence.DataAccess\\StudentGuidence.DataAccess.csproj"
+            "C:\\Users\\khuba\\Desktop\\pro\\StudentGuidence-KhubaibBranch\\StudentGuidence.DataAccess\\StudentGuidence.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\khuba\\Desktop\\pro\\StudentGuidence-KhubaibBranch\\StudentGuidence.DataAccess\\StudentGuidence.DataAccess.csproj"
             },
-            "C:\\Users\\Abdurrahman\\source\\repos\\StudentGuidence\\StudentGuidence.Models\\StudentGuidence.Models.csproj": {
-              "projectPath": "C:\\Users\\Abdurrahman\\source\\repos\\StudentGuidence\\StudentGuidence.Models\\StudentGuidence.Models.csproj"
+            "C:\\Users\\khuba\\Desktop\\pro\\StudentGuidence-KhubaibBranch\\StudentGuidence.Models\\StudentGuidence.Models.csproj": {
+              "projectPath": "C:\\Users\\khuba\\Desktop\\pro\\StudentGuidence-KhubaibBranch\\StudentGuidence.Models\\StudentGuidence.Models.csproj"
             }
           }
         }
@@ -8220,6 +8241,10 @@
             "target": "Package",
             "version": "[3.0.0, )"
           },
+          "Microsoft.VisualStudio.Services.NuGet.CredentialProvider": {
+            "target": "Package",
+            "version": "[0.37.0, )"
+          },
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[3.0.0, )"
@@ -8243,7 +8268,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }

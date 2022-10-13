@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Abdurrahman\\source\\repos\\StudentGuidence\\StudentGuidence.Models\\StudentGuidence.Models.csproj": {}
+    "C:\\Users\\khuba\\Desktop\\pro\\StudentGuidence-KhubaibBranch\\StudentGuidence.Models\\StudentGuidence.Models.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Abdurrahman\\source\\repos\\StudentGuidence\\StudentGuidence.Models\\StudentGuidence.Models.csproj": {
+    "C:\\Users\\khuba\\Desktop\\pro\\StudentGuidence-KhubaibBranch\\StudentGuidence.Models\\StudentGuidence.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Abdurrahman\\source\\repos\\StudentGuidence\\StudentGuidence.Models\\StudentGuidence.Models.csproj",
+        "projectUniqueName": "C:\\Users\\khuba\\Desktop\\pro\\StudentGuidence-KhubaibBranch\\StudentGuidence.Models\\StudentGuidence.Models.csproj",
         "projectName": "StudentGuidence.Models",
-        "projectPath": "C:\\Users\\Abdurrahman\\source\\repos\\StudentGuidence\\StudentGuidence.Models\\StudentGuidence.Models.csproj",
-        "packagesPath": "C:\\Users\\Abdurrahman\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Abdurrahman\\source\\repos\\StudentGuidence\\StudentGuidence.Models\\obj\\",
+        "projectPath": "C:\\Users\\khuba\\Desktop\\pro\\StudentGuidence-KhubaibBranch\\StudentGuidence.Models\\StudentGuidence.Models.csproj",
+        "packagesPath": "C:\\Users\\khuba\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\khuba\\Desktop\\pro\\StudentGuidence-KhubaibBranch\\StudentGuidence.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Abdurrahman\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\khuba\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -47,6 +47,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[3.0.0, )"
+            },
+            "Microsoft.VisualStudio.Services.NuGet.CredentialProvider": {
+              "target": "Package",
+              "version": "[0.37.0, )"
             }
           },
           "imports": [
@@ -64,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }
