@@ -7,7 +7,7 @@
     <div class="border p-3 mt-4 border-success ">
         <div class="row pb-2">
             <h2 class="text-primary">Create University</h2>
-            
+
         </div>
         <div class="text-danger" asp-validation-summary="All"></div>
         <div class="mb-3 ">
@@ -21,13 +21,11 @@
             <span asp-validation-for="Province" class="text-danger"></span>
         </div>
         <div class="mb-3">
-<<<<<<< HEAD
+
             <label asp-for="Establishment"></label>
             <input type="date" asp-for="Establishment" class="form-control" />
-=======
-             <label asp-for="Establishment"></label>
-            <input  asp-for="Establishment" class="form-control form-control-lg border-primary" />
->>>>>>> ce2e15ed81cb5d3e2a7e1d2041918361a409b1fb
+            @*<label asp-for="Establishment"></label>
+            <input asp-for="Establishment" class="form-control form-control-lg border-primary" />*@
             <span asp-validation-for="Establishment" class="text-danger"></span>
         </div>
         <button type="submit" class="btn btn-outline-success" style="width:150px">
@@ -41,16 +39,6 @@
         </a>
     </div>
 </form>
-
-
-@{
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-    <script type="text/javascript">
-        toastr.success("Welcom");
-    </script>
-}
-
 
 
 @section Scripts{

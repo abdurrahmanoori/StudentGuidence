@@ -43,7 +43,6 @@ namespace StudentGuidence.Areas.Admin
                 {
                     ModelState.AddModelError("EqualCheck", "University Name And Province Name Cannot Be Same.");
                 }
-
                 if (ModelState.IsValid)
                 {
                     _db.Universities.Add(university);
