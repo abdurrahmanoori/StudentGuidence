@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using StudentGuidenc.DataAccess;
 
 namespace StudentGuidence.DataAccess.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221013062316_RemovedUniversityEstablishDefaultValueToEmpty")]
+    partial class RemovedUniversityEstablishDefaultValueToEmpty
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -252,7 +254,7 @@ namespace StudentGuidence.DataAccess.Migrations
                     b.Property<DateTime>("Establishment")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("Date")
-                        .HasDefaultValue(new DateTime(2022, 10, 13, 0, 0, 0, 0, DateTimeKind.Unspecified));
+                        .HasDefaultValue(new DateTime(2022, 10, 13, 10, 53, 16, 326, DateTimeKind.Local).AddTicks(2091));
 
                     b.Property<string>("Name")
                         .IsRequired()

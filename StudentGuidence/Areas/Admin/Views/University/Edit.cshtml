@@ -29,7 +29,7 @@
             </div>
             <div class="mb-3">
                 <label asp-for="Establishment"></label>
-                <input asp-for="Establishment" class="form-control" />
+                <input type="date" asp-for="Establishment" class="form-control" />
                 <span asp-validation-for="Establishment" class="text-danger"></span>
             </div>
             <button type="submit" class="btn btn-outline-primary" style="width:150px">
@@ -37,7 +37,6 @@
                 Update
             </button>
             <a asp-controller="Unversity" asp-action="Index" class="btn btn-outline-primary" style="width:150px;">
-
                 <img src="~/img/Icon/back_50px.png" />
                 Back to List
             </a>

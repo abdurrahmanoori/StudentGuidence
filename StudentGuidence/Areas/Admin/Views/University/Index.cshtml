@@ -2,7 +2,6 @@
 @{
     ViewData["Title"] = "Index";
 }
-
 <h1>Index</h1>
 <h1>University</h1>
 <a asp-action="Create" class="float-right btn btn-primary font-weight-bold text-capitalize">
@@ -25,18 +24,14 @@
         <tr>
             <td>@university.Name</td>
             <td>@university.Province</td>
-            <td>@university.Establishment.Date</td>
+            <td>@university.Establishment.ToString("d")</td>
             <td>
 
-
                 <a asp-action="Delete" asp-route-id="@university.Id" class="mr-1">
-                    <img src="~/img/Icon/delete_bin_60px.png22.png"  />
+                    <img src="~/img/Icon/delete_bin_60px.png22.png" />
                 </a>
-
-
                 <a asp-action="Edit" asp-route-id="@university.Id">
                     <img src="~/img/Icon/icons8_edit.ico" />
-
                 </a>
             </td>
         </tr>

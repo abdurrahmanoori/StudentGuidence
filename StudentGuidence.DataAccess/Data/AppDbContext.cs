@@ -30,6 +30,13 @@ namespace StudentGuidenc.DataAccess
             modelBuilder.Entity<University>().HasIndex(u => u.Name).IsUnique();
             modelBuilder.Entity<Faculty>().HasIndex(u => u.Name).IsUnique();
             modelBuilder.Entity<Department>().HasIndex(u => u.Name).IsUnique();
+
+            modelBuilder.Entity<University>().Property(u => u.Establishment).HasColumnType("Date");
+
+            DateTime d = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+            modelBuilder.Entity<University>().Property(u => u.Establishment).HasDefaultValue(d);
+
+            
         }
     }
 }
