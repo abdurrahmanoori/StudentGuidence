@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.0": {
+      "Blazorise.Icons.Bootstrap/1.1.1": {
+        "type": "package",
+        "build": {
+          "buildTransitive/Blazorise.Icons.Bootstrap.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Blazorise.Icons.Bootstrap.props": {}
+        }
+      },
       "Microsoft.CSharp/4.6.0": {
         "type": "package",
         "compile": {
@@ -1258,6 +1267,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.0",
         "dependencies": {
+          "Blazorise.Icons.Bootstrap": "1.1.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.0.0",
           "Microsoft.VisualStudio.Services.NuGet.CredentialProvider": "0.37.0"
         },
@@ -1271,6 +1281,26 @@
     }
   },
   "libraries": {
+    "Blazorise.Icons.Bootstrap/1.1.1": {
+      "sha512": "B61C+jmqiUzrQZzcDFEmctNi95a4PC9C+DKvGigp9Qf06+nPExk6y+BVkAj7Br0PcSsnzRDvsUxEhEl5fyj8kQ==",
+      "type": "package",
+      "path": "blazorise.icons.bootstrap/1.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Blazorise.png",
+        "LICENSE.md",
+        "blazorise.icons.bootstrap.1.1.1.nupkg.sha512",
+        "blazorise.icons.bootstrap.nuspec",
+        "build/Blazorise.Icons.Bootstrap.props",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "buildMultiTargeting/Blazorise.Icons.Bootstrap.props",
+        "buildTransitive/Blazorise.Icons.Bootstrap.props",
+        "lib/net6.0/Blazorise.Icons.Bootstrap.dll",
+        "lib/net7.0/Blazorise.Icons.Bootstrap.dll",
+        "staticwebassets/blazorise.icons.bootstrap.css"
+      ]
+    },
     "Microsoft.CSharp/4.6.0": {
       "sha512": "kxn3M2rnAGy5N5DgcIwcE8QTePWU/XiYcQVzn9HqTls2NKluVzVSmVWRjK7OUPWbljCXuZxHyhEz9kPRIQeXow==",
       "type": "package",
@@ -4943,6 +4973,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.0": [
+      "Blazorise.Icons.Bootstrap >= 1.1.1",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.0.0",
       "Microsoft.EntityFrameworkCore.Tools >= 3.0.0",
       "Microsoft.VisualStudio.Services.NuGet.CredentialProvider >= 0.37.0",
@@ -4990,6 +5021,10 @@
     "frameworks": {
       "netcoreapp3.0": {
         "dependencies": {
+          "Blazorise.Icons.Bootstrap": {
+            "target": "Package",
+            "version": "[1.1.1, )"
+          },
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
             "version": "[3.0.0, )"

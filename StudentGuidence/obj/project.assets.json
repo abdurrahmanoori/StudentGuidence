@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.0": {
+      "Blazorise.Icons.Bootstrap/1.1.1": {
+        "type": "package",
+        "build": {
+          "buildTransitive/Blazorise.Icons.Bootstrap.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Blazorise.Icons.Bootstrap.props": {}
+        }
+      },
       "Microsoft.AspNetCore.Html.Abstractions/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -2504,6 +2513,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.0",
         "dependencies": {
+          "Blazorise.Icons.Bootstrap": "1.1.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.0.0",
           "Microsoft.VisualStudio.Services.NuGet.CredentialProvider": "0.37.0",
           "StudentGuidence.Models": "1.0.0"
@@ -2519,6 +2529,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.0",
         "dependencies": {
+          "Blazorise.Icons.Bootstrap": "1.1.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.0.0",
           "Microsoft.VisualStudio.Services.NuGet.CredentialProvider": "0.37.0"
         },
@@ -2532,6 +2543,26 @@
     }
   },
   "libraries": {
+    "Blazorise.Icons.Bootstrap/1.1.1": {
+      "sha512": "B61C+jmqiUzrQZzcDFEmctNi95a4PC9C+DKvGigp9Qf06+nPExk6y+BVkAj7Br0PcSsnzRDvsUxEhEl5fyj8kQ==",
+      "type": "package",
+      "path": "blazorise.icons.bootstrap/1.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Blazorise.png",
+        "LICENSE.md",
+        "blazorise.icons.bootstrap.1.1.1.nupkg.sha512",
+        "blazorise.icons.bootstrap.nuspec",
+        "build/Blazorise.Icons.Bootstrap.props",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "buildMultiTargeting/Blazorise.Icons.Bootstrap.props",
+        "buildTransitive/Blazorise.Icons.Bootstrap.props",
+        "lib/net6.0/Blazorise.Icons.Bootstrap.dll",
+        "lib/net7.0/Blazorise.Icons.Bootstrap.dll",
+        "staticwebassets/blazorise.icons.bootstrap.css"
+      ]
+    },
     "Microsoft.AspNetCore.Html.Abstractions/2.2.0": {
       "sha512": "Y4rs5aMEXY8G7wJo5S3EEt6ltqyOTr/qOeZzfn+hw/fuQj5GppGckMY5psGLETo1U9hcT5MmAhaT5xtusM1b5g==",
       "type": "package",
@@ -8174,6 +8205,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.0": [
+      "Blazorise.Icons.Bootstrap >= 1.1.1",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.0.0",
       "Microsoft.EntityFrameworkCore.Tools >= 3.0.0",
       "Microsoft.Extensions.Logging.Debug >= 3.0.0",
@@ -8227,6 +8259,10 @@
     "frameworks": {
       "netcoreapp3.0": {
         "dependencies": {
+          "Blazorise.Icons.Bootstrap": {
+            "target": "Package",
+            "version": "[1.1.1, )"
+          },
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
             "version": "[3.0.0, )"

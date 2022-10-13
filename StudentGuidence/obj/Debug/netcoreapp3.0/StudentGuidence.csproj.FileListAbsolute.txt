@@ -211,7 +211,6 @@ C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\bin\Deb
 C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\bin\Debug\netcoreapp3.0\StudentGuidence.Models.pdb
 C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Debug\netcoreapp3.0\StudentGuidence.AssemblyInfoInputs.cache
 C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Debug\netcoreapp3.0\StudentGuidence.AssemblyInfo.cs
-C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Debug\netcoreapp3.0\StudentGuidence.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Debug\netcoreapp3.0\StudentGuidence.RazorAssemblyInfo.cache
 C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Debug\netcoreapp3.0\StudentGuidence.RazorAssemblyInfo.cs
 C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Debug\netcoreapp3.0\staticwebassets\StudentGuidence.StaticWebAssets.Manifest.cache
@@ -294,3 +293,5 @@ C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Deb
 C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Admin\Views\University\Delete.cshtml.g.cs
 C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Admin\Views\University\Edit.cshtml.g.cs
 C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Admin\Views\University\Test.cshtml.g.cs
+C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\bin\Debug\netcoreapp3.0\StudentGuidence.StaticWebAssets.xml
+C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence\obj\Debug\netcoreapp3.0\StudentGuidence.MvcApplicationPartsAssemblyInfo.cache
