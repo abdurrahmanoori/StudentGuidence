@@ -10,7 +10,7 @@ namespace StudentGuidence.Models
     {
         [Key]
         public int Id { get; set; }
-        [Required, Display(Name = "Faculty Name Must Not Be Empty")]
+        [Required(ErrorMessage = "Faculty Name Must Not Be Empty"), Display(Name ="Faculty Name" )]
         public string Name { get; set; }
         public string History { get; set; }
         [Required(ErrorMessage = "Please Write Some Pre Reqiremnt Information About Faculty")]
