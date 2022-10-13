@@ -10,6 +10,7 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore.SqlServer": "3.0.0",
           "Microsoft.EntityFrameworkCore.Tools": "3.0.0",
+          "Microsoft.VisualStudio.Services.NuGet.CredentialProvider": "0.37.0",
           "StudentGuidence.Models": "1.0.0"
         },
         "runtime": {
@@ -255,6 +256,7 @@
       },
       "Microsoft.NETCore.Platforms/2.0.0": {},
       "Microsoft.NETCore.Targets/1.1.0": {},
+      "Microsoft.VisualStudio.Services.NuGet.CredentialProvider/0.37.0": {},
       "Microsoft.Win32.Registry/4.5.0": {
         "dependencies": {
           "System.Security.AccessControl": "4.5.0",
@@ -832,7 +834,8 @@
       },
       "StudentGuidence.Models/1.0.0": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.SqlServer": "3.0.0"
+          "Microsoft.EntityFrameworkCore.SqlServer": "3.0.0",
+          "Microsoft.VisualStudio.Services.NuGet.CredentialProvider": "0.37.0"
         },
         "runtime": {
           "StudentGuidence.Models.dll": {}
@@ -1006,6 +1009,13 @@
       "sha512": "sha512-aOZA3BWfz9RXjpzt0sRJJMjAscAUm3Hoa4UWAfceV9UTYxgwZ1lZt5nO2myFf+/jetYQo4uTP7zS8sJY67BBxg==",
       "path": "microsoft.netcore.targets/1.1.0",
       "hashPath": "microsoft.netcore.targets.1.1.0.nupkg.sha512"
+    },
+    "Microsoft.VisualStudio.Services.NuGet.CredentialProvider/0.37.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7+ssieaVr+FShzh3lKqOIKk0YTCZcrex/tAY9IbBKlL0trmYTVv7IcaIqzP9GMO5dUi64q7vEkqBt0GBFeGYdg==",
+      "path": "microsoft.visualstudio.services.nuget.credentialprovider/0.37.0",
+      "hashPath": "microsoft.visualstudio.services.nuget.credentialprovider.0.37.0.nupkg.sha512"
     },
     "Microsoft.Win32.Registry/4.5.0": {
       "type": "package",

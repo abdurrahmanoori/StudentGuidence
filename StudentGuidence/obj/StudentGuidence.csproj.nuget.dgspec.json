@@ -51,6 +51,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[3.0.0, )"
+            },
+            "Microsoft.VisualStudio.Services.NuGet.CredentialProvider": {
+              "target": "Package",
+              "version": "[0.37.0, )"
             }
           },
           "imports": [
@@ -115,6 +119,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[3.0.0, )"
+            },
+            "Microsoft.VisualStudio.Services.NuGet.CredentialProvider": {
+              "target": "Package",
+              "version": "[0.37.0, )"
             }
           },
           "imports": [
@@ -190,6 +198,10 @@
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
               "version": "[3.0.0, )"
+            },
+            "Microsoft.VisualStudio.Services.NuGet.CredentialProvider": {
+              "target": "Package",
+              "version": "[0.37.0, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",

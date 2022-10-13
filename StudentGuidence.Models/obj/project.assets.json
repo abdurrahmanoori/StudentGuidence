@@ -291,6 +291,9 @@
           "lib/netstandard1.0/_._": {}
         }
       },
+      "Microsoft.VisualStudio.Services.NuGet.CredentialProvider/0.37.0": {
+        "type": "package"
+      },
       "Microsoft.Win32.Registry/4.5.0": {
         "type": "package",
         "dependencies": {
@@ -1701,6 +1704,21 @@
         "microsoft.netcore.targets.1.1.0.nupkg.sha512",
         "microsoft.netcore.targets.nuspec",
         "runtime.json"
+      ]
+    },
+    "Microsoft.VisualStudio.Services.NuGet.CredentialProvider/0.37.0": {
+      "sha512": "7+ssieaVr+FShzh3lKqOIKk0YTCZcrex/tAY9IbBKlL0trmYTVv7IcaIqzP9GMO5dUi64q7vEkqBt0GBFeGYdg==",
+      "type": "package",
+      "path": "microsoft.visualstudio.services.nuget.credentialprovider/0.37.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "EULA_Microsoft Visual Studio Team Services Credential Provider.docx",
+        "ThirdPartyNotices.txt",
+        "microsoft.visualstudio.services.nuget.credentialprovider.0.37.0.nupkg.sha512",
+        "microsoft.visualstudio.services.nuget.credentialprovider.nuspec",
+        "tools/CredentialProvider.VSS.exe"
       ]
     },
     "Microsoft.Win32.Registry/4.5.0": {
@@ -4907,7 +4925,8 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.0": [
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.0.0",
-      "Microsoft.EntityFrameworkCore.Tools >= 3.0.0"
+      "Microsoft.EntityFrameworkCore.Tools >= 3.0.0",
+      "Microsoft.VisualStudio.Services.NuGet.CredentialProvider >= 0.37.0"
     ]
   },
   "packageFolders": {
@@ -4956,6 +4975,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[3.0.0, )"
+          },
+          "Microsoft.VisualStudio.Services.NuGet.CredentialProvider": {
+            "target": "Package",
+            "version": "[0.37.0, )"
           }
         },
         "imports": [

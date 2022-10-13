@@ -8,15 +8,9 @@
       "TRACE",
       "DEBUG",
       "NETCOREAPP",
-      "NETCOREAPP3_0",
-      "NETCOREAPP1_0_OR_GREATER",
-      "NETCOREAPP1_1_OR_GREATER",
-      "NETCOREAPP2_0_OR_GREATER",
-      "NETCOREAPP2_1_OR_GREATER",
-      "NETCOREAPP2_2_OR_GREATER",
-      "NETCOREAPP3_0_OR_GREATER"
+      "NETCOREAPP3_0"
     ],
-    "languageVersion": "8.0",
+    "languageVersion": "",
     "platform": "",
     "allowUnsafe": false,
     "warningsAsErrors": false,
@@ -33,6 +27,7 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "3.0.0",
           "Microsoft.EntityFrameworkCore.Tools": "3.0.0",
           "Microsoft.Extensions.Logging.Debug": "3.0.0",
+          "Microsoft.VisualStudio.Services.NuGet.CredentialProvider": "0.37.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.0.0",
           "StudentGuidence.DataAccess": "1.0.0",
           "StudentGuidence.Models": "1.0.0",
@@ -789,6 +784,7 @@
       },
       "Microsoft.NETCore.Platforms/2.1.2": {},
       "Microsoft.NETCore.Targets/1.1.0": {},
+      "Microsoft.VisualStudio.Services.NuGet.CredentialProvider/0.37.0": {},
       "Microsoft.VisualStudio.Web.CodeGeneration/3.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "3.0.0",
@@ -1114,7 +1110,11 @@
           "System.Threading.Tasks": "4.3.0"
         }
       },
-      "System.Collections.Immutable/1.6.0": {},
+      "System.Collections.Immutable/1.6.0": {
+        "compile": {
+          "lib/netstandard2.0/System.Collections.Immutable.dll": {}
+        }
+      },
       "System.Collections.NonGeneric/4.3.0": {
         "dependencies": {
           "System.Diagnostics.Debug": "4.3.0",
@@ -1141,7 +1141,11 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "System.ComponentModel.Annotations/4.6.0": {},
+      "System.ComponentModel.Annotations/4.6.0": {
+        "compile": {
+          "ref/netstandard2.1/System.ComponentModel.Annotations.dll": {}
+        }
+      },
       "System.ComponentModel.Primitives/4.3.0": {
         "dependencies": {
           "System.ComponentModel": "4.3.0",
@@ -1319,7 +1323,11 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "System.Diagnostics.DiagnosticSource/4.6.0": {},
+      "System.Diagnostics.DiagnosticSource/4.6.0": {
+        "compile": {
+          "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {}
+        }
+      },
       "System.Diagnostics.Tools/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.1.2",
@@ -2002,6 +2010,7 @@
       "StudentGuidence.DataAccess/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.SqlServer": "3.0.0",
+          "Microsoft.VisualStudio.Services.NuGet.CredentialProvider": "0.37.0",
           "StudentGuidence.Models": "1.0.0"
         },
         "runtime": {
@@ -2013,7 +2022,8 @@
       },
       "StudentGuidence.Models/1.0.0": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.SqlServer": "3.0.0"
+          "Microsoft.EntityFrameworkCore.SqlServer": "3.0.0",
+          "Microsoft.VisualStudio.Services.NuGet.CredentialProvider": "0.37.0"
         },
         "runtime": {
           "StudentGuidence.Models.dll": {}
@@ -3959,6 +3969,13 @@
       "sha512": "sha512-aOZA3BWfz9RXjpzt0sRJJMjAscAUm3Hoa4UWAfceV9UTYxgwZ1lZt5nO2myFf+/jetYQo4uTP7zS8sJY67BBxg==",
       "path": "microsoft.netcore.targets/1.1.0",
       "hashPath": "microsoft.netcore.targets.1.1.0.nupkg.sha512"
+    },
+    "Microsoft.VisualStudio.Services.NuGet.CredentialProvider/0.37.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7+ssieaVr+FShzh3lKqOIKk0YTCZcrex/tAY9IbBKlL0trmYTVv7IcaIqzP9GMO5dUi64q7vEkqBt0GBFeGYdg==",
+      "path": "microsoft.visualstudio.services.nuget.credentialprovider/0.37.0",
+      "hashPath": "microsoft.visualstudio.services.nuget.credentialprovider.0.37.0.nupkg.sha512"
     },
     "Microsoft.VisualStudio.Web.CodeGeneration/3.0.0": {
       "type": "package",
