@@ -1,40 +1,44 @@
 ﻿@model StudentGuidence.Models.University
-
 @{
     ViewData["Title"] = "Create";
 }
-
-<h1>Create</h1>
-
-<h4>University</h4>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create" method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Province" class="control-label"></label>
-                <input asp-for="Province" class="form-control" />
-                <span asp-validation-for="Province" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Establishment" class="control-label"></label>
-                <input asp-for="Establishment" class="form-control" />
-                <span asp-validation-for="Establishment" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" class="btn btn-primary" />
-            </div>
-        </form>
+<form method="post" asp-controller="University" asp-action="Create">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Create University</h2>
+            <hr />
+        </div>
+        <div class="text-danger" asp-validation-summary="All"></div>
+        <div class="mb-3">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Province"></label>
+            <input asp-for="Province" class="form-control" />
+            <span asp-validation-for="Province" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+             <label asp-for="Establishment.Date"></label>
+            <input asp-for="Establishment" class="form-control" />
+            <span asp-validation-for="Establishment" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-outline-success" style="width:150px">
+            Create
+            <img src="~/img/Icon/add25px.png" />
+
+        </button>
+        <a asp-action="Index" class="btn btn-outline-primary" style="width:150px;">
+            <img src="~/img/Icon/back_50px.png" />
+            Back to List
+        </a>
     </div>
-</div>
+</form>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
+@section Scripts{ 
+    @{ 
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

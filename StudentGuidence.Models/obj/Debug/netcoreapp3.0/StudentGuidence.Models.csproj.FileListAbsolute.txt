@@ -8,12 +8,16 @@ C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence.Models\
 C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence.Models\bin\Debug\netcoreapp3.0\StudentGuidence.Models.runtimeconfig.dev.json
 C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence.Models\bin\Debug\netcoreapp3.0\StudentGuidence.Models.dll
 C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence.Models\bin\Debug\netcoreapp3.0\StudentGuidence.Models.pdb
+C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence.Models\obj\Debug\netcoreapp3.0\StudentGuidence.Models.csproj.AssemblyReference.cache
+C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence.Models\obj\Debug\netcoreapp3.0\StudentGuidence.Models.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence.Models\obj\Debug\netcoreapp3.0\StudentGuidence.Models.AssemblyInfoInputs.cache
 C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence.Models\obj\Debug\netcoreapp3.0\StudentGuidence.Models.AssemblyInfo.cs
+C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence.Models\obj\Debug\netcoreapp3.0\StudentGuidence.Models.csproj.CoreCompileInputs.cache
 C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence.Models\obj\Debug\netcoreapp3.0\StudentGuidence.Models.dll
 C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence.Models\obj\Debug\netcoreapp3.0\StudentGuidence.Models.pdb
+C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence.Models\obj\Debug\netcoreapp3.0\StudentGuidence.Models.genruntimeconfig.cache
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence.Models\obj\Debug\netcoreapp3.0\StudentGuidence.Models.AssemblyInfoInputs.cache
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence.Models\obj\Debug\netcoreapp3.0\StudentGuidence.Models.AssemblyInfo.cs
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence.Models\obj\Debug\netcoreapp3.0\StudentGuidence.Models.dll
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence.Models\obj\Debug\netcoreapp3.0\StudentGuidence.Models.pdb
-C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence.Models\obj\Debug\netcoreapp3.0\StudentGuidence.Models.csprojAssemblyReference.cache
+C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence.Models\obj\Debug\netcoreapp3.0\StudentGuidence.Models.csprojAssemblyReference.cache
