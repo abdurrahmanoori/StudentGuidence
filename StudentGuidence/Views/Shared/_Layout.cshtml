@@ -7,100 +7,104 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <!---&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& links &&&&&&&&&&&&&&&&&&&&&&&&&-->
-    <link href="~/img/favicon.png" rel="icon">
-    <link href="~/img/apple-touch-icon.png" rel="apple-touch-icon">
+      <link href="~/img/favicon.png" rel="icon">
+  <link href="~/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-    <!-- Vendor CSS Files -->
-
-    <link href="~/sitfiles/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="~/sitfiles/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="~/sitfiles/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="~/sitfiles/remixicon/remixicon.css" rel="stylesheet">
-    <link href="~/sitfiles/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <!-- Vendor CSS Files -->
+  
+  <link href="~/sitfiles/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="~/sitfiles/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="~/sitfiles/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="~/sitfiles/remixicon/remixicon.css" rel="stylesheet">
+  <link href="~/sitfiles/swiper/swiper-bundle.min.css" rel="stylesheet">
     <!-- Main CSS File -->
-    <link href="~/css/style.css" rel="stylesheet">
-    <!--&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&-->
+  <link href="~/css/style.css" rel="stylesheet">
+  <!--&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&-->
 </head>
 <body>
 
-    <header id="header" class="container-fluid header fixed-top bg-white">
-        <div class="container-fluid container-xxl d-flex align-items-center justify-content-between">
+ <header id="header" class="container-fluid header fixed-top bg-white">
+            <div class="container-fluid container-xxl d-flex align-items-center justify-content-between">
 
-            <a asp-controller="Home" asp-action="Index" class="logo d-flex align-items-center">
+              <a asp-controller="Home" asp-action="Index" class="logo d-flex align-items-center">
                 <img src="~/img/logo.png" alt="">
                 <span> د زده کونکو لارښود </span>
-            </a>
-            <nav id="navbar" class="navbar">
-                <ul>
-                    <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="Home" asp-action="Student"> زده کونکي </a></li>
-                    <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="Home" asp-action="Teacher"> استاد </a></li>
-                    <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="Home" asp-action="Faculty"> پوهنځی </a></li>
-                    <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="Home" asp-action="About"> زمونږ په اړه </a></li>
-                    <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="Home" asp-action=""> اړیکه </a></li>
-                    <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="Home" asp-action="Team"> ګروپ </a></li>
-                    <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="home" asp-action="Services"> خدمات </a></li>
-                    <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="Home" asp-action="Universities"> پوهنتونونه </a></li>
-                    <li><a class="nav-link scrollto active" asp-area="Visitor" asp-controller="Home" asp-action="Index"> کور </a></li>
-                    <li><a class="nav-link scrollto active" asp-area="Admin" asp-controller="University" asp-action="Index"> University</a></li>
-                   
+              </a>
 
-                    <li>
-                        <div class="dropdown dropleft">
-                            <button type="button" class="btn btn-primary dropdown-toggle  mx-2 px-3" data-toggle="dropdown">
-                                <b>  ننوتل  </b>
-                            </button>
-                            <div class="dropdown-menu dropleft">
-                                <button type="button" class="btn btn-primary dropdown-toggle  mx-2 px-3" data-toggle="dropdown">
-                                    ثبتول
-                                </button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" asp-area="Visitor" asp-controller="Home" asp-action="Registration"> استاد یم </a>
-                                    <a class="dropdown-item" asp-area="Visitor" asp-controller="Home" asp-action="Registration"> شاګرد یم </a>
-                                </div>
-
-
-                                <a class="dropdown-item" asp-area="Visitor" asp-controller="Home" asp-action="Login"> ننوتل </a>
-
-                            </div>
-                        </div>
+              <nav id="navbar" class="navbar">
+                  <ul>
+                      <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="Home" asp-action="Student"> زده کونکي </a></li>
+                      <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="Home" asp-action="Teacher"> استاد </a></li>
+                      <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="Home" asp-action="Faculty"> پوهنځی </a></li>
+                      <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="Home" asp-action="About"> زمونږ په اړه </a></li>
+                      <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="Home" asp-action=""> اړیکه </a></li>
+                      <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="Home" asp-action="Team"> ګروپ </a></li>
+                      <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="home" asp-action="Services"> خدمات </a></li>
+                      <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="Home" asp-action="Universities"> پوهنتونونه </a></li>
+                      <li><a class="nav-link scrollto active" asp-area="Visitor" asp-controller="Home" asp-action="Index"> کور </a></li>
+                      <li><a class="nav-link scrollto active" asp-area="Admin" asp-controller="University" asp-action="Index"> University </a></li>
+                      <li><a class="nav-link scrollto active" asp-area="Admin" asp-controller="University" asp-action="Test"> Student List Desing </a></li>
+                      <li>
+                          <div class="dropdown dropleft">
+                              <button type="button" class="btn btn-primary dropdown-toggle  mx-2 px-3" data-toggle="dropdown">
+                                  <b>  ننوتل  </b>
+                              </button>
+                              <div class="dropdown-menu dropleft">
+                                  <button type="button" class="btn btn-primary dropdown-toggle  mx-2 px-3" data-toggle="dropdown">
+                                      ثبتول
+                                  </button>
+                                  <div class="dropdown-menu">
+                                      <a class="dropdown-item" asp-controller="Home" asp-action="Registration"> استاد یم </a>
+                                      <a class="dropdown-item" asp-controller="Home" asp-action="Registration"> شاګرد یم </a>
+                                  </div>
 
 
+                                  <a class="dropdown-item" asp-controller="Home" asp-action="Login"> ننوتل </a>
+
+                              </div>
+                          </div>
 
 
-                    </li>
-                    
-                </ul>
+
+
+
+                          <!--  <a class="getstarted scrollto" asp-controller="Home" asp-action="Login"> ننوتل </a></li>-->
+                  </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav><!-- .navbar -->
+              </nav><!-- .navbar -->
 
-        </div>
-
-
+            </div>
+  
+        </nav>
     </header>
 
     <!--===================== End of Header =========================-->
+
+   
+
+
     <!--****************************************************************************-->
     <section class="container-fluid py-5">
 
         <div class="container-fluid">
-            <main role="main" class="pb-3">
-                @RenderBody()
-            </main>
-        </div>
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
 
     </section>
     <!--===========Footer of Page-->
-
+   
 
     <footer class="footer text-muted py-0">
         <div class="container-fluid ">
-            <p> &copy; 2022 - STUDENT__GUIDANCE - <a asp-area="" asp-controller="Home" asp-action="Index">WebSite</a></p>
+           <p> &copy; 2022 - STUDENT__GUIDANCE - <a asp-area="" asp-controller="Home" asp-action="Index">WebSite</a></p>
         </div>
     </footer>
-
+   
 
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

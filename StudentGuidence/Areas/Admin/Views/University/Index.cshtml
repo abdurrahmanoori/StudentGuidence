@@ -18,9 +18,9 @@
         <tr>
             <td>@university.Name</td>
             <td>@university.Province</td>
-            <td>@university.Establishment.Year</td>
+            <td>@university.Establishment.Date</td>
             <td>
-                <a asp-action="Create" asp-route-id="@university.Id" class="btn btn-danger">Delete</a>
+                <a asp-action="Delete" asp-route-id="@university.Id" class="btn btn-danger">Delete</a>
                 <a asp-action="Edit" asp-route-id="@university.Id" class="btn btn-primary">Edit</a>
             </td>
         </tr>
