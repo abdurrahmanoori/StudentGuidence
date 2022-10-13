@@ -6,7 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using StudentGuidenc.DataAccess;
 using StudentGuidence.Models;
 
-namespace StudentGuidence.Areas.Admin.Controllers
+namespace StudentGuidence.Areas.Admin
+    .Controllers
 {
     public class UniversityController : Controller
     {
@@ -36,12 +37,22 @@ namespace StudentGuidence.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(University university)
         {
-            if (ModelState.IsValid)
+            if (university != null)
             {
-                _db.Universities.Add(university);
-                _db.SaveChanges();
-                return RedirectToAction("Index");
+                if (university.Name == university.Province)
+                {
+                    ModelState.AddModelError("EqualCheck", "University Name And Province Name Cannot Be Same.");
+                }
+
+
+                if (ModelState.IsValid)
+                {
+                    _db.Universities.Add(university);
+                    _db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
             }
+            ModelState.AddModelError("NullCheck", "Model is Null!");
             return View(university);
         }
         //GET Edit
