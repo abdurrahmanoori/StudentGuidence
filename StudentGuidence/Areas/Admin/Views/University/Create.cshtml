@@ -2,27 +2,32 @@
 @{
     ViewData["Title"] = "Create";
 }
-<hr />
-<form method="post" asp-controller="University" asp-action="Create">
-    <div class="border p-3 mt-4">
+<h1 clsass="text-center py-5"> University Creation Page</h1>
+<form method="post" asp-controller="University" asp-action="Create" class="form-control form-control-lg h-100 border-danger py-5 mb-3">
+    <div class="border p-3 mt-4 border-success ">
         <div class="row pb-2">
             <h2 class="text-primary">Create University</h2>
-            <hr />
+            
         </div>
         <div class="text-danger" asp-validation-summary="All"></div>
-        <div class="mb-3">
+        <div class="mb-3 ">
             <label asp-for="Name"></label>
-            <input asp-for="Name" class="form-control" />
+            <input asp-for="Name" class="form-control form-control-lg border-primary" />
             <span asp-validation-for="Name" class="text-danger"></span>
         </div>
         <div class="mb-3">
             <label asp-for="Province"></label>
-            <input asp-for="Province" class="form-control" />
+            <input asp-for="Province" class="form-control form-control-lg border-primary" />
             <span asp-validation-for="Province" class="text-danger"></span>
         </div>
         <div class="mb-3">
+<<<<<<< HEAD
             <label asp-for="Establishment"></label>
             <input type="date" asp-for="Establishment" class="form-control" />
+=======
+             <label asp-for="Establishment"></label>
+            <input  asp-for="Establishment" class="form-control form-control-lg border-primary" />
+>>>>>>> ce2e15ed81cb5d3e2a7e1d2041918361a409b1fb
             <span asp-validation-for="Establishment" class="text-danger"></span>
         </div>
         <button type="submit" class="btn btn-outline-success" style="width:150px">

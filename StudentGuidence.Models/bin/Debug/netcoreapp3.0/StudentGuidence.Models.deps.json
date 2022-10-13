@@ -8,13 +8,16 @@
     ".NETCoreApp,Version=v3.0": {
       "StudentGuidence.Models/1.0.0": {
         "dependencies": {
+          "Blazorise.Icons.Bootstrap": "1.1.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.0.0",
-          "Microsoft.EntityFrameworkCore.Tools": "3.0.0"
+          "Microsoft.EntityFrameworkCore.Tools": "3.0.0",
+          "Microsoft.VisualStudio.Services.NuGet.CredentialProvider": "0.37.0"
         },
         "runtime": {
           "StudentGuidence.Models.dll": {}
         }
       },
+      "Blazorise.Icons.Bootstrap/1.1.1": {},
       "Microsoft.CSharp/4.6.0": {},
       "Microsoft.Data.SqlClient/1.0.19249.1": {
         "dependencies": {
@@ -254,6 +257,7 @@
       },
       "Microsoft.NETCore.Platforms/2.0.0": {},
       "Microsoft.NETCore.Targets/1.1.0": {},
+      "Microsoft.VisualStudio.Services.NuGet.CredentialProvider/0.37.0": {},
       "Microsoft.Win32.Registry/4.5.0": {
         "dependencies": {
           "System.Security.AccessControl": "4.5.0",
@@ -837,6 +841,13 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Blazorise.Icons.Bootstrap/1.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-B61C+jmqiUzrQZzcDFEmctNi95a4PC9C+DKvGigp9Qf06+nPExk6y+BVkAj7Br0PcSsnzRDvsUxEhEl5fyj8kQ==",
+      "path": "blazorise.icons.bootstrap/1.1.1",
+      "hashPath": "blazorise.icons.bootstrap.1.1.1.nupkg.sha512"
+    },
     "Microsoft.CSharp/4.6.0": {
       "type": "package",
       "serviceable": true,
@@ -997,6 +1008,13 @@
       "sha512": "sha512-aOZA3BWfz9RXjpzt0sRJJMjAscAUm3Hoa4UWAfceV9UTYxgwZ1lZt5nO2myFf+/jetYQo4uTP7zS8sJY67BBxg==",
       "path": "microsoft.netcore.targets/1.1.0",
       "hashPath": "microsoft.netcore.targets.1.1.0.nupkg.sha512"
+    },
+    "Microsoft.VisualStudio.Services.NuGet.CredentialProvider/0.37.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7+ssieaVr+FShzh3lKqOIKk0YTCZcrex/tAY9IbBKlL0trmYTVv7IcaIqzP9GMO5dUi64q7vEkqBt0GBFeGYdg==",
+      "path": "microsoft.visualstudio.services.nuget.credentialprovider/0.37.0",
+      "hashPath": "microsoft.visualstudio.services.nuget.credentialprovider.0.37.0.nupkg.sha512"
     },
     "Microsoft.Win32.Registry/4.5.0": {
       "type": "package",

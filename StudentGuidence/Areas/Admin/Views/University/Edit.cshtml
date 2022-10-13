@@ -3,40 +3,47 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<h1 class="text-center py-5 ">Edit University</h1>
 
-<h4>Edit University</h4>
-<hr />
-<div>
-    <form method="post" asp-controller="University" asp-action="Edit">
-        <div class="border p-3 mt-4">
+<div >
+    <form method="post" asp-controller="University" asp-action="Edit" class="form-control form-control-lg h-100 border-danger py-5 mb-3">
+        <div class="container border p-3 mt-4">
             <div class="row pb-2">
-                <h2 class="text-primary">Create University</h2>
-                <hr />
+                <h2 class="text-primary">Edit  University  Information</h2>
+                
             </div>
             <div asp-validation-summary="All"></div>
             <div class="mb-3">
                 <input asp-for="Id" hidden />
 
                 <label asp-for="Name"></label>
-                <input asp-for="Name" class="form-control" />
+                <input asp-for="Name" class="form-control form-control-lg border-primary" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="mb-3">
                 <label asp-for="Province"></label>
-                <input asp-for="Province" class="form-control" />
+                <input asp-for="Province" class="form-control form-control-lg border-primary" />
                 <span asp-validation-for="Province" class="text-danger"></span>
             </div>
             <div class="mb-3">
                 <label asp-for="Establishment"></label>
+<<<<<<< HEAD
                 <input type="date" asp-for="Establishment" class="form-control" />
+=======
+                <input asp-for="Establishment" class="form-control form-control-lg border-primary" />
+>>>>>>> ce2e15ed81cb5d3e2a7e1d2041918361a409b1fb
                 <span asp-validation-for="Establishment" class="text-danger"></span>
             </div>
             <button type="submit" class="btn btn-outline-primary" style="width:150px">
                 <img src="~/img/Icon/update_25px.png" />
                 Update
             </button>
+<<<<<<< HEAD
             <a asp-controller="Unversity" asp-action="Index" class="btn btn-outline-primary" style="width:150px;">
+=======
+            <a asp-controller="University" asp-action="Index" class="btn btn-outline-primary" style="width:150px;">
+
+>>>>>>> ce2e15ed81cb5d3e2a7e1d2041918361a409b1fb
                 <img src="~/img/Icon/back_50px.png" />
                 Back to List
             </a>
@@ -49,3 +56,41 @@
 
 
 
+<<<<<<< HEAD
+=======
+@*<h1>Edit</h1>
+
+    <h4>University</h4>
+    
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Province" class="control-label"></label>
+                    <input asp-for="Province" class="form-control" />
+                    <span asp-validation-for="Province" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Establishment" class="control-label"></label>
+                    <input asp-for="Establishment" class="form-control" />
+                    <span asp-validation-for="Establishment" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">University Lists</a>
+    </div>*@
+
+>>>>>>> ce2e15ed81cb5d3e2a7e1d2041918361a409b1fb

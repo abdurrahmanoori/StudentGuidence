@@ -24,9 +24,11 @@
     ".NETCoreApp,Version=v3.0": {
       "StudentGuidence/1.0.0": {
         "dependencies": {
+          "Blazorise.Icons.Bootstrap": "1.1.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.0.0",
           "Microsoft.EntityFrameworkCore.Tools": "3.0.0",
           "Microsoft.Extensions.Logging.Debug": "3.0.0",
+          "Microsoft.VisualStudio.Services.NuGet.CredentialProvider": "0.37.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.0.0",
           "StudentGuidence.DataAccess": "1.0.0",
           "StudentGuidence.Models": "1.0.0",
@@ -320,6 +322,7 @@
           "StudentGuidence.dll": {}
         }
       },
+      "Blazorise.Icons.Bootstrap/1.1.1": {},
       "Microsoft.AspNetCore.Html.Abstractions/2.2.0": {
         "dependencies": {
           "System.Text.Encodings.Web": "4.5.0"
@@ -783,6 +786,7 @@
       },
       "Microsoft.NETCore.Platforms/2.1.2": {},
       "Microsoft.NETCore.Targets/1.1.0": {},
+      "Microsoft.VisualStudio.Services.NuGet.CredentialProvider/0.37.0": {},
       "Microsoft.VisualStudio.Web.CodeGeneration/3.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "3.0.0",
@@ -2007,7 +2011,9 @@
       },
       "StudentGuidence.DataAccess/1.0.0": {
         "dependencies": {
+          "Blazorise.Icons.Bootstrap": "1.1.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.0.0",
+          "Microsoft.VisualStudio.Services.NuGet.CredentialProvider": "0.37.0",
           "StudentGuidence.Models": "1.0.0"
         },
         "runtime": {
@@ -2019,7 +2025,9 @@
       },
       "StudentGuidence.Models/1.0.0": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.SqlServer": "3.0.0"
+          "Blazorise.Icons.Bootstrap": "1.1.1",
+          "Microsoft.EntityFrameworkCore.SqlServer": "3.0.0",
+          "Microsoft.VisualStudio.Services.NuGet.CredentialProvider": "0.37.0"
         },
         "runtime": {
           "StudentGuidence.Models.dll": {}
@@ -3728,6 +3736,13 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Blazorise.Icons.Bootstrap/1.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-B61C+jmqiUzrQZzcDFEmctNi95a4PC9C+DKvGigp9Qf06+nPExk6y+BVkAj7Br0PcSsnzRDvsUxEhEl5fyj8kQ==",
+      "path": "blazorise.icons.bootstrap/1.1.1",
+      "hashPath": "blazorise.icons.bootstrap.1.1.1.nupkg.sha512"
+    },
     "Microsoft.AspNetCore.Html.Abstractions/2.2.0": {
       "type": "package",
       "serviceable": true,
@@ -3965,6 +3980,13 @@
       "sha512": "sha512-aOZA3BWfz9RXjpzt0sRJJMjAscAUm3Hoa4UWAfceV9UTYxgwZ1lZt5nO2myFf+/jetYQo4uTP7zS8sJY67BBxg==",
       "path": "microsoft.netcore.targets/1.1.0",
       "hashPath": "microsoft.netcore.targets.1.1.0.nupkg.sha512"
+    },
+    "Microsoft.VisualStudio.Services.NuGet.CredentialProvider/0.37.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7+ssieaVr+FShzh3lKqOIKk0YTCZcrex/tAY9IbBKlL0trmYTVv7IcaIqzP9GMO5dUi64q7vEkqBt0GBFeGYdg==",
+      "path": "microsoft.visualstudio.services.nuget.credentialprovider/0.37.0",
+      "hashPath": "microsoft.visualstudio.services.nuget.credentialprovider.0.37.0.nupkg.sha512"
     },
     "Microsoft.VisualStudio.Web.CodeGeneration/3.0.0": {
       "type": "package",

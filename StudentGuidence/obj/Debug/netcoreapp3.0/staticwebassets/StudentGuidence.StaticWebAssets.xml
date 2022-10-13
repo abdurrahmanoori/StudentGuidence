@@ -1,1 +1,3 @@
-﻿<StaticWebAssets Version="1.0" />
+﻿<StaticWebAssets Version="1.0">
+  <ContentRoot BasePath="_content/Blazorise.Icons.Bootstrap" Path="C:\Users\khuba\.nuget\packages\blazorise.icons.bootstrap\1.1.1\build\..\staticwebassets\" />
+</StaticWebAssets>
