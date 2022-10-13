@@ -44,7 +44,6 @@ namespace StudentGuidence.Areas.Admin
                     ModelState.AddModelError("EqualCheck", "University Name And Province Name Cannot Be Same.");
                 }
 
-
                 if (ModelState.IsValid)
                 {
                     _db.Universities.Add(university);
@@ -52,43 +51,54 @@ namespace StudentGuidence.Areas.Admin
                     return RedirectToAction("Index");
                 }
             }
-            ModelState.AddModelError("NullCheck", "Model is Null!");
             return View(university);
         }
         //GET Edit
         public IActionResult Edit(int id)
         {
-            University university = _db.Universities.Find(id);
-            if(university != null && university.Id >=0)
+            if (id == 0)
             {
-                return View(university);
+                return NotFound();
             }
-            return NotFound();
+            University university = _db.Universities.Find(id);
+            if (university == null)
+            {
+                return NotFound();
+            }
+            return View(university);
         }
         //POST Edit
-        [HttpPost] 
+        [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Edit(University university)
         {
-            if (ModelState.IsValid)
             {
+                if (university.Name == university.Province)
+                {
+                    ModelState.AddModelError("EqualCheck", "University Name And Province Name Cannot Be Same.");
+                }
 
-                if (university != null)
+                if (ModelState.IsValid)
                 {
                     _db.Universities.Update(university);
                     _db.SaveChanges();
                     return RedirectToAction("Index");
                 }
-            }
-            return View(university);
 
+                return View(university);
+
+            }
         }
         //GET Delete
         //[HttpGet]
         public IActionResult Delete(int id)
         {
+            if (id == 0)
+            {
+                return NotFound();
+            }
             University university = _db.Universities.Find(id);
-            if(university != null)
+            if (university != null)
             {
                 return View(university);
             }
@@ -100,7 +110,7 @@ namespace StudentGuidence.Areas.Admin
         public IActionResult DeletePost(int id)
         {
             University universityDelete = _db.Universities.Find(id);
-            if(universityDelete != null)
+            if (universityDelete != null)
             {
                 _db.Universities.Remove(universityDelete);
                 _db.SaveChanges();

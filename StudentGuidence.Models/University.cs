@@ -14,9 +14,10 @@ namespace StudentGuidence.Models
         public string Name { get; set; }
         [Required(ErrorMessage ="University name must not be empty")]
         public string Province { get; set; }
-        [Display(Name ="Province Establish Date")]
+        [Display(Name ="Establish Date")]
         //[DataType(DataType.Date)]
         //[DisplayFormat(DataFormatString ="")]
+        [Required]
         public DateTime Establishment { get; set; }
     }
 }

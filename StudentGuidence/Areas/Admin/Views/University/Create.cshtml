@@ -21,7 +21,7 @@
             <span asp-validation-for="Province" class="text-danger"></span>
         </div>
         <div class="mb-3">
-             <label asp-for="Establishment.Date"></label>
+            <label asp-for="Establishment"></label>
             <input asp-for="Establishment" class="form-control" />
             <span asp-validation-for="Establishment" class="text-danger"></span>
         </div>
@@ -37,8 +37,19 @@
     </div>
 </form>
 
-@section Scripts{ 
-    @{ 
+
+@{
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script type="text/javascript">
+        toastr.success("Welcom");
+    </script>
+}
+
+
+
+@section Scripts{
+    @{
         <partial name="_ValidationScriptsPartial" />
     }
 }
