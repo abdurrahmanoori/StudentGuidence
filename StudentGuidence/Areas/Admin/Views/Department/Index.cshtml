@@ -1,43 +1,39 @@
-﻿@model IEnumerable<StudentGuidence.Models.Faculty>
+﻿@model IEnumerable<StudentGuidence.Models.Department>
 @{
     ViewData["Title"] = "Index";
 }
 <h1>Index</h1>
 
-<h1 class="container text-center py-5">Faculty Table</h1>
+<h1 class="container text-center py-5">Department Table</h1>
 <form class="form-control form-control-lg h-100 border-danger py-5 mb-3">
     <a asp-action="Create" class="float-right btn btn-primary font-weight-bold text-capitalize">
 
         <img src="~/img/Icon/add_50px.png" />
-        Create Faculty
+        Create Department
     </a>
     <table class="table table-bordered border-success">
         <tr>
 
-
             <th>Name</th>
-            <th>University</th>
             <th>History</th>
             <th>Pre Requirement</th>
-            <th>Image</th>
+            <th>Faculty Name</th>
+            <th></th>
         </tr>
-        @foreach (var faculty in Model)
+        @foreach (var department in Model)
         {
             <tr>
-                <td>@faculty.Name</td>
-                <td>@faculty.University.Name</td>
-                <td>@faculty.History</td>
-                <td>@faculty.PreRequirment</td>
+                <td>@department.Name</td>
+                <td>@department.History</td>
+                <td>@department.PreRequirment</td>
+                <td>@department.Faculty.Name</td>
+
                 <td>
-                    <img src="@faculty.ImageUrl" style="width:140px; height:140px;" />
-                </td>
-                <td>
-                    <a asp-action="Delete" asp-route-id="@faculty.Id" class="mx-2">
+                    <a asp-action="Delete" asp-route-id="@department.Id" class="mx-2">
                         <i class="bi bi-trash3-fill"></i>
                     </a>
-                    <a asp-action="Edit" asp-route-id="@faculty.Id">
+                    <a asp-action="Edit" asp-route-id="@department.Id">
                         <i class="bi bi-pencil-square "></i>
-
                     </a>
                 </td>
             </tr>

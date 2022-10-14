@@ -1,12 +1,12 @@
 ﻿@model StudentGuidence.Models.Faculty
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Edit";
 }
-<h1 clsass="text-center py-5">Create Faculty</h1>
-<form method="post" asp-controller="Faculty" enctype="multipart/form-data" asp-action="Create" class="form-control form-control-lg h-100 border-danger py-5 mb-3">
+<h1 clsass="text-center py-5">Edit Faculty</h1>
+<form method="post" asp-controller="Faculty" enctype="multipart/form-data" asp-action="Edit" class="form-control form-control-lg h-100 border-danger py-5 mb-3">
     <div class="border p-3 mt-4 border-success ">
         <div class="row pb-2">
-            <h2 class="text-primary">Create Faculty</h2>
+            <h2 class="text-primary">Edit Faculty</h2>
 
         </div>
         <div class="text-danger" asp-validation-summary="All"></div>
@@ -26,19 +26,18 @@
         </div>
         <div class="mb-3">
             <label asp-for="ImageUrl"></label>
-            <input type="file" name="file"  class="form-control" />
-            <span asp-validation-for="ImageUrl" class="text-danger"></span>
+            <input type="file" name="file" class="form-control" />
         </div>
         <div class="mb-3">
             <label asp-for="UniversityId"></label>
             <select class="form-control" asp-for="UniversityId" asp-items="@(ViewBag.universityList)"></select>
             <span asp-validation-for="UniversityId" class="text-danger"></span>
         </div>
-        <button type="submit" class="btn btn-outline-success" style="width:150px">
-            Create
-            <img src="~/img/Icon/add25px.png" />
+        <button type="submit" class="btn btn-outline-primary" style="width:150px">
+            <img src="~/img/Icon/update_25px.png" />
+            Update
         </button>
-        <a asp-action="Index" class="btn btn-outline-primary" style="width:150px;">
+        <a asp-controller="University" asp-action="Index" class="btn btn-outline-primary" style="width:150px;">
             <img src="~/img/Icon/back_50px.png" />
             Back to List
         </a>
