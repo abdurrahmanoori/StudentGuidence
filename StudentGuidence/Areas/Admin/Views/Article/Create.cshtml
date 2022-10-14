@@ -1,0 +1,47 @@
+﻿@model StudentGuidence.Models.Article
+@{
+    ViewData["Title"] = "Create";
+}
+<h1 clsass="text-center py-5">Create Article</h1>
+<form method="post" asp-controller="Article" enctype="multipart/form-data" asp-action="Create" class="form-control form-control-lg h-100 border-danger py-5 mb-3">
+    <div class="border p-3 mt-4 border-success ">
+        <div class="row pb-2">
+            <h2 class="text-primary">Create Article</h2>
+        </div>
+        <div class="text-danger" asp-validation-summary="All"></div>
+        <div class="mb-3 ">
+            <label asp-for="Title"></label>
+            <input asp-for="Title" class="form-control form-control-lg border-primary" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+        <div class="mb-3 ">
+            <label asp-for="Description"></label>
+            <textarea class="form-control" rows="5" asp-for="Description"></textarea>
+        </div>
+        <div class="mb-3 ">
+            <label asp-for="DateOfIssue"></label>
+            <input type="date" asp-for="DateOfIssue" class="form-control form-control-lg border-primary" />
+            <span asp-validation-for="DateOfIssue" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="ImageUrl"></label>
+            <input type="file" name="file" class="bi-upload" />
+            <span asp-validation-for="ImageUrl" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-outline-success" style="width:150px">
+            Create
+            <img src="~/img/Icon/add25px.png" />
+        </button>
+        <a asp-action="Index" class="btn btn-outline-primary" style="width:150px;">
+            <img src="~/img/Icon/back_50px.png" />
+            Back to List
+        </a>
+    </div>
+</form>
+
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

@@ -33,9 +33,10 @@ namespace StudentGuidenc.DataAccess
 
             modelBuilder.Entity<University>().Property(u => u.Establishment).HasColumnType("Date");
 
-            DateTime d = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
-            modelBuilder.Entity<University>().Property(u => u.Establishment).HasDefaultValue(d);
+            //DateTime d = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+            //modelBuilder.Entity<University>().Property(u => u.Establishment).HasDefaultValue(d);
 
+            modelBuilder.Entity<Article>().Property(u => u.DateOfIssue).HasColumnType("Date");
             
         }
     }
