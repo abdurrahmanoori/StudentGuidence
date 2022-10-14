@@ -1,12 +1,12 @@
 ﻿@model StudentGuidence.Models.Department
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Edit";
 }
-<h1 clsass="text-center py-5">Create Department</h1>
-<form method="post" asp-controller="Department" asp-action="Create" class="form-control form-control-lg h-100 border-danger py-5 mb-3">
+<h1 clsass="text-center py-5">Edit Department</h1>
+<form method="post" asp-controller="Department" asp-action="Edit" class="form-control form-control-lg h-100 border-danger py-5 mb-3">
     <div class="border p-3 mt-4 border-success ">
         <div class="row pb-2">
-            <h2 class="text-primary">Create Department</h2>
+            <h2 class="text-primary">Edit Department</h2>
         </div>
         <div class="text-danger" asp-validation-summary="All"></div>
         <div class="mb-3 ">
@@ -17,6 +17,7 @@
         <div class="mb-3 ">
             <label asp-for="History"></label>
             <textarea class="form-control" rows="5" asp-for="History"></textarea>
+            <span asp-validation-for="History"></span>
         </div>
         <div class="mb-3">
             <label asp-for="PreRequirment"></label>
@@ -25,14 +26,14 @@
         </div>
         <div class="mb-3">
             <label asp-for="FacultyId"></label>
-            <select class="form-control" asp-for="FacultyId" asp-items="@(ViewBag.departmentList)"></select>
+            <select class="form-control" asp-for="FacultyId" asp-items="@(ViewBag.facultyList)"></select>
             <span asp-validation-for="FacultyId" class="text-danger"></span>
         </div>
-        <button type="submit" class="btn btn-outline-success" style="width:150px">
-            Create
-            <img src="~/img/Icon/add25px.png" />
+        <button type="submit" class="btn btn-outline-primary" style="width:150px">
+            <img src="~/img/Icon/update_25px.png" />
+            Update
         </button>
-        <a asp-action="Index" class="btn btn-outline-primary" style="width:150px;">
+        <a asp-controller="University" asp-action="Index" class="btn btn-outline-primary" style="width:150px;">
             <img src="~/img/Icon/back_50px.png" />
             Back to List
         </a>

@@ -302,3 +302,5 @@ C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netc
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\StudentGuidence.pdb
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Admin\Views\Department\Index.cshtml.g.cs
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Admin\Views\Department\Create.cshtml.g.cs
+C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Admin\Views\Department\Edit.cshtml.g.cs
+C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Admin\Views\Department\Delete.cshtml.g.cs

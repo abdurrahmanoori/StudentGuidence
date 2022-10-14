@@ -1,0 +1,44 @@
+﻿@model StudentGuidence.Models.Department
+@{
+    ViewData["Title"] = "Delete";
+}
+<h1 clsass="text-center py-5">Delete Department</h1>
+<form method="post" asp-controller="Department" asp-action="Delete" class="form-control form-control-lg h-100 border-danger py-5 mb-3">
+    <div class="border p-3 mt-4 border-success ">
+        <div class="row pb-2">
+            <h2 class="text-primary">Delete Department</h2>
+        </div>
+        <div class="mb-3 ">
+            <label asp-for="Name"></label>
+            <input disabled asp-for="Name" class="form-control form-control-lg border-primary" />
+        </div>
+        <div class="mb-3 ">
+            <label asp-for="History"></label>
+            <textarea disabled class="form-control" rows="5" asp-for="History"></textarea>
+        </div>
+        <div class="mb-3">
+            <label asp-for="PreRequirment"></label>
+            <textarea disabled asp-for="PreRequirment" rows="7" class="form-control form-control-lg border-primary"></textarea>
+        </div>
+        <div class="mb-3">
+            <label asp-for="FacultyId"></label>
+            <select disabled class="form-control" asp-for="FacultyId" asp-items="@(ViewBag.facultyList)"></select>
+        </div>
+        <button type="submit" class="btn btn-outline-danger">
+            Delete
+
+            <img src="~/img/Icon/delete_25px.png" />
+
+        </button>
+        <a asp-action="Index" class="btn btn-outline-primary p-2 px-4">
+            Cancel
+        </a>
+    </div>
+</form>
+
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
