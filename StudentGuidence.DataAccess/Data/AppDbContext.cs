@@ -32,12 +32,12 @@ namespace StudentGuidenc.DataAccess
             modelBuilder.Entity<Department>().HasIndex(u => u.Name).IsUnique();
 
             modelBuilder.Entity<University>().Property(u => u.Establishment).HasColumnType("Date");
-
+            modelBuilder.Entity<Article>().Property(u => u.DateOfIssue).HasColumnType("Date");
+            modelBuilder.Entity<Student>().Property(u => u.UniversityStartDate).HasColumnType("Date");
             //DateTime d = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
             //modelBuilder.Entity<University>().Property(u => u.Establishment).HasDefaultValue(d);
 
-            modelBuilder.Entity<Article>().Property(u => u.DateOfIssue).HasColumnType("Date");
-            
+
         }
     }
 }

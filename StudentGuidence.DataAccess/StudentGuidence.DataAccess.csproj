@@ -9,6 +9,12 @@
     <Compile Remove="Migrations\20221006161924_Noori.Designer.cs" />
     <Compile Remove="Migrations\20221006172244_AddPreRequirementForDepartemtnModelToDb.cs" />
     <Compile Remove="Migrations\20221006172244_AddPreRequirementForDepartemtnModelToDb.Designer.cs" />
+    <Compile Remove="Migrations\20221015011303_ChangedStduentDateTimeToDate.cs" />
+    <Compile Remove="Migrations\20221015011303_ChangedStduentDateTimeToDate.Designer.cs" />
+    <Compile Remove="Migrations\20221015054548_AddComplexTypeToArticle.cs" />
+    <Compile Remove="Migrations\20221015054548_AddComplexTypeToArticle.Designer.cs" />
+    <Compile Remove="Migrations\20221015102929_AddTypeColumnToAritcle.cs" />
+    <Compile Remove="Migrations\20221015102929_AddTypeColumnToAritcle.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

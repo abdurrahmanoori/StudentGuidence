@@ -18,17 +18,13 @@ namespace StudentGuidence.Models
         public string ImageUrl { get; set; }
         public string Province { get; set; }
         public string District { get; set; }
-        public DateTime UniversityStartDate { get; set; } = DateTime.Now;
+        //public DateTime UniversityStartDate { get; set; } = DateTime.Now;
+        public DateTime UniversityStartDate { get; set; } 
         public int DepartmentId { get; set; }
         [ForeignKey("DepartmentId")]
         public Department Department { get; set; }
         public int ArticleId { get; set; }
         [ForeignKey("ArticleId")]
         public Article Article { get; set; }
-
-
-
-
-
     }
 }

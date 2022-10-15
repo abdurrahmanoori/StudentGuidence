@@ -281,9 +281,7 @@ C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netc
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Visitor\Views\Home\Faculty.cshtml.g.cs
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Visitor\Views\Home\Index.cshtml.g.cs
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Visitor\Views\Home\Login.cshtml.g.cs
-C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Visitor\Views\Home\Registration.cshtml.g.cs
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Visitor\Views\Home\Services.cshtml.g.cs
-C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Visitor\Views\Home\Student.cshtml.g.cs
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Visitor\Views\Home\Teacher.cshtml.g.cs
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Visitor\Views\Home\Team.cshtml.g.cs
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Visitor\Views\Home\Universities.cshtml.g.cs
@@ -308,3 +306,6 @@ C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netc
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Admin\Views\Article\Create.cshtml.g.cs
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Admin\Views\Article\Edit.cshtml.g.cs
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Admin\Views\Article\Delete.cshtml.g.cs
+C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Admin\Views\Student\Index.cshtml.g.cs
+C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Admin\Views\Student\Detail.cshtml.g.cs
+C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Admin\Views\Student\Create.cshtml.g.cs
