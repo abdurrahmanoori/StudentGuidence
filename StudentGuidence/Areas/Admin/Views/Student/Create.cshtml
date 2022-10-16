@@ -6,18 +6,19 @@
 <sction class="contianer-fluid">
     <p class="display-5  text-center pt-5"> ثبت پاڼه </p>
     <div class="form-group ">
-
         <form class="form-control form-control-lg h-100 border-danger py-5 mb-3">
             <lable><p class="text-end">  :شخصی معلومات </p></lable>
             <div class="row py-4">
                 <div class="col">
-                    <input type="text" name="name" placeholder="  نوم  " class="form-control form-control-lg border-primary" />
+                    <input asp-for="FristName" name="name" placeholder="  نوم  " class="form-control form-control-lg border-primary" />
+                    <span asp-validation-for="FristName">></span>
                 </div>
                 <div class="col">
-                    <input type="text" name="last name" placeholder="  تخلص  " class="form-control form-control-lg border-primary" />
+                    <input asp-for="LastName" placeholder="  تخلص  " class="form-control form-control-lg border-primary" />
+                    <span asp-validation-for="LastName"></span>
                 </div>
                 <div class="col">
-                    <input type="text" name="father name" placeholder="  پلار نوم  " class="form-control form-control-lg border-primary" />
+                    <input name="father name" placeholder="  پلار نوم  " class="form-control form-control-lg border-primary" />
                 </div>
             </div>
 
