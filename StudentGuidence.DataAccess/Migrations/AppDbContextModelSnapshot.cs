@@ -173,6 +173,9 @@ namespace StudentGuidence.DataAccess.Migrations
                     b.Property<string>("District")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("FristName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

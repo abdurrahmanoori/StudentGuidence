@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using StudentGuidence.Models;
 using System;
 using System.Collections.Generic;
@@ -7,12 +8,11 @@ using System.Text;
 
 namespace StudentGuidenc.DataAccess
 {
-    public  class AppDbContext:DbContext
+    public  class AppDbContext: DbContext
     {
         public AppDbContext(DbContextOptions<AppDbContext> options):base(options)
         {
                        
-           
         }
 
         public DbSet<Faculty> Faculties { get; set; }

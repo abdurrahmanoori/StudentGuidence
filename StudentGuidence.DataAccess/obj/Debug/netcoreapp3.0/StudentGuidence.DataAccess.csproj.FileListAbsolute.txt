@@ -18,3 +18,9 @@ C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence.DataAcc
 C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence.DataAccess\obj\Debug\netcoreapp3.0\StudentGuidence.DataAccess.dll
 C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence.DataAccess\obj\Debug\netcoreapp3.0\StudentGuidence.DataAccess.pdb
 C:\Users\khuba\Desktop\pro\StudentGuidence-KhubaibBranch\StudentGuidence.DataAccess\obj\Debug\netcoreapp3.0\StudentGuidence.DataAccess.csprojAssemblyReference.cache
+C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence.DataAccess\obj\Debug\netcoreapp3.0\StudentGuidence.DataAccess.csprojAssemblyReference.cache
+C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence.DataAccess\obj\Debug\netcoreapp3.0\StudentGuidence.DataAccess.AssemblyInfoInputs.cache
+C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence.DataAccess\obj\Debug\netcoreapp3.0\StudentGuidence.DataAccess.AssemblyInfo.cs
+C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence.DataAccess\obj\Debug\netcoreapp3.0\StudentGuidence.DataAccess.csproj.CopyComplete
+C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence.DataAccess\obj\Debug\netcoreapp3.0\StudentGuidence.DataAccess.dll
+C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence.DataAccess\obj\Debug\netcoreapp3.0\StudentGuidence.DataAccess.pdb

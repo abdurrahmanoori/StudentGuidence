@@ -18,7 +18,14 @@ namespace StudentGuidence.Models
         public string ImageUrl { get; set; }
         public string Province { get; set; }
         public string District { get; set; }
-        //public DateTime UniversityStartDate { get; set; } = DateTime.Now;
+        [EmailAddress]
+        public string Email { get; set; }
+        [Compare(otherProperty:"ConfrimPassword",ErrorMessage ="Password and confirm passwrod are not same."),Required(ErrorMessage ="Password Field is Required!")]
+        [DataType(DataType.Password)]
+        public string Password { get; set; }
+        [NotMapped,DataType(DataType.Password)]
+        [Display(Name ="Confirm Password")]
+        public string ConfirmPassword { get; set; }
         public DateTime UniversityStartDate { get; set; } 
         public int DepartmentId { get; set; }
         [ForeignKey("DepartmentId")]

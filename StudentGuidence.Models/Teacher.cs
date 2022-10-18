@@ -19,7 +19,13 @@ namespace StudentGuidence.Models
         public string Province { get; set; }
         public string District { get; set; }
         public string Phone { get; set; }
+        [Required]
         public string Email { get; set; }
+        [Required]
+        public string Password { get; set; }
+        [Compare(otherProperty:"Passwrod",ErrorMessage ="Password and confirm password are not same!")]
+        [NotMapped]
+        public string ConfrimPassword { get; set; }
         public int? FacultyId { get; set; }
         [ForeignKey("FacultyId")]
         public Faculty Faculty { get; set; }
