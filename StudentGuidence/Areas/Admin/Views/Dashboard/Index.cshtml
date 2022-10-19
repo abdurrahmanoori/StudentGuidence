@@ -1,7 +1,169 @@
 ﻿
 @{
-    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
 }
 
-<h1>Index</h1>
-}
+<div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
+    <div class="sidebar-brand d-none d-md-flex py-4">
+        <h6>System Managemet Page</h6>
+    </div>
+    <img src="~/images/abn.jpg" width="100px" height="110px" class="rounded-circle mx-auto py-3" />
+    <label class="text-center pb-3">Abdurrahman Noori</label>
+    <hr />
+    <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
+        <li class="nav-item">
+            <a class="nav-link " asp-area="Visitor" asp-controller="Home" asp-action="Index">
+                <svg class="nav-icon">
+                </svg>Go To Website<span class="badge badge-sm bg-info ms-auto">NEW</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " target="adminsection" asp-controller="University" asp-action="Index">
+                <svg class="nav-icon">
+                </svg> Universities
+            </a>
+        </li>
+        <li class="nav-item">
+
+            <a class="nav-link " target="adminsection" asp-area="Admin" asp-controller="Faculty" asp-action="Index">
+                <svg class="nav-icon">
+                </svg> Faculties
+            </a>
+        </li>
+        <li class="nav-item">
+
+            <a class="nav-link " target="adminsection" asp-area="Admin" asp-controller="Department" asp-action="Index">
+                <svg class="nav-icon">
+                </svg> Department
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link">
+                <svg class="nav-icon">
+                </svg> Teachers
+            </a>
+        </li>
+        <li class="nav-item">
+
+            <a class="nav-link" target="adminsection" asp-area="Admin" asp-controller="Student" asp-action="Index">
+                <svg class="nav-icon">
+                </svg> Students
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="adminsection" asp-area="Admin" asp-controller="Article" asp-action="Index">
+                <svg class="nav-icon">
+                </svg>Article
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <svg class="nav-icon">
+                </svg> Setting
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <svg class="nav-icon">
+                </svg> Log out
+            </a>
+        </li>
+    </ul>
+
+</div>
+<div class="wrapper d-flex flex-column min-vh-100 bg-light py-5">
+    <div class="body flex-grow-1 px-3">
+        <div class="container-lg">
+            <div class="row">
+                <div class="col-sm-6 col-lg-3">
+                    <div class="card mb-4 text-white bg-primary">
+                        <div class="card-body pb-0 d-flex justify-content-between align-items-start">
+                            <div>
+                                <div class="fs-4 fw-semibold">
+                                    26K <span class="fs-6 fw-normal">
+                                        (-12.4%
+                                        <svg class="icon">
+
+                                        </svg>)
+                                    </span>
+                                </div>
+                                <div>Users</div>
+                            </div>
+                        </div>
+                        <div class="c-chart-wrapper mt-3 mx-3" style="height:70px;">
+                            <canvas class="chart" id="card-chart1" height="70"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col-->
+                <div class="col-sm-6 col-lg-3">
+                    <div class="card mb-4 text-white bg-info">
+                        <div class="card-body pb-0 d-flex justify-content-between align-items-start">
+                            <div>
+                                <div class="fs-4 fw-semibold">
+                                    $6.200 <span class="fs-6 fw-normal">
+                                        (40.9%
+                                        <svg class="icon">
+
+                                        </svg>)
+                                    </span>
+                                </div>
+                                <div>Income</div>
+                            </div>
+                        </div>
+                        <div class="c-chart-wrapper mt-3 mx-3" style="height:70px;">
+                            <canvas class="chart" id="card-chart2" height="70"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col-->
+                <div class="col-sm-6 col-lg-3">
+                    <div class="card mb-4 text-white bg-warning">
+                        <div class="card-body pb-0 d-flex justify-content-between align-items-start">
+                            <div>
+                                <div class="fs-4 fw-semibold">
+                                    2.49% <span class="fs-6 fw-normal">
+                                        (84.7%
+                                        <svg class="icon">
+
+                                        </svg>)
+                                    </span>
+                                </div>
+                                <div>Conversion Rate</div>
+                            </div>
+                        </div>
+                        <div class="c-chart-wrapper mt-3" style="height:70px;">
+                            <canvas class="chart" id="card-chart3" height="70"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col-->
+                <div class="col-sm-6 col-lg-3">
+                    <div class="card mb-4 text-white bg-danger">
+                        <div class="card-body pb-0 d-flex justify-content-between align-items-start">
+                            <div>
+                                <div class="fs-4 fw-semibold">44K <span class="fs-6 fw-normal"></div>
+                                <div>Sessions</div>
+                            </div>
+
+                        </div>
+                        <div class="c-chart-wrapper mt-3 mx-3" style="height:70px;">
+                            <canvas class="chart" id="card-chart4" height="70"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="container">
+                <iframe class="responsive-iframe" name="adminsection" src="index.html"></iframe>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
