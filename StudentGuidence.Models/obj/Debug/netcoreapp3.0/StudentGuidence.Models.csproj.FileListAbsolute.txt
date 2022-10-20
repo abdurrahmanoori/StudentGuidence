@@ -23,3 +23,8 @@ C:\Users\khuba\Desktop\final\StudentGuidence.Models\obj\Debug\netcoreapp3.0\Stud
 C:\Users\khuba\Desktop\final\StudentGuidence.Models\bin\Debug\netcoreapp3.0\StudentGuidence.Models.pdb
 C:\Users\khuba\Desktop\final\StudentGuidence.Models\obj\Debug\netcoreapp3.0\StudentGuidence.Models.dll
 C:\Users\khuba\Desktop\final\StudentGuidence.Models\obj\Debug\netcoreapp3.0\StudentGuidence.Models.pdb
+C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence.Models\obj\Debug\netcoreapp3.0\StudentGuidence.Models.csprojAssemblyReference.cache
+C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence.Models\obj\Debug\netcoreapp3.0\StudentGuidence.Models.AssemblyInfoInputs.cache
+C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence.Models\obj\Debug\netcoreapp3.0\StudentGuidence.Models.AssemblyInfo.cs
+C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence.Models\obj\Debug\netcoreapp3.0\StudentGuidence.Models.dll
+C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence.Models\obj\Debug\netcoreapp3.0\StudentGuidence.Models.pdb

@@ -5,11 +5,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using StudentGuidenc.DataAccess;
+using StudentGuidence.Models;
 //using StudentGuidence.Models.Data;
 
 namespace StudentGuidence
@@ -28,9 +30,18 @@ namespace StudentGuidence
         {
             services.AddDbContext<AppDbContext>(option =>
             option.UseSqlServer(Configuration.GetConnectionString("DBCS")));
-            
-            services.AddControllersWithViews();
 
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<AppDbContext>();
+            services.AddControllersWithViews();
+            services.Configure<IdentityOptions>(option =>
+            {
+                option.Password.RequireDigit = false;
+                option.Password.RequiredLength = 1;
+                option.Password.RequireLowercase = false;
+                option.Password.RequireNonAlphanumeric = false;
+                option.Password.RequireUppercase = false;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,7 +63,7 @@ namespace StudentGuidence
             app.UseRouting();
 
             app.UseAuthorization();
-
+            app.UseAuthentication();
             //app.UseMvc(routes =>
             //{
             //    routes.MapRoute(

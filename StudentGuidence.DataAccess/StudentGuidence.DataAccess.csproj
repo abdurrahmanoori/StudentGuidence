@@ -15,10 +15,13 @@
     <Compile Remove="Migrations\20221015054548_AddComplexTypeToArticle.Designer.cs" />
     <Compile Remove="Migrations\20221015102929_AddTypeColumnToAritcle.cs" />
     <Compile Remove="Migrations\20221015102929_AddTypeColumnToAritcle.Designer.cs" />
+    <Compile Remove="Migrations\20221020013248_AddUserTypeToApplicationUserModel22.cs" />
+    <Compile Remove="Migrations\20221020013248_AddUserTypeToApplicationUserModel22.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Blazorise.Icons.Bootstrap" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.0.0">
       <PrivateAssets>all</PrivateAssets>

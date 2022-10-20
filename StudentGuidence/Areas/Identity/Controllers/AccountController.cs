@@ -4,12 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace StudentGuidence.Areas.Admin.Controllers
+namespace StudentGuidence.Areas.Identity.Controllers
 {
-    public class DashboardController : Controller
+    public class AccountController : Controller
     {
-        
-        public IActionResult Index()
+        public IActionResult Register()
         {
             return View();
         }
