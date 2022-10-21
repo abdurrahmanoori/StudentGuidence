@@ -2,10 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -34,6 +38,17 @@ namespace StudentGuidence
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<AppDbContext>();
             services.AddControllersWithViews();
+            //  services.AddMvcCore();
+            services.AddMvc(config =>
+            {
+                var policy = new AuthorizationPolicyBuilder()
+                                 .RequireAuthenticatedUser()
+                                 .Build();
+                config.Filters.Add(new AuthorizeFilter(policy));
+            });
+
+            services.ConfigureApplicationCookie(options => options.LoginPath = "/Identity/Account/LogIn");
+
             services.Configure<IdentityOptions>(option =>
             {
                 option.Password.RequireDigit = false;
@@ -74,9 +89,17 @@ namespace StudentGuidence
 
             app.UseEndpoints(endpoints =>
             {
+
+            //    endpoints.MapAreaControllerRoute(
+            //name: "myVisitor",
+            //areaName: "Visitor",
+            //pattern: "Visitor/{controller=Home}/{action=Index}/{id?}");
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{Area=Visitor}/{controller=Home}/{action=Index}/{id?}");
+
+
             });
         }
     }

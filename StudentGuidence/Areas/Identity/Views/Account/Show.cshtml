@@ -1,0 +1,99 @@
+﻿
+@{
+    ViewData["Title"] = "Show";
+}
+
+<h1>Show</h1>
+
+<h1 class="fw-bold display-3">@ViewBag.Message</h1>
+
+
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/lib/sweetalert2/sweetalert2.js"></script>
+<link href="~/lib/sweetalert2/sweetalert2.css" rel="stylesheet" />
+<link href="~/assets/css/fontawesome-free/css/all.css" rel="stylesheet" />
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+<link href="~/css/StyleLogin.css" rel="stylesheet" />
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <div id="bg">
+        <img src="~/assets/img/GedungRS.jpg" class="img1" />
+    </div>
+    <form asp-action="LoginUser" asp-controller="Login" method="post">
+       
+        <div class="text-danger"></div>
+        <div class="container mt-2 img2">
+            <div class="row">
+                <div class="col-md-6">
+                </div>
+                <div class="col-md-4">
+                    <div class="container_form">
+                        <img src="~/assets/img/LoginUserIcon.jpg" height="150px" width="295px" />
+                        <h6 class="text text-center alert alert-primary">
+                            Welcome Back ! <br />
+                            Sign In to continue use <br />
+                            Klinik Information System
+                        </h6>
+                        <hr />
+                        <div class="form-group">
+                            <label for="UserName">
+                                User Name
+                            </label>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                <input type="text"  class="form-control" placeholder="Enter User Name" required />
+                                <br />
+                                <span class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Password">
+                                Password
+                            </label>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text"><i class="fa fa-key"></i></span>
+                                <input type="password" class="form-control" placeholder="Enter Password" required />
+                                <br />
+                                <span class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label>
+                                    <input  />
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div align="right">
+                                <button type="submit" class="btn btn-md btn-success"><i class="fa fa-lock-open"></i> Sign In</button>
+                            </div>
+                        </div>
+                        <i class="fa fa-arrow-alt-circle-right"> @Html.ActionLink("Register New User", "Register")</i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    @if (@ViewBag.Message != null)
+    {
+        <script type="text/javascript" lang="javascript">
+            Swal.fire({
+                position: 'top',
+                icon: 'error',
+                title: 'Oops...',
+                text: '@ViewBag.Message'
+            });
+        </script>
+    }
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+</body>
+</html>
+

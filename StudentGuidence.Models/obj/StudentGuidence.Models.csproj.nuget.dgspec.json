@@ -46,6 +46,14 @@
               "target": "Package",
               "version": "[3.0.0, )"
             },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Abstractions": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[3.0.0, )"
@@ -55,10 +63,6 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[3.0.0, )"
-            },
-            "Microsoft.VisualStudio.Services.NuGet.CredentialProvider": {
-              "target": "Package",
-              "version": "[0.37.0, )"
             }
           },
           "imports": [

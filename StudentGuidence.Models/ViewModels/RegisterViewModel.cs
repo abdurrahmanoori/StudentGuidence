@@ -2,21 +2,26 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
+using Microsoft.AspNetCore;
+using Microsoft.EntityFrameworkCore.Metadata;
+using CompareAttribute = System.ComponentModel.DataAnnotations.CompareAttribute;
 
 namespace StudentGuidence.Models.ViewModels
 {
-   public class RegisterViewModel
+
+    public class RegisterViewModel
     {
         [Required]
         public string UserName { get; set; }
 
         [EmailAddress]
+        //[Remote(action:"IsEmailInUse",controller:"Account")]
         public string Email { get; set; }
 
-        [Required]
+        [Required, Display(Name = "I Am")]
         public string UserType { get; set; }
 
-        [Compare(otherProperty: "ConfirmPassword"),Required,DataType(DataType.Password)]
+        [Compare(otherProperty: "ConfirmPassword"), Required, DataType(DataType.Password)]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]

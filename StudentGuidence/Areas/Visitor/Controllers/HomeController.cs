@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using StudentGuidenc.DataAccess;
@@ -11,6 +12,7 @@ using StudentGuidence.Models;
 
 namespace StudentGuidence.Controllers
 {
+    [AllowAnonymous]
     public class HomeController : Controller
     {
         private readonly AppDbContext _db;
@@ -19,6 +21,7 @@ namespace StudentGuidence.Controllers
         {
             _db = db;
         }
+        
         public IActionResult Index()
         {
             return View();
