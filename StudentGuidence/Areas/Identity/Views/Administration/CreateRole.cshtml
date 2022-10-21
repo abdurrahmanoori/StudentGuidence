@@ -1,10 +1,14 @@
 ﻿@model StudentGuidence.Models.ViewModels.CreateRoleViewModel
 
-<h4>CreateRoleViewModel</h4>
+@{
+    ViewData["Title"] = "CreateRole";
+}
+
+<h1>CreateRole</h1>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="CreateRole">
+        <form asp-action="CreateRole" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="RoleName" class="control-label"></label>
