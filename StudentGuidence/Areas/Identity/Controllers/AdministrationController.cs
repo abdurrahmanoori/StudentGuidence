@@ -176,7 +176,10 @@ namespace StudentGuidence.Areas.Identity.Controllers
                         return RedirectToAction("EditRole", new { Id = roleId });
                 }
             }
-            return View();
+            return RedirectToAction("EditRole", "Administration", new
+            {
+                id = roleId
+            });
         }
 
     }

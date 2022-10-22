@@ -48,19 +48,21 @@ namespace StudentGuidence.Areas.Identity.Controllers
             return View();
         }
 
-        [HttpGet][AllowAnonymous]
+        [HttpGet]
+        [AllowAnonymous]
         public IActionResult Register()
         {
             return View();
         }
 
-        [HttpPost][AllowAnonymous]
+        [HttpPost]
+        [AllowAnonymous]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
             if (ModelState.IsValid)
             {
                 //Check wether this email has been already taken or not.
-                if (_db.Users.Any(u => u.Email == model.Email && u.UserName==model.UserName))
+                if (_db.Users.Any(u => u.Email == model.Email && u.UserName == model.UserName))
                 {
                     ModelState.AddModelError("", "This email or user name has been already taken.");
                     return View(model);
@@ -89,21 +91,24 @@ namespace StudentGuidence.Areas.Identity.Controllers
             }
             return View(model);
         }
-        
-        [HttpGet][AllowAnonymous]
+
+        [HttpGet]
+        [AllowAnonymous]
         public IActionResult Login()
         {
             return View();
         }
 
-        [HttpPost][AllowAnonymous]
+        [HttpPost]
+        [AllowAnonymous]
         public async Task<IActionResult> Login(LoginViewModel model, string ReturnUrl)
         {
             if (ModelState.IsValid)
             {
                 ApplicationUser user;
 
-                if (model.UsernameOrEmail.Contains("@")){
+                if (model.UsernameOrEmail.Contains("@"))
+                {
                     user = await userManager.FindByEmailAsync(model.UsernameOrEmail);
                 }
                 else
@@ -115,10 +120,12 @@ namespace StudentGuidence.Areas.Identity.Controllers
                 //signInManager.pas
                 if (result.Succeeded)
                 {
-                    if (ReturnUrl != null) return LocalRedirect(ReturnUrl);
-                    return RedirectToAction("Index", "Team", new
+                    if (ReturnUrl != null)
+                        return LocalRedirect(ReturnUrl);
+
+                    return RedirectToAction("Index", "Home", new
                     {
-                        area = "admin"
+                        area = "Visitor"
                     });
                     //return Redirect("~/Visitor/Home/Index");
                 }
@@ -134,7 +141,11 @@ namespace StudentGuidence.Areas.Identity.Controllers
         public async Task<IActionResult> Logout()
         {
             await signInManager.SignOutAsync();
-            return RedirectToAction("Login");
+            return RedirectToAction("Index", "Home", new
+            {
+                area = "Visitor"
+            });
+            //return RedirectToAction("Login");
             //return Redirect("~Visitor/Home/Index");
         }
 

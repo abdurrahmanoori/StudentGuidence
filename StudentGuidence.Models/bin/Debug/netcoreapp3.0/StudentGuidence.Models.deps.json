@@ -9,6 +9,7 @@
       "StudentGuidence.Models/1.0.0": {
         "dependencies": {
           "Blazorise.Icons.Bootstrap": "1.1.1",
+          "Microsoft.AspNetCore.Authorization": "3.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.0.0",
           "Microsoft.EntityFrameworkCore": "3.0.0",
           "Microsoft.EntityFrameworkCore.Abstractions": "3.0.0",
@@ -20,6 +21,19 @@
         }
       },
       "Blazorise.Icons.Bootstrap/1.1.1": {},
+      "Microsoft.AspNetCore.Authorization/3.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Metadata": "3.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "3.0.0",
+          "Microsoft.Extensions.Options": "3.0.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Microsoft.AspNetCore.Authorization.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.19.46502"
+          }
+        }
+      },
       "Microsoft.AspNetCore.Cryptography.Internal/3.0.0": {
         "runtime": {
           "lib/netstandard2.0/Microsoft.AspNetCore.Cryptography.Internal.dll": {
@@ -46,6 +60,14 @@
         },
         "runtime": {
           "lib/netcoreapp3.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.19.46502"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Metadata/3.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Metadata.dll": {
             "assemblyVersion": "3.0.0.0",
             "fileVersion": "3.0.19.46502"
           }
@@ -905,6 +927,13 @@
       "path": "blazorise.icons.bootstrap/1.1.1",
       "hashPath": "blazorise.icons.bootstrap.1.1.1.nupkg.sha512"
     },
+    "Microsoft.AspNetCore.Authorization/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pylAplpaC5r3YIh2OR4RcYCSYoMc/sZwHyGeyT43IbSMN+TqvO05pAybaFcNxPeZ+HxDP2LcRO/R1XHSCB2GKw==",
+      "path": "microsoft.aspnetcore.authorization/3.0.0",
+      "hashPath": "microsoft.aspnetcore.authorization.3.0.0.nupkg.sha512"
+    },
     "Microsoft.AspNetCore.Cryptography.Internal/3.0.0": {
       "type": "package",
       "serviceable": true,
@@ -925,6 +954,13 @@
       "sha512": "sha512-wcFdFphS6/Kr+u4HV8+OIbju0YsENKzIwqhMd0Aev4LwnEEkxzwcIsVVKWgsIDNA+shuEiEPyxIqobpRX3tTSg==",
       "path": "microsoft.aspnetcore.identity.entityframeworkcore/3.0.0",
       "hashPath": "microsoft.aspnetcore.identity.entityframeworkcore.3.0.0.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Metadata/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gXT2t+bocyv4aCwwfrATy8QMHHZTRqZ/grmUzC+76MA1M+S0TIXp+BK3dEkvADVkhsAdERb5DnjqQKX3G/uMYQ==",
+      "path": "microsoft.aspnetcore.metadata/3.0.0",
+      "hashPath": "microsoft.aspnetcore.metadata.3.0.0.nupkg.sha512"
     },
     "Microsoft.CSharp/4.6.0": {
       "type": "package",

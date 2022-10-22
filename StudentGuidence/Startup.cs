@@ -37,8 +37,9 @@ namespace StudentGuidence
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<AppDbContext>();
+
             services.AddControllersWithViews();
-            //  services.AddMvcCore();
+            
             services.AddMvc(config =>
             {
                 var policy = new AuthorizationPolicyBuilder()

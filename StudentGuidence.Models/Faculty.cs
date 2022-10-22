@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Authorization;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -6,6 +7,7 @@ using System.Text;
 
 namespace StudentGuidence.Models
 {
+    //[Authorize(Roles ="Admin")]
     public class Faculty
     {
         [Key]
