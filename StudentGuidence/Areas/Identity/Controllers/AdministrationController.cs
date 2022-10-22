@@ -10,7 +10,8 @@ using StudentGuidence.Models.ViewModels;
 
 namespace StudentGuidence.Areas.Identity.Controllers
 {
-    [AllowAnonymous]
+    //[AllowAnonymous]
+   
     public class AdministrationController : Controller
     {
         private readonly RoleManager<IdentityRole> roleManager;
@@ -24,6 +25,7 @@ namespace StudentGuidence.Areas.Identity.Controllers
         }
 
         [HttpGet]
+       // [Authorize(Roles ="Admin")]
         public IActionResult CreateRole()
         {
             return View();

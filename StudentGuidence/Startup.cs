@@ -35,8 +35,16 @@ namespace StudentGuidence
             services.AddDbContext<AppDbContext>(option =>
             option.UseSqlServer(Configuration.GetConnectionString("DBCS")));
 
+
+
+            //services.AddIdentity<ApplicationUser, IdentityRole>().AddDefaultTokenProviders()
+            //.AddEntityFrameworkStores<AppDbContext>();
+
+
             services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<AppDbContext>();
+            .AddEntityFrameworkStores<AppDbContext>();
+
+
 
             services.AddControllersWithViews();
             
@@ -77,9 +85,9 @@ namespace StudentGuidence
             app.UseStaticFiles();
 
             app.UseRouting();
-
-            app.UseAuthorization();
             app.UseAuthentication();
+            app.UseAuthorization();
+            
             //app.UseMvc(routes =>
             //{
             //    routes.MapRoute(

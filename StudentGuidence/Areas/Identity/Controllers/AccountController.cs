@@ -57,6 +57,7 @@ namespace StudentGuidence.Areas.Identity.Controllers
 
         [HttpPost]
         [AllowAnonymous]
+        //[Authorize(Roles ="Admin")]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
             if (ModelState.IsValid)
@@ -106,7 +107,6 @@ namespace StudentGuidence.Areas.Identity.Controllers
             if (ModelState.IsValid)
             {
                 ApplicationUser user;
-
                 if (model.UsernameOrEmail.Contains("@"))
                 {
                     user = await userManager.FindByEmailAsync(model.UsernameOrEmail);
@@ -138,6 +138,7 @@ namespace StudentGuidence.Areas.Identity.Controllers
         }
         //[HttpPost]
         [AllowAnonymous]
+        //[Authorize(Roles ="User")]
         public async Task<IActionResult> Logout()
         {
             await signInManager.SignOutAsync();

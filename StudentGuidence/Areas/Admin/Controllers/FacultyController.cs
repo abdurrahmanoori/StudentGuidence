@@ -17,7 +17,7 @@ namespace StudentGuidence.Areas.Admin.Controllers
 {
 
 
-   // [Authorize(Roles ="admin")]
+    [Authorize(Roles ="Admin")]
     public class FacultyController : Controller
     {
         private readonly AppDbContext _db;
@@ -28,12 +28,15 @@ namespace StudentGuidence.Areas.Admin.Controllers
             _db = db;
             _iWebHostEnvironment = webHostEnvironment;
         }
-
+        
         public IActionResult Index()
         {
+            
+
             return View(_db.Faculties.Include(u => u.University).ToList());
         }
         //GET Create
+      //  [Authorize(Roles = "User")]
         public IActionResult Create()
         {
             ViewBag.universityList = _db.Universities.ToList().Select(u =>
@@ -76,6 +79,7 @@ namespace StudentGuidence.Areas.Admin.Controllers
             return View(faculty);
         }
         //GET Edit
+       // [Authorize(Roles ="Admin")]
         public IActionResult Edit(int id)
         {
             if (id == 0)
