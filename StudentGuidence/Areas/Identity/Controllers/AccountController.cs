@@ -45,6 +45,7 @@ namespace StudentGuidence.Areas.Identity.Controllers
 
         public IActionResult Show()
         {
+
             return View();
         }
 

@@ -1,6 +1,7 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @inject SignInManager<ApplicationUser> signInManager
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,7 +41,8 @@
             <nav id="navbar" class="navbar">
                 <ul>
 
-                    @if (signInManager.IsSignedIn(User))
+
+                    @if (signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
                     {
                         <li><a asp-area="Admin" asp-controller="University" asp-action="Index" class="nav-link">University</a> </li>
                         <li><a asp-area="Admin" asp-controller="Faculty" asp-action="Index" class="nav-link scrollto">Faculty</a> </li>
@@ -49,7 +51,6 @@
                         <li><a asp-area="Admin" asp-controller="Article" asp-action="Index" class="nav-link scrollto">Article</a> </li>
                         <li><a asp-area="Admin" asp-controller="Student" asp-action="Index" class="nav-link scrollto">Student</a> </li>
                         <li><a asp-area="Identity" asp-controller="Administration" asp-action="ListRoles" class="x-2 text-center nav-link scrollto">Administration</a> </li>
-
 
                         <li class="ml-1">
                             <div class="dropdown">
@@ -66,14 +67,17 @@
                                 </div>
                             </div>
                         </li>
+
                         <li>
                             <a asp-area="Identity" asp-controller="Account" asp-action="Logout" class="nav-link scrollto active">
                                 Logout  @User.Identity.Name
                             </a>
                         </li>
                     }
-                    else
+
+                    else if (signInManager.IsSignedIn(User) && User.IsInRole("Student"))
                     {
+                        <li class="text-danger">Welcome student.</li>
 
                         <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="Home" asp-action="About"> زمونږ په اړه </a></li>
                         <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="Home" asp-action=""> اړیکه </a></li>
@@ -81,10 +85,46 @@
                         <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="home" asp-action="Services"> خدمات </a></li>
                         <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="Home" asp-action="Universities"> پوهنتونونه </a></li>
                         <li><a class="nav-link scrollto active" asp-area="Visitor" asp-controller="Home" asp-action="Index"> کور </a></li>
-                        <li><a class="nav-link scrollto" asp-area="Admin" asp-controller="Student" asp-action="Index">stu</a></li>
+                        <li><a class="nav-link scrollto active" asp-area="Admin" asp-controller="University" asp-action="Test">List</a></li>
+
+                        <li>
+                            <a asp-area="Identity" asp-controller="Account" asp-action="Logout" class="nav-link scrollto active">
+                                Logout  @User.Identity.Name
+                            </a>
+                        </li>
+                    }
+
+                    else if (signInManager.IsSignedIn(User) && User.IsInRole("Teacher"))
+                    {
+                        <li class="text-danger">Welcome Teacher.</li>
+
+                        <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="Home" asp-action="About"> زمونږ په اړه </a></li>
+                        <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="Home" asp-action=""> اړیکه </a></li>
+                        <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="Home" asp-action="Team"> ګروپ </a></li>
+                        <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="home" asp-action="Services"> خدمات </a></li>
+                        <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="Home" asp-action="Universities"> پوهنتونونه </a></li>
+                        <li><a class="nav-link scrollto active" asp-area="Visitor" asp-controller="Home" asp-action="Index"> کور </a></li>
                         <li><a class="nav-link scrollto active" asp-area="Admin" asp-controller="University" asp-action="Test">List</a></li>
 
 
+                        <li>
+                            <a asp-area="Identity" asp-controller="Account" asp-action="Logout" class="nav-link scrollto active">
+                                Logout  @User.Identity.Name
+                            </a>
+                        </li>
+
+                    }
+                    else
+                    {
+
+
+                        <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="Home" asp-action="About"> زمونږ په اړه </a></li>
+                        <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="Home" asp-action=""> اړیکه </a></li>
+                        <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="Home" asp-action="Team"> ګروپ </a></li>
+                        <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="home" asp-action="Services"> خدمات </a></li>
+                        <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="Home" asp-action="Universities"> پوهنتونونه </a></li>
+                        <li><a class="nav-link scrollto active" asp-area="Visitor" asp-controller="Home" asp-action="Index"> کور </a></li>
+                        <li><a class="nav-link scrollto active" asp-area="Admin" asp-controller="University" asp-action="Test">List</a></li>
                         <li>
                             <a asp-area="Identity" asp-controller="Account" asp-action="Login" class="nav-link scrollto active">Login</a>
                         </li>
@@ -93,6 +133,7 @@
                         </li>
 
                     }
+
 
                     <!--  <a class="getstarted scrollto" asp-controller="Home" asp-action="Login"> ننوتل </a></li>-->
                 </ul>
