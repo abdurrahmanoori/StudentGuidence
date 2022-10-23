@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using StudentGuidenc.DataAccess;
 using StudentGuidence.Models;
 
-namespace StudentGuidence.Areas.Admin
-    .Controllers
+namespace StudentGuidence.Areas.Admin.Controllers
 {
+    [Authorize(Roles ="Admin")]
     public class UniversityController : Controller
     {
         private readonly AppDbContext _db;
@@ -32,6 +33,7 @@ namespace StudentGuidence.Areas.Admin
         {
             return View();
         }
+
         //POST Create
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -52,6 +54,7 @@ namespace StudentGuidence.Areas.Admin
             }
             return View(university);
         }
+
         //GET Edit
         public IActionResult Edit(int id)
         {
@@ -66,6 +69,7 @@ namespace StudentGuidence.Areas.Admin
             }
             return View(university);
         }
+
         //POST Edit
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -88,6 +92,7 @@ namespace StudentGuidence.Areas.Admin
 
             }
         }
+
         //GET Delete
         //[HttpGet]
         public IActionResult Delete(int id)
@@ -103,6 +108,7 @@ namespace StudentGuidence.Areas.Admin
             }
             return NotFound();
         }
+
         //POST Delete
         [HttpPost]
         [ActionName("Delete")]

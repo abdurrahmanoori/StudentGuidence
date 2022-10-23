@@ -11,6 +11,7 @@ using StudentGuidenc.DataAccess;
 namespace StudentGuidence.Areas.Admin.Controllers
 {
 
+    [AllowAnonymous]
     public class StudentController : Controller
     {
         private readonly AppDbContext _db;
@@ -25,10 +26,12 @@ namespace StudentGuidence.Areas.Admin.Controllers
         {
             return View(_db.Students.Find(id));
         }
+
         public IActionResult Index()
         {
             return View(_db.Students.Include(u => u.Article));
         }
+
         //GET Create
         public IActionResult Create()
         {
