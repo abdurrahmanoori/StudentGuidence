@@ -1,12 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using StudentGuidenc.DataAccess;
+using StudentGuidence.DataAccess.Data;
+using StudentGuidence.Models;
 
 namespace StudentGuidence.Areas.Admin.Controllers
 {
@@ -22,6 +27,7 @@ namespace StudentGuidence.Areas.Admin.Controllers
             _db = db;
             _iWebHostEnvironment = webHostEnvironment;
         }
+
         public IActionResult Detail(int id)
         {
             return View(_db.Students.Find(id));
@@ -35,164 +41,195 @@ namespace StudentGuidence.Areas.Admin.Controllers
         //GET Create
         public IActionResult Create()
         {
+            ViewBag.departmentList = _db.Departments.ToList().Select(u =>
+                  new SelectListItem
+                  {
+                      Text = u.Name,
+                      Value = u.Id.ToString()
+                  }
+                );
+            ViewBag.aritcleList = _db.Articles.ToList().Select(u =>
+             new SelectListItem
+             {
+                 Text = u.Title,
+                 Value = u.Id.ToString()
+             });
+
             //ViewBag.universityList = _db.Universities.ToList().Select(u =>
-             //new SelectListItem
-             //{
-             //    Text = u.Name,
-             //    Value = u.Id.ToString()
-             //});
+            //new SelectListItem
+            //{
+            //    Text = u.Name,
+            //    Value = u.Id.ToString()
+            //});
             return View();
         }
 
-        ////POST Create
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public IActionResult Create(Faculty faculty, IFormFile file)
-        //{
+        //POST Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Student student, IFormFile file)
+        {
 
-        //    faculty.ImageUrl = file.FileName;
+            student.ImageUrl = file.FileName;
 
-        //    if (ModelState.IsValid)
-        //    {
-        //        string wwwRootPath = _iWebHostEnvironment.WebRootPath;
-        //        if (file != null)
-        //        {
-        //            string fileName = Guid.NewGuid().ToString();
-        //            var uploads = Path.Combine(wwwRootPath, @"images\faculty");
-        //            var extension = Path.GetExtension(file.FileName);
+            if (ModelState.IsValid)
+            {
+                string wwwRootPath = _iWebHostEnvironment.WebRootPath;
+                if (file != null)
+                {
+                    string fileName = Guid.NewGuid().ToString();
+                    var uploads = Path.Combine(wwwRootPath, @"images\student");
+                    var extension = Path.GetExtension(file.FileName);
 
-        //            using (var fileStreams = new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
-        //            {
-        //                file.CopyTo(fileStreams);
-        //            }
-        //            faculty.ImageUrl = @"\images\faculty\" + fileName + extension;
-        //        }
-        //        _db.Faculties.Add(faculty);
-        //        _db.SaveChanges();
-        //        return RedirectToAction("Index");
-        //    }
+                    using (var fileStreams = new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
+                    {
+                        file.CopyTo(fileStreams);
+                    }
+                    student.ImageUrl = @"\images\student\" + fileName + extension;
+                }
+                _db.Students.Add(student);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
 
-        //    return View(faculty);
-        //}
-        ////GET Edit
-        //public IActionResult Edit(int id)
-        //{
-        //    if (id == 0)
-        //    {
-        //        return NotFound();
-        //    }
-        //    Faculty faculty = _db.Faculties.Find(id);
-        //    if (faculty == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    ViewBag.universityList = _db.Universities.Select(u =>
-        //    new SelectListItem
-        //    {
-        //        Text = u.Name,
-        //        Value = u.Id.ToString()
-        //    });
-        //    return View(faculty);
-        //}
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public IActionResult Edit(Faculty faculty, IFormFile? file)
-        //{
-        //    Faculty faculty1 = new Faculty
-        //    {
-        //        Name = faculty.Name,
-        //        PreRequirment = faculty.PreRequirment,
-        //        UniversityId = faculty.UniversityId,
-        //        History = faculty.History,
-        //        ImageUrl = GetImageUrl(faculty),
-        //        Id = faculty.Id,
-        //        University = faculty.University
-        //    };
+            return View(student);
+        }
 
-        //    if (ModelState.IsValid)
-        //    {
-        //        string wwwRootPath = _iWebHostEnvironment.WebRootPath;
-        //        if (file != null)
-        //        {
-        //            string fileName = Guid.NewGuid().ToString();
-        //            var uploads = Path.Combine(wwwRootPath, @"images\faculty");
-        //            var extension = Path.GetExtension(file.FileName);
-        //            if (faculty1.ImageUrl != null)
-        //            {
-        //                //LOGIC ABOUT DELETING OLD IMAGE
-        //                var oldImagePath = Path.Combine(wwwRootPath, faculty1.ImageUrl.TrimStart('\\'));
-        //                if (System.IO.File.Exists(oldImagePath))
-        //                {
-        //                    System.IO.File.Delete(oldImagePath);
-        //                }
-        //            }
+        //GET Edit
+        public IActionResult Edit(int id)
+        {
+            if (id == 0)
+            {
+                return NotFound();
+            }
+            Student student = _db.Students.Find(id);
+            if (student == null)
+            {
+                return NotFound();
+            }
+            ViewBag.departmentList = _db.Departments.ToList().Select(u =>
+                  new SelectListItem
+                  {
+                      Text = u.Name,
+                      Value = u.Id.ToString()
+                  }
+                );
+            ViewBag.aritcleList = _db.Articles.ToList().Select(u =>
+             new SelectListItem
+             {
+                 Text = u.Title,
+                 Value = u.Id.ToString()
+             });
+            return View(student);
+        }
 
-        //            using (var fileStreams = new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
-        //            {
-        //                file.CopyTo(fileStreams);
-        //            }
-        //            faculty1.ImageUrl = @"\images\faculty\" + fileName + extension;
-        //        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(Student student, IFormFile? file)
+        {
+            Student student1 = new Student
+            {
+                Id = student.Id,
+                FristName = student.FristName,
+                LastName = student.LastName,
+                Province = student.Province,
+                District = student.District,
+                ImageUrl = student.ImageUrl,
+                UniversityStartDate = student.UniversityStartDate,
+                DepartmentId = student.DepartmentId,
+                ArticleId = student.ArticleId
+            };
 
-        //        _db.Faculties.Update(faculty1);
-        //        _db.SaveChanges();
-        //        return RedirectToAction("Index");
-        //    }
-        //    return View(faculty1);
-        //}
+            if (ModelState.IsValid)
+            {
+                string wwwRootPath = _iWebHostEnvironment.WebRootPath;
+                if (file != null)
+                {
+                    string fileName = Guid.NewGuid().ToString();
+                    var uploads = Path.Combine(wwwRootPath, @"images\student");
+                    var extension = Path.GetExtension(file.FileName);
+                    if (student1.ImageUrl != null)
+                    {
+                        //LOGIC ABOUT DELETING OLD IMAGE
+                        var oldImagePath = Path.Combine(wwwRootPath, student1.ImageUrl.TrimStart('\\'));
+                        if (System.IO.File.Exists(oldImagePath))
+                        {
+                            System.IO.File.Delete(oldImagePath);
+                        }
+                    }
 
-        ////GET Delete
-        //[HttpGet]
-        //public IActionResult Delete(int id)
-        //{
-        //    if (id == 0)
-        //    {
-        //        return NotFound();
-        //    }
-        //    Faculty faculty = _db.Faculties.Find(id);
-        //    if (faculty != null)
-        //    {
-        //        ViewBag.UniversityList = _db.Universities.Select(u => new SelectListItem
-        //        {
-        //            Text = u.Name,
-        //            Value = u.Id.ToString()
-        //        });
-        //        return View(faculty);
-        //    }
-        //    return NotFound();
-        //}
+                    using (var fileStreams = new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
+                    {
+                        file.CopyTo(fileStreams);
+                    }
+                    student1.ImageUrl = @"\images\student\" + fileName + extension;
+                }
 
-        ////POST Delete
-        //[HttpPost]
-        //[ActionName("Delete")]
-        //public IActionResult DeletePost(int id)
-        //{
-        //    Faculty faculty = _db.Faculties.Find(id);
-        //    string wwwRootPath = _iWebHostEnvironment.WebRootPath;
+                _db.Students.Update(student1);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(student1);
+        }
 
-        //    if (faculty.ImageUrl != null)
-        //    {
-        //        //LOGIC ABOUT DELETING OLD IMAGE
-        //        var oldImagePath = Path.Combine(wwwRootPath, faculty.ImageUrl.TrimStart('\\'));
-        //        if (System.IO.File.Exists(oldImagePath))
-        //        {
-        //            System.IO.File.Delete(oldImagePath);
-        //        }
-        //    }
-        //    _db.Faculties.Remove(faculty);
-        //    _db.SaveChanges();
-        //    return RedirectToAction("Index");
+        //GET Delete
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            if (id == 0)
+            {
+                return NotFound();
+            }
+            Student student= _db.Students.Find(id);
+            if (student != null)
+            {
+                ViewBag.departmentList = _db.Departments.Select(u => new SelectListItem
+                {
+                    Text = u.Name,
+                    Value = u.Id.ToString()
+                });
+                ViewBag.articleList = _db.Articles.Select(u =>
+                  new SelectListItem
+                  {
+                      Text = u.Title,
+                      Value=u.Id.ToString()
+                  });
+                return View(student);
+            }
+            return NotFound();
+        }
 
-        //}
+        //POST Delete
+        [HttpPost]
+        [ActionName("Delete")]
+        public IActionResult DeletePost(int id)
+        {
+            Student student= _db.Students.Find(id);
+            string wwwRootPath = _iWebHostEnvironment.WebRootPath;
 
-        //public string GetImageUrl(Faculty faculty)
-        //{
-        //    using (AppDbContext2 context = new AppDbContext2())
-        //    {
-        //        int id = faculty.Id;
-        //        return context.Faculties.Find(id).ImageUrl;
-        //    }
+            if (student.ImageUrl != null)
+            {
+                //LOGIC ABOUT DELETING OLD IMAGE
+                var oldImagePath = Path.Combine(wwwRootPath, student.ImageUrl.TrimStart('\\'));
+                if (System.IO.File.Exists(oldImagePath))
+                {
+                    System.IO.File.Delete(oldImagePath);
+                }
+            }
+            _db.Students.Remove(student);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
 
-        //}
+        }
+
+        public string GetImageUrl(Student student)
+        {
+            using (AppDbContext2 context = new AppDbContext2())
+            {
+                int id = student.Id;
+                return context.Students.Find(id).ImageUrl;
+            }
+
+        }
     }
 }

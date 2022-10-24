@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="Blazorise.Icons.Bootstrap" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.0.0">
       <PrivateAssets>all</PrivateAssets>
@@ -23,6 +24,7 @@
   <ItemGroup>
     <Folder Include="wwwroot\images\faculty\" />
     <Folder Include="wwwroot\images\article\" />
+    <Folder Include="wwwroot\images\student\" />
   </ItemGroup>
 
 </Project>

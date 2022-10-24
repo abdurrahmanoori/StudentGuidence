@@ -1,0 +1,77 @@
+﻿@model StudentGuidence.Models.Student
+@{
+    ViewData["Title"] = "Edit";
+}
+<h1 clsass="text-center py-5">Edit Student</h1>
+<form method="post" asp-controller="Student" enctype="multipart/form-data" asp-action="Edit" class="form-control form-control-lg h-100 border-danger py-5 mb-3">
+    <div class="border p-3 mt-4 border-success ">
+        <div class="row pb-2">
+            <h2 class="text-primary">Edit Student</h2>
+        </div>
+
+        <div class="text-danger" asp-validation-summary="All"></div>
+        <div class="mb-3 ">
+            <label asp-for="FristName"></label>
+            <input asp-for="FristName" class="form-control form-control-lg border-primary" />
+            <span asp-validation-for="FristName" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3 ">
+            <label asp-for="LastName"></label>
+            <input asp-for="LastName" class="form-control form-control-lg border-primary" />
+            <span asp-validation-for="LastName" class="text-danger"></span>
+        </div>
+
+
+        <div class="mb-3 ">
+            <label asp-for="Province"></label>
+            <input asp-for="Province" class="form-control form-control-lg border-primary" />
+            <span asp-validation-for="Province" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3 ">
+            <label asp-for="District"></label>
+            <input asp-for="District" class="form-control form-control-lg border-primary" />
+            <span asp-validation-for="District" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="ImageUrl"></label>
+            <input type="file" name="file" class="form-control" />
+            <span asp-validation-for="ImageUrl" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3 ">
+            <label asp-for="UniversityStartDate"></label>
+            <input asp-for="UniversityStartDate" class="form-control form-control-lg border-primary" />
+            <span asp-validation-for="UniversityStartDate" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="DepartmentId"></label>
+            <select class="form-control" asp-for="DepartmentId" asp-items="@(ViewBag.departmentList)"></select>
+            <span asp-validation-for="DepartmentId" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="ArticleId"></label>
+            <select class="form-control" asp-for="ArticleId" asp-items="@(ViewBag.aritcleList)"></select>
+            <span asp-validation-for="ArticleId" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-outline-primary" style="width:150px">
+            <img src="~/img/Icon/update_25px.png" />
+            Update
+        </button>
+        <a asp-controller="Student" asp-action="Index" class="btn btn-outline-primary" style="width:150px;">
+            <img src="~/img/Icon/back_50px.png" />
+            Back to List
+        </a>
+    </div>
+</form>
+
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

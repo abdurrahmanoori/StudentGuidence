@@ -44,7 +44,8 @@ namespace StudentGuidence
             services.AddIdentity<ApplicationUser, IdentityRole>()
             .AddEntityFrameworkStores<AppDbContext>();
 
-
+            services.AddRazorPages().AddRazorRuntimeCompilation();//Run Razor page code quickly.
+            //First install RazorPage.Runtimecompilation.
 
             services.AddControllersWithViews();
             
