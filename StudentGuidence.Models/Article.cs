@@ -9,12 +9,17 @@ namespace StudentGuidence.Models
     {
         [Key]
         public int Id { get; set; }
+
         [Required(ErrorMessage ="Article Must Have A Title.")]
         public string Title { get; set; }
+
         public string ImageUrl { get; set; }
         [Required(ErrorMessage ="Article Must Have A Description.")]
+
         public string Description { get; set; }
+
         public byte Author { get; set; }// Where 1 is Admin, 2 is Teacher and 3 is Student
+
         public DateTime DateOfIssue { get; set; }
     }
 }

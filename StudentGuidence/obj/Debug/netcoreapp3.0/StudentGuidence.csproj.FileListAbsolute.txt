@@ -781,3 +781,7 @@ C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netc
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\StudentGuidence.pdb
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Admin\Views\Student\Edit.cshtml.g.cs
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Admin\Views\Student\Delete.cshtml.g.cs
+C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Admin\Views\Teacher\Index.cshtml.g.cs
+C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Admin\Views\Teacher\Create.cshtml.g.cs
+C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Admin\Views\Teacher\Detail.cshtml.g.cs
+C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Admin\Views\Teacher\Edit.cshtml.g.cs
