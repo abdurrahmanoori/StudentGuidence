@@ -1,0 +1,78 @@
+﻿@model StudentGuidence.Models.Teacher
+@{
+    ViewData["Title"] = "Delete";
+}
+<h1 clsass="text-center py-5">Delete Teacher</h1>
+<form method="post" asp-controller="Teacher" enctype="multipart/form-data" asp-action="Delete" class="form-control form-control-lg h-100 border-danger py-5 mb-3">
+    <div class="border p-3 mt-4 border-success ">
+        <div class="row pb-2">
+            <h2 class="text-primary">Edit Teacher</h2>
+        </div>
+
+        <div class="text-danger" asp-validation-summary="All"></div>
+        <div class="mb-3 ">
+            <label asp-for="FirstName"></label>
+            <input disabled asp-for="FirstName" class="form-control form-control-lg border-primary" />
+        </div>
+
+        <div class="mb-3 ">
+            <label asp-for="LastName"></label>
+            <input disabled asp-for="LastName" class="form-control form-control-lg border-primary" />
+        </div>
+
+        <div class="mb-3 ">
+            <label asp-for="Degree"></label>
+            <input disabled asp-for="Degree" class="form-control form-control-lg border-primary" />
+        </div>
+
+        <div class="mb-3 ">
+            <label asp-for="Province"></label>
+            <input disabled asp-for="Province" class="form-control form-control-lg border-primary" />
+        </div>
+
+        <div class="mb-3 ">
+            <label asp-for="District"></label>
+            <input disabled asp-for="District" class="form-control form-control-lg border-primary" />
+        </div>
+
+        <div class="mb-3 ">
+            <label asp-for="Email"></label>
+            <input disabled asp-for="Email" class="form-control form-control-lg border-primary" />
+        </div>
+
+        <div class="mb-3 ">
+            <label asp-for="Phone"></label>
+            <input disabled asp-for="Phone" class="form-control form-control-lg border-primary" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="ImageUrl"></label>
+            <input disabled type="file" name="file" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="FacultyId"></label>
+            <select disabled class="form-control" asp-for="FacultyId" asp-items="@(ViewBag.facultyList)"></select>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="ArticleId"></label>
+            <select disabled class="form-control" asp-for="ArticleId" asp-items="@(ViewBag.aritcleList)"></select>
+        </div>
+
+        <button type="submit" class="btn btn-outline-danger">
+            Delete
+            <img src="~/img/Icon/delete_25px.png" />
+        </button>
+        <a asp-action="Index" class="btn btn-outline-primary p-2 px-4">
+            Cancel
+        </a>
+    </div>
+</form>
+
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

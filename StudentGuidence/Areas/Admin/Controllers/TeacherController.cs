@@ -116,9 +116,12 @@ namespace StudentGuidence.Areas.Admin.Controllers
                 Id = teacher.Id,
                 FirstName = teacher.FirstName,
                 LastName = teacher.LastName,
+                Degree = teacher.Degree,
                 Province = teacher.Province,
                 District = teacher.District,
                 ImageUrl = teacher.ImageUrl,
+                Phone = teacher.Phone,
+                Email = teacher.Email,
                 FacultyId = teacher.FacultyId,
                 ArticleId = teacher.ArticleId
             };
@@ -154,64 +157,62 @@ namespace StudentGuidence.Areas.Admin.Controllers
             return View(teacher1);
         }
 
-        ////GET Delete
-        //[HttpGet]
-        //public IActionResult Delete(int id)
-        //{
-        //    if (id == 0)
-        //    {
-        //        return NotFound();
-        //    }
-        //    Student student = _db.Students.Find(id);
-        //    if (student != null)
-        //    {
-        //        ViewBag.departmentList = _db.Departments.Select(u => new SelectListItem
-        //        {
-        //            Text = u.Name,
-        //            Value = u.Id.ToString()
-        //        });
-        //        ViewBag.articleList = _db.Articles.Select(u =>
-        //          new SelectListItem
-        //          {
-        //              Text = u.Title,
-        //              Value = u.Id.ToString()
-        //          });
-        //        return View(student);
-        //    }
-        //    return NotFound();
-        //}
+        //GET Delete
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            if (id == 0)
+            {
+                return NotFound();
+            }
+            Teacher teacher = _db.Teachers.Find(id);
+            if (teacher != null)
+            {
+                ViewBag.facultyList = _db.Faculties.Select(u => new SelectListItem
+                {
+                    Text = u.Name,
+                    Value = u.Id.ToString()
+                });
+                ViewBag.articleList = _db.Articles.Select(u =>
+                  new SelectListItem
+                  {
+                      Text = u.Title,
+                      Value = u.Id.ToString()
+                  });
+                return View(teacher);
+            }
+            return NotFound();
+        }
 
-        ////POST Delete
-        //[HttpPost]
-        //[ActionName("Delete")]
-        //public IActionResult DeletePost(int id)
-        //{
-        //    Student student = _db.Students.Find(id);
-        //    string wwwRootPath = _iWebHostEnvironment.WebRootPath;
+        //POST Delete
+        [HttpPost]
+        [ActionName("Delete")]
+        public IActionResult DeletePost(int id)
+        {
+            Teacher teacher = _db.Teachers.Find(id);
+            string wwwRootPath = _iWebHostEnvironment.WebRootPath;
 
-        //    if (student.ImageUrl != null)
-        //    {
-        //        //LOGIC ABOUT DELETING OLD IMAGE
-        //        var oldImagePath = Path.Combine(wwwRootPath, student.ImageUrl.TrimStart('\\'));
-        //        if (System.IO.File.Exists(oldImagePath))
-        //        {
-        //            System.IO.File.Delete(oldImagePath);
-        //        }
-        //    }
-        //    _db.Students.Remove(student);
-        //    _db.SaveChanges();
-        //    return RedirectToAction("Index");
+            if (teacher.ImageUrl != null)
+            {
+                //LOGIC ABOUT DELETING OLD IMAGE
+                var oldImagePath = Path.Combine(wwwRootPath, teacher.ImageUrl.TrimStart('\\'));
+                if (System.IO.File.Exists(oldImagePath))
+                {
+                    System.IO.File.Delete(oldImagePath);
+                }
+            }
+            _db.Teachers.Remove(teacher);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
 
-        //}
-
-        //public string GetImageUrl(Teacher teacher)
-        //{
-        //    using (AppDbContext2 context = new AppDbContext2())
-        //    {
-        //        int id = teacher.Id;
-        //        return context.Teachers.Find(id).ImageUrl;
-        //    }
-
-        //}
+        public string GetImageUrl(Teacher teacher)
+        {
+            using (AppDbContext2 context = new AppDbContext2())
+            {
+                int id = teacher.Id;
+                return context.Teachers.Find(id).ImageUrl;
+            }
+        }
     }
 }

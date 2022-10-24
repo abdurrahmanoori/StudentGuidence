@@ -16,5 +16,6 @@ namespace StudentGuidence.DataAccess.Data
         public DbSet<Article> Articles { get; set; }
 
         public DbSet<Student> Students { get; set; }
+        public DbSet<Teacher> Teachers { get; set; }
     }
 }
