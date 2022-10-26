@@ -28,6 +28,11 @@ namespace StudentGuidence.Areas.Admin.Controllers
             _iWebHostEnvironment = webHostEnvironment;
         }
 
+        //public IActionResult Post()
+        //{
+        //    return RedirectToAction("Create")
+        //}
+
         public IActionResult Detail(int id)
         {
             return View(_db.Students.Find(id));

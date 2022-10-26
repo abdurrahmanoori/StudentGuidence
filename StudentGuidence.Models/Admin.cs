@@ -11,7 +11,7 @@ namespace StudentGuidence.Models
         [Key]
         public int Id { get; set; }
 
-        [Required(ErrorMessage ="First Name Is Required.")]
+       // [Required(ErrorMessage ="First Name Is Required.")]
         [Display(Name ="First Name")]
         public string FirstName { get; set; }
 

@@ -18,7 +18,7 @@ namespace StudentGuidence.Models
 
         public string Description { get; set; }
 
-        public byte Author { get; set; }// Where 1 is Admin, 2 is Teacher and 3 is Student
+        public string Author { get; set; }// Where 1 is Admin, 2 is Teacher and 3 is Student
 
         public DateTime DateOfIssue { get; set; }
     }

@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using StudentGuidenc.DataAccess;
 using StudentGuidence.Models;
 using StudentGuidence.Models.ViewModels;
+using StudentGuidence.Utility;
 
 namespace StudentGuidence.Areas.Identity.Controllers
 {
@@ -64,22 +65,44 @@ namespace StudentGuidence.Areas.Identity.Controllers
             if (ModelState.IsValid)
             {
                 //Check wether this email has been already taken or not.
-                if (_db.Users.Any(u => u.Email == model.Email && u.UserName == model.UserName))
+                if (_db.Users.Any(u => u.Email == model.Email))
                 {
-                    ModelState.AddModelError("", "This email or user name has been already taken.");
+                    ModelState.AddModelError("", "This user name has been already taken.");
                     return View(model);
                 }
                 ApplicationUser user = new ApplicationUser
                 {
-                    UserName = model.UserName,
                     Email = model.Email,
                     UserType = model.UserType
                 };
+
+                if (model.UserType == SD.Teacher)
+                {
+                    Teacher teacher = new Teacher
+                    {
+                        Email = model.Email
+                    };
+                    _db.Teachers.Update(teacher);
+                    _db.SaveChanges();
+                }
+                else if (model.UserType == SD.Student)
+                {
+                    Student student = new Student
+                    {
+                        Email = model.Email
+                    };
+                    _db.Students.Update(student);
+                    _db.SaveChanges();
+                }
+
                 IdentityResult result = await userManager.CreateAsync(user, model.Password);
 
                 if (result.Succeeded)
                 {
+
                     await signInManager.SignInAsync(user, isPersistent: false);
+
+
                     ViewBag.Message = $"Successfully user: {user.UserName} Created.";
                     return RedirectToAction("Show", "Account");
                 }
@@ -151,5 +174,9 @@ namespace StudentGuidence.Areas.Identity.Controllers
             //return Redirect("~Visitor/Home/Index");
         }
 
+        //public string CheckUser(string userType)
+        //{
+
+        //}
     }
 }

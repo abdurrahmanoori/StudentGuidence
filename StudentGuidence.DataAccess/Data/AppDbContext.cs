@@ -38,6 +38,13 @@ namespace StudentGuidenc.DataAccess
             modelBuilder.Entity<ApplicationUser>().HasIndex(u => u.Email).IsUnique(unique: true);
             //DateTime d = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
             //modelBuilder.Entity<University>().Property(u => u.Establishment).HasDefaultValue(d);
+            modelBuilder.Entity<Student>().HasIndex(u => u.Email).IsUnique();
+            modelBuilder.Entity<Teacher>().HasIndex(u => u.Email).IsUnique();
+            modelBuilder.Entity<ApplicationUser>().Property(u => u.Email).IsRequired(required: true);
+           // modelBuilder.Entity<Student>().Property(u => u.ArticleId).IsRequired(required: false);
+           // modelBuilder.Entity<Student>().Property(u => u.DepartmentId).IsRequired(false);
+
+
             base.OnModelCreating(modelBuilder);
 
         }

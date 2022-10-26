@@ -32,6 +32,7 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.0.0",
           "StudentGuidence.DataAccess": "1.0.0",
           "StudentGuidence.Models": "1.0.0",
+          "StudentGuidence.Utility": "1.0.0",
           "Microsoft.AspNetCore.Antiforgery": "3.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.0.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.0.0.0",
@@ -2130,6 +2131,14 @@
         },
         "compile": {
           "StudentGuidence.Models.dll": {}
+        }
+      },
+      "StudentGuidence.Utility/1.0.0": {
+        "runtime": {
+          "StudentGuidence.Utility.dll": {}
+        },
+        "compile": {
+          "StudentGuidence.Utility.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/3.0.0.0": {
@@ -4986,6 +4995,11 @@
       "sha512": ""
     },
     "StudentGuidence.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "StudentGuidence.Utility/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

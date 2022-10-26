@@ -20,14 +20,16 @@
 
                                 <form method="post" class="mx-1 mx-md-4">
 
-                                    <div class="d-flex flex-row align-items-center mb-4">
+                                    @*<div class="d-flex flex-row align-items-center mb-4">
                                         <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                         <div class="form-outline flex-fill mb-0">
                                             <input asp-for="UserName" type="text" id="form3Example1c" class="form-control" />
                                             <label class="form-label" for="form3Example1c">Your Username</label>
                                             <span class="text-danger" asp-validation-for="UserName"></span>
                                         </div>
-                                    </div>
+                                    </div>*@
+
+
 
                                     <div class="d-flex flex-row align-items-center mb-4">
                                         <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
@@ -41,12 +43,14 @@
                                     <div class="d-flex flex-row align-items-center mb-4">
                                         <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                                         <div class="form-outline flex-fill mb-0">
-                                            <input asp-for="UserType" id="form3Example4c" class="form-control" />
+                                            <select asp-for="UserType" id="form3Example4c" class="form-control">
+                                                <option>Teacher</option>
+                                                <option>Student</option>
+                                            </select>
                                             <label class="form-label" asp-for="UserType" for="form3Example4c"></label>
                                             <span class="text-danger" asp-validation-for="UserType"></span>
                                         </div>
                                     </div>
-
 
                                     <div class="d-flex flex-row align-items-center mb-4">
                                         <i class="fas fa-lock fa-lg me-3 fa-fw"></i>

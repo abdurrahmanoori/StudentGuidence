@@ -17,7 +17,7 @@ namespace StudentGuidence.Areas.Admin.Controllers
 {
 
 
-    [Authorize(Roles ="Admin")]
+    [Authorize(Roles = "Admin")]
     public class FacultyController : Controller
     {
         private readonly AppDbContext _db;
@@ -28,9 +28,9 @@ namespace StudentGuidence.Areas.Admin.Controllers
             _db = db;
             _iWebHostEnvironment = webHostEnvironment;
         }
-        
+
         public IActionResult Index()
-        {            
+        {
             return View(_db.Faculties.Include(u => u.University).ToList());
         }
         //GET Create
@@ -72,7 +72,6 @@ namespace StudentGuidence.Areas.Admin.Controllers
                 _db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
             return View(faculty);
         }
 
@@ -172,7 +171,6 @@ namespace StudentGuidence.Areas.Admin.Controllers
         {
             Faculty faculty = _db.Faculties.Find(id);
             string wwwRootPath = _iWebHostEnvironment.WebRootPath;
-
             if (faculty.ImageUrl != null)
             {
                 //LOGIC ABOUT DELETING OLD IMAGE

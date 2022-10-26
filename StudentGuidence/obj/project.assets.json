@@ -2685,6 +2685,16 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "StudentGuidence.Utility/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "compile": {
+          "bin/placeholder/StudentGuidence.Utility.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StudentGuidence.Utility.dll": {}
+        }
       }
     }
   },
@@ -8502,6 +8512,11 @@
       "type": "project",
       "path": "../StudentGuidence.Models/StudentGuidence.Models.csproj",
       "msbuildProject": "../StudentGuidence.Models/StudentGuidence.Models.csproj"
+    },
+    "StudentGuidence.Utility/1.0.0": {
+      "type": "project",
+      "path": "../StudentGuidence.Utility/StudentGuidence.Utility.csproj",
+      "msbuildProject": "../StudentGuidence.Utility/StudentGuidence.Utility.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -8513,7 +8528,8 @@
       "Microsoft.Extensions.Logging.Debug >= 3.0.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.0.0",
       "StudentGuidence.DataAccess >= 1.0.0",
-      "StudentGuidence.Models >= 1.0.0"
+      "StudentGuidence.Models >= 1.0.0",
+      "StudentGuidence.Utility >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -8547,6 +8563,9 @@
             },
             "C:\\Users\\Abdurrahman\\source\\repos\\StudentGuidence\\StudentGuidence.Models\\StudentGuidence.Models.csproj": {
               "projectPath": "C:\\Users\\Abdurrahman\\source\\repos\\StudentGuidence\\StudentGuidence.Models\\StudentGuidence.Models.csproj"
+            },
+            "C:\\Users\\Abdurrahman\\source\\repos\\StudentGuidence\\StudentGuidence.Utility\\StudentGuidence.Utility.csproj": {
+              "projectPath": "C:\\Users\\Abdurrahman\\source\\repos\\StudentGuidence\\StudentGuidence.Utility\\StudentGuidence.Utility.csproj"
             }
           }
         }

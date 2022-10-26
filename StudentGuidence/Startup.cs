@@ -32,6 +32,11 @@ namespace StudentGuidence
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddRazorPages().AddRazorRuntimeCompilation();//Run Razor page code quickly.
+            //First install RazorPage.Runtimecompilation.
+
+
             services.AddDbContext<AppDbContext>(option =>
             option.UseSqlServer(Configuration.GetConnectionString("DBCS")));
 
@@ -43,9 +48,6 @@ namespace StudentGuidence
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
             .AddEntityFrameworkStores<AppDbContext>();
-
-            services.AddRazorPages().AddRazorRuntimeCompilation();//Run Razor page code quickly.
-            //First install RazorPage.Runtimecompilation.
 
             services.AddControllersWithViews();
             

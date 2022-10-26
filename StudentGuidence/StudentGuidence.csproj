@@ -19,13 +19,11 @@
   <ItemGroup>
     <ProjectReference Include="..\StudentGuidence.DataAccess\StudentGuidence.DataAccess.csproj" />
     <ProjectReference Include="..\StudentGuidence.Models\StudentGuidence.Models.csproj" />
+    <ProjectReference Include="..\StudentGuidence.Utility\StudentGuidence.Utility.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\images\faculty\" />
-    <Folder Include="wwwroot\images\article\" />
-    <Folder Include="wwwroot\images\teacher\" />
-    <Folder Include="wwwroot\images\student\" />
+    <Folder Include="wwwroot\images\university\" />
   </ItemGroup>
 
 </Project>

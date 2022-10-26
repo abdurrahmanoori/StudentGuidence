@@ -17,6 +17,8 @@
     <Compile Remove="Migrations\20221015102929_AddTypeColumnToAritcle.Designer.cs" />
     <Compile Remove="Migrations\20221020013248_AddUserTypeToApplicationUserModel22.cs" />
     <Compile Remove="Migrations\20221020013248_AddUserTypeToApplicationUserModel22.Designer.cs" />
+    <Compile Remove="Migrations\20221026100425_RquiredAttributeRemovedFromStudentAndTeacher.cs" />
+    <Compile Remove="Migrations\20221026100425_RquiredAttributeRemovedFromStudentAndTeacher.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

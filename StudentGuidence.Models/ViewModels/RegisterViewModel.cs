@@ -11,10 +11,7 @@ namespace StudentGuidence.Models.ViewModels
 
     public class RegisterViewModel
     {
-        [Required]
-        public string UserName { get; set; }
-
-        [EmailAddress]
+        [EmailAddress][Required]
         //[Remote(action:"IsEmailInUse",controller:"Account")]
         public string Email { get; set; }
 

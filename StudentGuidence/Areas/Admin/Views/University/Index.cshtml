@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<StudentGuidence.Models.University>
 @*@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}*@
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }*@
 @*<a asp-action="Create" class="float-right btn btn-primary font-weight-bold text-capitalize">
     </a>*@
 
@@ -19,6 +19,7 @@
             <th>Name</th>
             <th>Provnce</th>
             <th>Establish Date</th>
+            <th>Image</th>
             <th>Manage</th>
         </tr>
         @foreach (var university in Model)
@@ -27,6 +28,9 @@
                 <td>@university.Name</td>
                 <td>@university.Province</td>
                 <td>@university.Establishment.ToString("d")</td>
+                <td>
+                    <img src="@university.ImageUrl" style="width:140px; height:140px;" />
+                </td>
                 <td>
                     <a asp-action="Delete" asp-route-id="@university.Id" class="mx-2">
                         <i class="bi bi-trash3-fill"></i>

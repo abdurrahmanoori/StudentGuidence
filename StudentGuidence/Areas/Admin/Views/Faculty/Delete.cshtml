@@ -30,12 +30,9 @@
             <select disabled class="form-control" asp-for="UniversityId" asp-items="@(ViewBag.UniversityList)"></select>
             <span asp-validation-for="UniversityId" class="text-danger"></span>
         </div>
-
         <button type="submit" class="btn btn-outline-danger">
             Delete
-
             <img src="~/img/Icon/delete_25px.png" />
-
         </button>
         <a asp-action="Index" class="btn btn-outline-primary p-2 px-4">
             Cancel
