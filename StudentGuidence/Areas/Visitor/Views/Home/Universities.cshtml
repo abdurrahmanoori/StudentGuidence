@@ -3,18 +3,198 @@
     ViewData["Title"] = "Universites";
 }
 
- @foreach(var u in Model)
- {
- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link href="~/sitfiles/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/sitfiles/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/sitfiles/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="~/sitfiles/remixicon/remixicon.css" rel="stylesheet">
+    <link href="~/sitfiles/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Main CSS File -->
+    <link href="~/css/style.css" rel="stylesheet">
+    <style>
+        #bgimg {
+            background-color: #272731d4;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-size: cover;
+            background-position: center center;
+            height: 300px;
+            position: relative;
+            font-size: 60px;
+            text-align: center;
+            color: #28d4bf;
+            padding-top: 5px;
+            box-shadow: inset;
+            border-radius: 50px 5px 50px 5px;
+        }
 
- }
+        #sub {
+            font-size: 25px;
+            padding-top: 3px;
+            color: white;
+        }
+        /*--------------------------------------------------------------
+        # Portfolio Section
+        --------------------------------------------------------------*/
+        .portfolio .portfolio-flters {
+            padding: 0 0 10px 0;
+            margin: 0 auto;
+            list-style: none;
+            text-align: center;
+        }
+
+            .portfolio .portfolio-flters li {
+                cursor: pointer;
+                display: inline-block;
+                padding: 0;
+                font-size: 18px;
+                font-weight: 500;
+                margin: 0 10px;
+                line-height: 1;
+                transition: all 0.3s ease-in-out;
+            }
+
+                .portfolio .portfolio-flters li:hover,
+                .portfolio .portfolio-flters li.filter-active {
+                    color: var(--color-primary);
+                }
+
+                .portfolio .portfolio-flters li:first-child {
+                    margin-left: 0;
+                }
+
+                .portfolio .portfolio-flters li:last-child {
+                    margin-right: 0;
+                }
+
+
+            .portfolio .portfolio-flters li {
+                font-size: 14px;
+                margin: 0 5px;
+            }
+
+        .portfolio .portfolio-wrap {
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            height: 100%;
+            // overflow: hidden;
+        }
+
+            .portfolio .portfolio-wrap img {
+                transition: 0.3s;
+                position: relative;
+                z-index: 1;
+            }
+
+            .portfolio .portfolio-wrap .portfolio-info {
+                padding: 25px 20px;
+                background-color: #fff;
+                position: relative;
+                border-top: 1px solid #f3f3f3;
+                z-index: 2;
+            }
+
+                .portfolio .portfolio-wrap .portfolio-info h4 {
+                    font-size: 18px;
+                    font-weight: 600;
+                    padding-right: 50px;
+                }
+
+                    .portfolio .portfolio-wrap .portfolio-info h4 a {
+                        color: var(--color-default);
+                        transition: 0.3s;
+                    }
+
+                        .portfolio .portfolio-wrap .portfolio-info h4 a:hover {
+                            color: var(--color-primary);
+                        }
+
+                .portfolio .portfolio-wrap .portfolio-info p {
+                    color: #6c757d;
+                    font-size: 14px;
+                    margin-bottom: 0;
+                    padding-right: 50px;
+                }
+
+            .portfolio .portfolio-wrap:hover img {
+                transform: scale(1.1);
+            }
+    </style>
+
+</head>
+<body>
+
+
+    <div class="py-3"></div>
+    <div class="container-fluid pt-5 pb-1" id="bgimg">
+
+        <div class="align-content-center">
+            <p class="pt-2"><b>د افغانستان دولتی پوهنتونونه  </b></p>
+
+        </div>
+        <h1 id="sub"> دلته د هغه پوهنتونونو په تړاو ټول معلومات ترلاسه کولای شي چي د کانکور امتحان له لاري یی انتخابوی</h1>
+
+    </div>
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio sections-bg">
+        <div class="container-fluid" data-aos="fade-up">
+            <div class="row gy-4 portfolio-container">
+
+                @foreach (var university in Model)
+                {
+
+                    <div class="col-xl-4 col-md-6 portfolio-item filter-app">
+                        <div class="portfolio-wrap">
+                            <a href="#" data-gallery="portfolio-gallery-app" class="glightbox">
+                                <img src="@university.ImageUrl" class="img-fluid" alt="">
+                            </a>
+                            <div class="portfolio-info">
+                                <h2><a href="#" title="More Details"><b>کابل پوهنتون</b></a></h2>
+                                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+                    <!-- End Portfolio Item -->
+                    @*<div class="col-xl-4 col-md-6 portfolio-item filter-app">
+                <div class="portfolio-wrap">
+                    <a href="#" data-gallery="portfolio-gallery-app" class="glightbox"><img src="~/img/kabulun.jpg" class="img-fluid" alt=""></a>
+                    <div class="portfolio-info">
+                        <h2><a href="#" title="More Details"><b>کابل پوهنتون</b></a></h2>
+                        <p>Lorem ipsum, dolor sit amet consectetur</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-md-6 portfolio-item filter-app">
+                <div class="portfolio-wrap">
+                    <a href="#" data-gallery="portfolio-gallery-app" class="glightbox"><img src="~/img/kabulun.jpg" class="img-fluid" alt=""></a>
+                    <div class="portfolio-info">
+                        <h2><a href="#" title="More Details"><b>کابل پوهنتون</b></a></h2>
+                        <p>Lorem ipsum, dolor sit amet consectetur</p>
+                    </div>
+                </div>
+            </div>*@
+                </div>
+            
+        </div>
+    </section>
+
+
+
+</body>
+</html>
 
 
 
 <!-- ======= Services Section ======= -->
-  
-        
-        <section id="services" class="services ">
+@*<section id="services" class="services ">
 
       <div class="container" data-aos="fade-up">
 
@@ -136,7 +316,5 @@
 
       </div>
 
-    </section><!-- End Services Section -->
-
-
-
+    </section>*@
+<!-- End Services Section -->

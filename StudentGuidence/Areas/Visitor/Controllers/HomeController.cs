@@ -31,14 +31,17 @@ namespace StudentGuidence.Controllers
         {
             return View(_db.Universities.ToList());
         }
+
         public IActionResult Faculty()
         {
             return View(_db.Faculties.ToList());
         }
+
         public IActionResult Teacher()
         {
             return View();//It is Empty.
         }
+
         public IActionResult Login()
         {
             return View();
