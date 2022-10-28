@@ -41,7 +41,7 @@
             <nav id="navbar" class="navbar">
                 <ul>
                     <li>
-                        <a asp-area="Visitor" asp-controller="PostArticle" asp-action="Create" class="nav-link" >Post Article</a>
+                        <a asp-area="Visitor" asp-controller="PostArticle" asp-action="Create" class="nav-link">Post Article</a>
                     </li>
 
                     @if (signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
@@ -72,7 +72,7 @@
 
                         <li>
                             <a asp-area="Identity" asp-controller="Account" asp-action="Logout" class="nav-link scrollto active">
-                                Logout  @User.Identity.Name
+                                <span class="text-danger mr-2">Logout  </span>   @User.Identity.Name
                             </a>
                         </li>
                     }
@@ -91,7 +91,7 @@
 
                         <li>
                             <a asp-area="Identity" asp-controller="Account" asp-action="Logout" class="nav-link scrollto active">
-                                Logout  @User.Identity.Name
+                                <span class="text-danger mr-2">Logout  </span>   @User.Identity.Name
                             </a>
                         </li>
                     }
@@ -111,7 +111,7 @@
 
                         <li>
                             <a asp-area="Identity" asp-controller="Account" asp-action="Logout" class="nav-link scrollto active">
-                                Logout  @User.Identity.Name
+                                <span class="text-danger mr-2">Logout  </span>   @User.Identity.Name
                             </a>
                         </li>
 

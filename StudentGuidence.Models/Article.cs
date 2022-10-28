@@ -20,6 +20,8 @@ namespace StudentGuidence.Models
 
         public string Author { get; set; }// Where 1 is Admin, 2 is Teacher and 3 is Student
 
+        public string AuthorId { get; set; }
+
         public DateTime DateOfIssue { get; set; }
     }
 }

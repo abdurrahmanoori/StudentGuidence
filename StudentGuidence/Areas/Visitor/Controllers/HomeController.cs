@@ -26,6 +26,7 @@ namespace StudentGuidence.Controllers
         {
             return View();
         }
+
         public IActionResult Universities()
         {
             return View(_db.Universities.ToList());

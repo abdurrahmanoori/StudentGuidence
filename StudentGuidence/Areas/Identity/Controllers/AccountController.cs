@@ -72,6 +72,7 @@ namespace StudentGuidence.Areas.Identity.Controllers
                 }
                 ApplicationUser user = new ApplicationUser
                 {
+                    UserName = model.Email,
                     Email = model.Email,
                     UserType = model.UserType
                 };
@@ -99,10 +100,7 @@ namespace StudentGuidence.Areas.Identity.Controllers
 
                 if (result.Succeeded)
                 {
-
                     await signInManager.SignInAsync(user, isPersistent: false);
-
-
                     ViewBag.Message = $"Successfully user: {user.UserName} Created.";
                     return RedirectToAction("Show", "Account");
                 }
@@ -131,17 +129,11 @@ namespace StudentGuidence.Areas.Identity.Controllers
             if (ModelState.IsValid)
             {
                 ApplicationUser user;
-                if (model.UsernameOrEmail.Contains("@"))
-                {
-                    user = await userManager.FindByEmailAsync(model.UsernameOrEmail);
-                }
-                else
-                {
-                    user = await userManager.FindByNameAsync(model.UsernameOrEmail);
-                }
+
+                user = await userManager.FindByNameAsync(model.Email);
 
                 var result = await signInManager.PasswordSignInAsync(user, model.Password, model.RememberMe, false);
-                //signInManager.pas
+
                 if (result.Succeeded)
                 {
                     if (ReturnUrl != null)

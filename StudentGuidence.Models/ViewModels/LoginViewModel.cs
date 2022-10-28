@@ -8,7 +8,7 @@ namespace StudentGuidence.Models.ViewModels
     public class LoginViewModel
     {
         [EmailAddress]
-        public string UsernameOrEmail { get; set; }
+        public string Email { get; set; }
 
         [DataType(DataType.Password)]
         public string Password { get; set; }

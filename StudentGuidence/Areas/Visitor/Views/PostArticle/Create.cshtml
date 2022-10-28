@@ -1,19 +1,20 @@
-﻿
-
-
-
-@model StudentGuidence.Models.Article
+﻿@model StudentGuidence.Models.Article
 @{
     ViewData["Title"] = "Create";
 }
 <h1 clsass="text-center py-5">Create Article</h1>
-<h4>Id: @ViewBag.Id</h4>
 
-
-<h1>&& @ViewBag.c &&</h1>
-
+@if (Model.AuthorId == null)
+{
+    <h2>Poster: </h2> @Model.Author;
+}
+else
+{
+    <h2>Name Of Poster: @ViewBag.Poster</h2>
+}
 <form method="post" asp-controller="PostArticle" enctype="multipart/form-data" asp-action="Create" class="form-control form-control-lg h-100 mb-3">
     <div>
+        
         <div class="row pb-2">
             <h2 class="text-primary">Create Article</h2>
         </div>
@@ -27,22 +28,22 @@
                 </div>
             </div>
             <div class="col-6">
-                <div class="mb-3" >
+                <div class="mb-3">
                     <label asp-for="Author"></label>
                     <input asp-for="Author" class="form-control form-control-lg border-primary" />
                 </div>
             </div>
-
+            <input asp-for="AuthorId" hidden/>
         </div>
-        <div class="mb-3 ">
+        <div class="mb-3">
             <label asp-for="Description"></label>
             <textarea class="form-control" rows="8" asp-for="Description"></textarea>
         </div>
         @*<div class="mb-3">
-            <label asp-for="ImageUrl"></label>
-            <input type="file" name="file" class="bi-upload" />
-            <span asp-validation-for="ImageUrl" class="text-danger"></span>
-        </div>*@
+                <label asp-for="ImageUrl"></label>
+                <input type="file" name="file" class="bi-upload" />
+                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+            </div>*@
         <button type="submit" class="btn btn-outline-success" style="width:150px">
             Post
             <img src="~/img/Icon/add25px.png" />
