@@ -42,11 +42,6 @@ namespace StudentGuidence.Controllers
             return View();//It is Empty.
         }
 
-        public IActionResult Login()
-        {
-            return View();
-        }
-
         public IActionResult Services()
         {
             return View();

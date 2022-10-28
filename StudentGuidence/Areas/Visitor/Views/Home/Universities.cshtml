@@ -2,7 +2,6 @@
 @{
     ViewData["Title"] = "Universites";
 }
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -128,27 +127,19 @@
 
 </head>
 <body>
-
-
     <div class="py-3"></div>
     <div class="container-fluid pt-5 pb-1" id="bgimg">
-
         <div class="align-content-center">
             <p class="pt-2"><b>د افغانستان دولتی پوهنتونونه  </b></p>
-
         </div>
         <h1 id="sub"> دلته د هغه پوهنتونونو په تړاو ټول معلومات ترلاسه کولای شي چي د کانکور امتحان له لاري یی انتخابوی</h1>
-
     </div>
-
-    <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio sections-bg">
         <div class="container-fluid" data-aos="fade-up">
             <div class="row gy-4 portfolio-container">
 
                 @foreach (var university in Model)
                 {
-
                     <div class="col-xl-4 col-md-6 portfolio-item filter-app">
                         <div class="portfolio-wrap">
                             <a href="#" data-gallery="portfolio-gallery-app" class="glightbox">
@@ -161,33 +152,9 @@
                         </div>
                     </div>
                 }
-                    <!-- End Portfolio Item -->
-                    @*<div class="col-xl-4 col-md-6 portfolio-item filter-app">
-                <div class="portfolio-wrap">
-                    <a href="#" data-gallery="portfolio-gallery-app" class="glightbox"><img src="~/img/kabulun.jpg" class="img-fluid" alt=""></a>
-                    <div class="portfolio-info">
-                        <h2><a href="#" title="More Details"><b>کابل پوهنتون</b></a></h2>
-                        <p>Lorem ipsum, dolor sit amet consectetur</p>
-                    </div>
-                </div>
             </div>
-
-            <div class="col-xl-4 col-md-6 portfolio-item filter-app">
-                <div class="portfolio-wrap">
-                    <a href="#" data-gallery="portfolio-gallery-app" class="glightbox"><img src="~/img/kabulun.jpg" class="img-fluid" alt=""></a>
-                    <div class="portfolio-info">
-                        <h2><a href="#" title="More Details"><b>کابل پوهنتون</b></a></h2>
-                        <p>Lorem ipsum, dolor sit amet consectetur</p>
-                    </div>
-                </div>
-            </div>*@
-                </div>
-            
         </div>
     </section>
-
-
-
 </body>
 </html>
 
