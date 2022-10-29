@@ -1,4 +1,5 @@
 ﻿@using Microsoft.AspNetCore.Identity
+@using StudentGuidence.Utility
 @inject SignInManager<ApplicationUser> signInManager
 
 
@@ -28,7 +29,7 @@
     <link href="~/sitfiles/swiper/swiper-bundle.min.css" rel="stylesheet">
     <!-- Main CSS File -->
     <link href="~/css/style.css" rel="stylesheet">
-    <!--&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&-->
+
 </head>
 <body>
 
@@ -44,7 +45,7 @@
                         <a asp-area="Visitor" asp-controller="PostArticle" asp-action="Create" class="nav-link">Post Article</a>
                     </li>
 
-                    @if (signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                    @if (signInManager.IsSignedIn(User) && User.IsInRole(SD.Admin))
                     {
                         <li><a asp-area="Admin" asp-controller="University" asp-action="Index" class="nav-link">University</a> </li>
                         <li><a asp-area="Admin" asp-controller="Faculty" asp-action="Index" class="nav-link scrollto">Faculty</a> </li>
@@ -63,7 +64,6 @@
                                     <a class="bg-dark text-white dropdown-item" asp-area="Visitor" asp-controller="Home" asp-action="About"> زمونږ په اړه </a>
                                     <a class="bg-dark text-white dropdown-item" asp-area="Visitor" asp-controller="Home" asp-action=""> اړیکه </a>
                                     <a class="bg-dark text-white dropdown-item" asp-area="Visitor" asp-controller="Home" asp-action="Team"> ګروپ </a>
-                                    <a class="bg-dark text-white dropdown-item" asp-area="Visitor" asp-controller="home" asp-action="Services"> خدمات </a>
                                     <a class="bg-dark text-white dropdown-item" asp-area="Visitor" asp-controller="Home" asp-action="Universities"> پوهنتونونه </a>
                                     <a class="bg-dark text-white dropdown-item" asp-area="Visitor" asp-controller="Home" asp-action="Index"> کور </a>
                                 </div>
@@ -77,17 +77,17 @@
                         </li>
                     }
 
-                    else if (signInManager.IsSignedIn(User) && User.IsInRole("Student"))
+                    else if (signInManager.IsSignedIn(User) && User.IsInRole(SD.Student))
                     {
                         <li class="text-danger">Welcome student.</li>
 
                         <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="Home" asp-action="About"> زمونږ په اړه </a></li>
                         <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="Home" asp-action=""> اړیکه </a></li>
                         <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="Home" asp-action="Team"> ګروپ </a></li>
-                        <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="home" asp-action="Services"> خدمات </a></li>
                         <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="Home" asp-action="Universities"> پوهنتونونه </a></li>
                         <li><a class="nav-link scrollto active" asp-area="Visitor" asp-controller="Home" asp-action="Index"> کور </a></li>
                         <li><a class="nav-link scrollto active" asp-area="Admin" asp-controller="University" asp-action="Test">List</a></li>
+                        <li><a class="nav-link scrollto active" asp-area="Admin" asp-controller="University" asp-action="">My Profile</a></li>
 
                         <li>
                             <a asp-area="Identity" asp-controller="Account" asp-action="Logout" class="nav-link scrollto active">
@@ -96,14 +96,13 @@
                         </li>
                     }
 
-                    else if (signInManager.IsSignedIn(User) && User.IsInRole("Teacher"))
+                    else if (signInManager.IsSignedIn(User) && User.IsInRole(SD.Teacher))
                     {
                         <li class="text-danger">Welcome Teacher.</li>
 
                         <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="Home" asp-action="About"> زمونږ په اړه </a></li>
                         <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="Home" asp-action=""> اړیکه </a></li>
                         <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="Home" asp-action="Team"> ګروپ </a></li>
-                        <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="home" asp-action="Services"> خدمات </a></li>
                         <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="Home" asp-action="Universities"> پوهنتونونه </a></li>
                         <li><a class="nav-link scrollto active" asp-area="Visitor" asp-controller="Home" asp-action="Index"> کور </a></li>
                         <li><a class="nav-link scrollto active" asp-area="Admin" asp-controller="University" asp-action="Test">List</a></li>
@@ -119,11 +118,9 @@
                     else
                     {
 
-
                         <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="Home" asp-action="About"> زمونږ په اړه </a></li>
                         <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="Home" asp-action="Contact"> اړیکه </a></li>
                         <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="Home" asp-action="Team"> ګروپ </a></li>
-                        <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="home" asp-action="Services"> خدمات </a></li>
                         <li><a class="nav-link scrollto" asp-area="Visitor" asp-controller="Home" asp-action="Universities"> پوهنتونونه </a></li>
                         <li><a class="nav-link scrollto active" asp-area="Visitor" asp-controller="Home" asp-action="Index"> کور </a></li>
                         <li><a class="nav-link scrollto active" asp-area="Admin" asp-controller="University" asp-action="Test">List</a></li>
@@ -159,7 +156,6 @@
 
     </section>
     <!--===========Footer of Page-->
-
 
     <footer class="footer text-muted py-0">
         <div class="container-fluid ">

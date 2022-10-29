@@ -305,8 +305,8 @@ C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence.Models\bin\Deb
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence.Models\bin\Debug\netcoreapp3.0\refs\System.Xml.XPath.dll
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence.Models\bin\Debug\netcoreapp3.0\refs\System.Xml.XPath.XDocument.dll
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence.Models\bin\Debug\netcoreapp3.0\refs\WindowsBase.dll
+C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence.Models\obj\Debug\netcoreapp3.0\StudentGuidence.Models.csprojAssemblyReference.cache
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence.Models\obj\Debug\netcoreapp3.0\StudentGuidence.Models.AssemblyInfoInputs.cache
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence.Models\obj\Debug\netcoreapp3.0\StudentGuidence.Models.AssemblyInfo.cs
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence.Models\obj\Debug\netcoreapp3.0\StudentGuidence.Models.dll
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence.Models\obj\Debug\netcoreapp3.0\StudentGuidence.Models.pdb
-C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence.Models\obj\Debug\netcoreapp3.0\StudentGuidence.Models.csprojAssemblyReference.cache
