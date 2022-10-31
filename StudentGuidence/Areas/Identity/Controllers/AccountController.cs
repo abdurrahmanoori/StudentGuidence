@@ -114,7 +114,6 @@ namespace StudentGuidence.Areas.Identity.Controllers
             }
             return View(model);
         }
-
         [HttpGet]
         [AllowAnonymous]
         public IActionResult Login()
@@ -129,8 +128,12 @@ namespace StudentGuidence.Areas.Identity.Controllers
             if (ModelState.IsValid)
             {
                 ApplicationUser user;
-
                 user = await userManager.FindByNameAsync(model.Email);
+                if (user == null)
+                {
+                    ModelState.AddModelError("", $"The email '{model.Email}' does not registerd yet.");
+                    return View(model);
+                }
 
                 var result = await signInManager.PasswordSignInAsync(user, model.Password, model.RememberMe, false);
 

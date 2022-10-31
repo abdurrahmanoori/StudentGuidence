@@ -21,7 +21,11 @@ namespace StudentGuidence.Controllers
         {
             _db = db;
         }
-        
+ 
+        public IActionResult TestShow()
+        {
+            return View();
+        }
         public IActionResult Index()
         {
             return View();

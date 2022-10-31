@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using StudentGuidenc.DataAccess;
@@ -19,13 +22,15 @@ namespace StudentGuidence.Areas.Visitor.Controllers
         private readonly AppDbContext _db;
         private readonly SignInManager<ApplicationUser> signInManager;
         private readonly UserManager<ApplicationUser> userManager;
+        private readonly IWebHostEnvironment _iWebHostEnvironment;
 
         public PostArticleController(AppDbContext db, SignInManager<ApplicationUser> signInManager,
-            UserManager<ApplicationUser> userManager)
+            UserManager<ApplicationUser> userManager, IWebHostEnvironment webHostEnvironment)
         {
             _db = db;
             this.signInManager = signInManager;
             this.userManager = userManager;
+            _iWebHostEnvironment = webHostEnvironment;
         }
 
         [HttpGet]
@@ -80,25 +85,59 @@ namespace StudentGuidence.Areas.Visitor.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(Article obj)
+        public IActionResult Create(Article obj, IFormFile? file)
         {
+            //obj.ImageUrl = file.FileName;
+
             if (ModelState.IsValid)
             {
-                obj.ImageUrl = "pathAbc";
+                string wwwRootPath = _iWebHostEnvironment.WebRootPath;
+                if (file != null)
+                {
+                    string fileName = Guid.NewGuid().ToString();
+                    var uploads = Path.Combine(wwwRootPath, @"images\article");
+                    var extension = Path.GetExtension(file.FileName);
+
+                    using (var fileStreams = new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
+                    {
+                        file.CopyTo(fileStreams);
+                    }
+                    obj.ImageUrl = @"\images\article\" + fileName + extension;
+                }
 
                 _db.Articles.Add(obj);
                 _db.SaveChanges();
 
-                return View("Post1", obj);
+                return RedirectToAction("Post1", obj);
             }
-
             return View(obj);
         }
 
         [HttpGet]
-        public IActionResult Post1(Article article)
+        public async Task<IActionResult> Post1(Article article)
         {
-            return View(article);
+
+            PostDisplayViewModel model = new PostDisplayViewModel
+            {
+                Article = article
+            };
+            // Get the user from AspNetUser table
+            var user = await userManager.FindByIdAsync(article.AuthorId);
+
+            if (article.Author == SD.Teacher)//If the user is Teacher, then find the correspoding user from teacher table.
+            {
+                Teacher teacher = _db.Teachers.FirstOrDefault(u => u.Email == user.Email);
+                model.Teacher = teacher;
+                model.ArticlesList = _db.Articles.Where(u => u.AuthorId == article.AuthorId).Select(u => u.Title);
+            }
+
+            else if (article.Author == SD.Student)
+            {
+                Student student = _db.Students.FirstOrDefault(u => u.Email == user.Email);
+                model.Student = student;
+                model.ArticlesList = _db.Articles.Where(u => u.AuthorId == article.AuthorId).Select(u => u.Title);
+            }
+            return View(model);
         }
 
     }

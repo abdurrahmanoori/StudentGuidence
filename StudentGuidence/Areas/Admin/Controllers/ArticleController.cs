@@ -58,6 +58,7 @@ namespace StudentGuidence.Areas.Admin.Controllers
                     }
                     article.ImageUrl = @"\images\article\" + fileName + extension;
                 }
+
                 _db.Articles.Add(article);
                 _db.SaveChanges();
                 return RedirectToAction("Index");
