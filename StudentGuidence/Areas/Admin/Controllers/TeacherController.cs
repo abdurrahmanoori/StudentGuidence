@@ -29,7 +29,7 @@ namespace StudentGuidence.Areas.Admin.Controllers
 
         public IActionResult Detail(int id) => View(_db.Teachers.Find(id));
 
-        public IActionResult Index() => View((_db.Teachers.Include(u => u.Faculty).Include(u => u.Article).ToList()));
+        public IActionResult Index() => View((_db.Teachers.Include(u => u.Faculty).ToList()));
 
         //GET Create
         public IActionResult Create()

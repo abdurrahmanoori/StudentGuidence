@@ -1,0 +1,36 @@
+﻿@model IEnumerable<StudentGuidence.Models.Teacher>
+@{
+    ViewData["Title"] = "Teacher";
+}
+<h1>Teacher</h1>
+
+<h1 class="container text-center py-5">Teacher Table</h1>
+    <table class="table table-bordered border-success">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Article</th>
+            <th></th>
+            @foreach (var teacher in Model)
+            {
+            <tr>
+                <td>@teacher.FirstName</td>
+                <td>@teacher.LastName</td>
+                @*<td>@teacher.Article.Title</td>*@
+                <td>
+                    <a asp-action="TeacherDetail" asp-route-id="@teacher.Id" class="btn btn-primary">
+                        Show Article
+                    </a>
+                    @*<a asp-action="Delete" asp-route-id="@teacher.Id" class="mx-2">
+                            <i class="bi bi-trash3-fill"></i>
+                        </a>
+                        <a asp-action="Edit" asp-route-id="@teacher.Id">
+                            <i class="bi bi-pencil-square "></i>
+                        </a>*@
+                </td>
+            </tr>
+        }
+        </table>
+   
+
+

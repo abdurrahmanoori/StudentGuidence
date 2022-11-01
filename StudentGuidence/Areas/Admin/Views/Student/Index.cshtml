@@ -13,7 +13,7 @@
     <table class="table table-bordered border-success">
         <tr>
             <th>First Name</th>
-            <th>Last Name</th>
+            @*<th>Last Name</th>*@
             <th>Article Title</th>
             <th></th>
         @foreach (var student in Model)
@@ -21,7 +21,7 @@
             <tr>
                 <td>@student.FristName</td>
                 <td>@student.LastName</td>
-                <td>@student.Article.Title</td>
+                @*<td>@student.Article.Title</td>*@
                 <td>
                     <a asp-action="Detail" asp-route-id="@student.Id" class="bi bi-arrow-up-right-square">
                     </a>

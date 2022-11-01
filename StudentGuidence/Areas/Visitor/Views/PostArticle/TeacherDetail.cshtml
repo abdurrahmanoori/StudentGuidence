@@ -1,0 +1,24 @@
+﻿@model StudentGuidence.Models.ViewModels.TeacherDetailViewModel
+
+@{
+    ViewData["Title"] = "TeacherDetail";
+}
+
+<h1>Teacher Detail</h1>
+<div class="m-4">
+    <div>
+        <b>Name:</b>@Model.Teacher.FirstName <br />
+        <b>Last Name:</b>@Model.Teacher.LastName <br />
+        
+    </div>
+    <div class="m-5 mt-2">
+        <h1 class="my-2">List Of All Article:</h1>
+        @foreach (Article article in Model.ArticlesList)
+        {
+            <h3>@article.Title</h3><p>Id: @article.Id</p>
+        }
+
+    </div>
+
+
+</div>

@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using StudentGuidenc.DataAccess;
 using StudentGuidence.Models;
 using StudentGuidence.Models.ViewModels;
@@ -31,6 +32,51 @@ namespace StudentGuidence.Areas.Visitor.Controllers
             this.signInManager = signInManager;
             this.userManager = userManager;
             _iWebHostEnvironment = webHostEnvironment;
+        }
+
+        public async Task<IActionResult> StudentDetail(int id)
+        {
+            Student student= _db.Students.Find(id); // Find teacher Id in Teacher table.
+
+            var user = await userManager.FindByEmailAsync(student.Email);// as Email attribut is common is aspNetUser and Student
+            // tables we found aspNetUser using email property of Teacher table.
+
+            var ArtList = _db.Articles.Where(u => u.AuthorId == user.Id); // We can find articles of a specefic user using 
+            // AuthorId property in Article. which is again common in aspNetUser table.
+
+            StudentDetailViewModel model = new StudentDetailViewModel
+            {
+                Student=student,
+                ArticlesList = ArtList
+            };
+
+            return View(model);
+        }
+
+
+        [HttpGet]
+        public IActionResult Teacher1()// Temp method
+        {
+            return View(_db.Teachers.Include(u => u.Article).ToList());
+        }
+
+        public async Task<IActionResult> TeacherDetail(int id)
+        {
+            Teacher teacher = _db.Teachers.Find(id); // Find teacher Id in Teacher table.
+
+            var user = await userManager.FindByEmailAsync(teacher.Email);// as Email attribut is common is aspNetUser and Teacher
+            // tables we found aspNetUser using email property of Teacher table.
+
+            var ArtList = _db.Articles.Where(u => u.AuthorId == user.Id); // We can find articles of a specefic user using 
+            // AuthorId property in Article. which is again common in aspNetUser table.
+
+            TeacherDetailViewModel model = new TeacherDetailViewModel
+            {
+                Teacher = teacher,
+                ArticlesList = ArtList
+            };
+
+            return View(model);
         }
 
         [HttpGet]

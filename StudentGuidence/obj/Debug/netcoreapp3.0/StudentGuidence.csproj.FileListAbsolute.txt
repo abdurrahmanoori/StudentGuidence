@@ -787,3 +787,5 @@ C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netc
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\StudentGuidence.dll
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\StudentGuidence.pdb
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Visitor\Views\Home\TestShow.cshtml.g.cs
+C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Visitor\Views\PostArticle\Teacher1.cshtml.g.cs
+C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence\obj\Debug\netcoreapp3.0\Razor\Areas\Visitor\Views\PostArticle\TeacherDetail.cshtml.g.cs
