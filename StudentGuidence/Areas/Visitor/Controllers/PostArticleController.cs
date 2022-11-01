@@ -67,7 +67,9 @@ namespace StudentGuidence.Areas.Visitor.Controllers
             var user = await userManager.FindByEmailAsync(teacher.Email);// as Email attribut is common is aspNetUser and Teacher
             // tables we found aspNetUser using email property of Teacher table.
 
-            var ArtList = _db.Articles.Where(u => u.AuthorId == user.Id); // We can find articles of a specefic user using 
+           // _db.Articles.AsEnumerable()
+
+            List<Article> ArtList = _db.Articles.Where(u => u.AuthorId == user.Id).ToList(); // We can find articles of a specefic user using 
             // AuthorId property in Article. which is again common in aspNetUser table.
 
             TeacherDetailViewModel model = new TeacherDetailViewModel
@@ -174,14 +176,14 @@ namespace StudentGuidence.Areas.Visitor.Controllers
             {
                 Teacher teacher = _db.Teachers.FirstOrDefault(u => u.Email == user.Email);
                 model.Teacher = teacher;
-                model.ArticlesList = _db.Articles.Where(u => u.AuthorId == article.AuthorId).Select(u => u.Title);
+                model.ArticlesList = _db.Articles.Where(u => u.AuthorId == user.Id);
             }
 
             else if (article.Author == SD.Student)
             {
                 Student student = _db.Students.FirstOrDefault(u => u.Email == user.Email);
                 model.Student = student;
-                model.ArticlesList = _db.Articles.Where(u => u.AuthorId == article.AuthorId).Select(u => u.Title);
+                model.ArticlesList = _db.Articles.Where(u => u.AuthorId == user.Id);
             }
             return View(model);
         }

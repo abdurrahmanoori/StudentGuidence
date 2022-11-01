@@ -1,24 +1,117 @@
 ﻿@model StudentGuidence.Models.ViewModels.TeacherDetailViewModel
 
 @{
-    ViewData["Title"] = "TeacherDetail";
+    ViewData["Title"] = "Teacher Details";
+    int count = 0;
 }
+<section>
+    <div class="container">
+        <div class="row bg-light">
+            @* Left Side has finished *@
+            <div class="col-8">
+                <div class="row">
+                    <div class="col-3 text-start">
+                        @foreach (Article article in Model.ArticlesList)
+                        {
+                            <a class="btn btn-secondary m-2 rounded-circle text-white">@article.Title</a>
+                            count++;
+                        }
+                    </div>
+                    <div class="col-9">
+                        <div class="row">
+                            <div>
+                                @* <p class="text-center"><b>د مقالو عنوانونه  &nbsp; &nbsp;  (د مقالو تاریخ)</b></p>*@
+                                <p class="text-center"><b>@Model.ArticlesList.ElementAtOrDefault(--count).Title &nbsp; &nbsp;  @Model.ArticlesList.ElementAtOrDefault(--count).DateOfIssue</b></p>
+                                <img src="~/images/teacher/040.jpg" class="text-center rounded" style="width:500px;height:400px;background-position-x:200px;" />
+                            </div>
+                            <div class="text-end " lang="ar" dir="rtl" id="floatingTextarea2" style="width:500px;height:500px">
+                                <p>
+                                    @Model.ArticlesList.ElementAtOrDefault(--count).Description;
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @* Right Side has finished *@
+            <div class="col-4">
 
-<h1>Teacher Detail</h1>
-<div class="m-4">
-    <div>
-        <b>Name:</b>@Model.Teacher.FirstName <br />
-        <b>Last Name:</b>@Model.Teacher.LastName <br />
-        
+                <div class="row">
+                    <div>
+                        <img src="~/images/teacher/040.jpg" class="rounded-circle" style="width:200px;height:200px; margin-left:100px;" />
+                    </div>
+                    <div class="mt-3">
+                        <div class="row">
+                            <div class="col-8 text-end">
+                                <h5><label><u>@Model.Teacher.FirstName</u></label></h5>
+                                <h5><label><u>@Model.Teacher.LastName</u></label></h5>
+                                <h5><label><u>@Model.Teacher.Province</u></label></h5>
+                                <h5><label><u>@Model.Teacher.District</u></label></h5>
+                                <h5><label><u>@Model.Teacher.Faculty</u></label></h5>
+                                <h5><label><u>@Model.Teacher.Degree</u></label></h5>
+                                <h5><label><u>@Model.Teacher.Phone</u></label></h5>
+                                <h5><label><u>@Model.Teacher.Email</u></label></h5>
+                            </div>
+                            <div class="col-4 text-end">
+                                <h5><label>:  نوم</label></h5>
+                                <h5><label>:  تخلص</label></h5>
+                                <h5><label>:  ولایت</label></h5>
+                                <h5><label>:  ولسوالی</label></h5>
+                                <h5><label>:‌  فاکولته</label></h5>
+                                <h5><label>:‌  ډګری</label></h5>
+                                <h5><label>:‌  موبایل</label></h5>
+                                <h5><label>:‌  ایمل</label></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
-    <div class="m-5 mt-2">
-        <h1 class="my-2">List Of All Article:</h1>
-        @foreach (Article article in Model.ArticlesList)
-        {
-            <h3>@article.Title</h3><p>Id: @article.Id</p>
-        }
-
-    </div>
+</section>
 
 
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*
+    @{
+        ViewData["Title"] = "TeacherDetail";
+    }
+
+    <h1>Teacher Detail</h1>
+    <div class="m-4">
+        <div>
+            <b>Name:</b>@Model.Teacher.FirstName <br />
+            <b>Last Name:</b>@Model.Teacher.LastName <br />
+
+        </div>
+        <div class="m-5 mt-2">
+            <h1 class="my-2">List Of All Article:</h1>
+            @foreach (Article article in Model.ArticlesList)
+            {
+                <h3>@article.Title</h3><p>Id: @article.Id</p>
+            }
+
+        </div>
+
+
+    </div>*@

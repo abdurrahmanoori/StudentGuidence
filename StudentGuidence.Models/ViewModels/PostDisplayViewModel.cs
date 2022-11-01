@@ -13,6 +13,6 @@ namespace StudentGuidence.Models.ViewModels
 
         public Student Student { get; set; }
 
-        public IQueryable <string> ArticlesList { get; set; }
+        public IQueryable<Article> ArticlesList { get; set; }
     }
 }

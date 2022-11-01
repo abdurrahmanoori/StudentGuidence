@@ -9,9 +9,7 @@ namespace StudentGuidence.Models.ViewModels
     {
         public Teacher Teacher { get; set; }
         
-       // public ApplicationUser ApplicationUserTeacher { get; set; }
-
-        public IQueryable ArticlesList { get; set; }
+        public List<Article> ArticlesList { get; set; }
 
     }
 }
