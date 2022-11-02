@@ -13,11 +13,11 @@
     <table class="table table-bordered border-success">
         <tr>
             <th>First Name</th>
-            @*<th>Last Name</th>*@
-            <th>Article Title</th>
+            <th>Last Name</th>
+            @*<th>Article Title</th>*@
             <th></th>
-        @foreach (var student in Model)
-        {
+            @foreach (var student in Model)
+            {
             <tr>
                 <td>@student.FristName</td>
                 <td>@student.LastName</td>
@@ -34,5 +34,5 @@
                 </td>
             </tr>
         }
-    </table>
-</form>
+        </table>
+    </form>

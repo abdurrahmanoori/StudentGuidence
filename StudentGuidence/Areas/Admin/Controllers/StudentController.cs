@@ -40,7 +40,9 @@ namespace StudentGuidence.Areas.Admin.Controllers
 
         public IActionResult Index()
         {
-            return View(_db.Students.Include(u => u.Article));
+            var stu = _db.Students.Include(u => u.Article).ToList();
+
+            return View(stu);
         }
 
         //GET Create
@@ -53,12 +55,12 @@ namespace StudentGuidence.Areas.Admin.Controllers
                       Value = u.Id.ToString()
                   }
                 );
-            ViewBag.aritcleList = _db.Articles.ToList().Select(u =>
-             new SelectListItem
-             {
-                 Text = u.Title,
-                 Value = u.Id.ToString()
-             });
+            //ViewBag.aritcleList = _db.Articles.ToList().Select(u =>
+            // new SelectListItem
+            // {
+            //     Text = u.Title,
+            //     Value = u.Id.ToString()
+            // });
 
             //ViewBag.universityList = _db.Universities.ToList().Select(u =>
             //new SelectListItem
@@ -137,6 +139,7 @@ namespace StudentGuidence.Areas.Admin.Controllers
                 Id = student.Id,
                 FristName = student.FristName,
                 LastName = student.LastName,
+                Email=student.Email,
                 Province = student.Province,
                 District = student.District,
                 ImageUrl = student.ImageUrl,

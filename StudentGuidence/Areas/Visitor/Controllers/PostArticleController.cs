@@ -36,7 +36,7 @@ namespace StudentGuidence.Areas.Visitor.Controllers
 
         public async Task<IActionResult> StudentDetail(int id)
         {
-            Student student= _db.Students.Find(id); // Find teacher Id in Teacher table.
+            Student student = _db.Students.Find(id); // Find teacher Id in Teacher table.
 
             var user = await userManager.FindByEmailAsync(student.Email);// as Email attribut is common is aspNetUser and Student
             // tables we found aspNetUser using email property of Teacher table.
@@ -46,13 +46,12 @@ namespace StudentGuidence.Areas.Visitor.Controllers
 
             StudentDetailViewModel model = new StudentDetailViewModel
             {
-                Student=student,
+                Student = student,
                 ArticlesList = ArtList
             };
 
             return View(model);
         }
-
 
         [HttpGet]
         public IActionResult Teacher1()// Temp method
@@ -66,8 +65,6 @@ namespace StudentGuidence.Areas.Visitor.Controllers
 
             var user = await userManager.FindByEmailAsync(teacher.Email);// as Email attribut is common is aspNetUser and Teacher
             // tables we found aspNetUser using email property of Teacher table.
-
-           // _db.Articles.AsEnumerable()
 
             List<Article> ArtList = _db.Articles.Where(u => u.AuthorId == user.Id).ToList(); // We can find articles of a specefic user using 
             // AuthorId property in Article. which is again common in aspNetUser table.
@@ -86,54 +83,51 @@ namespace StudentGuidence.Areas.Visitor.Controllers
         {
             var claimIdentity = (ClaimsIdentity)User.Identity;
             var claim = claimIdentity.FindFirst(ClaimTypes.NameIdentifier);
-
             string userId = claim.Value;
+
             ViewBag.Poster = null;
 
-            Article article = new Article();
+            //          Article article = new Article();
             var user = await userManager.FindByIdAsync(userId);
 
+            PostCreateViewModel model = new PostCreateViewModel()
+            {
+                Teacher = new Teacher(),
+                Student = new Student(),
+                Article = new Article()
+            };
+            
+            //        model.Article = article;
             if (User.IsInRole(SD.Teacher))
             {
-                article.Author = SD.Teacher;
-                article.AuthorId = user.Id;
-                ViewBag.Poster = _db.Teachers.FirstOrDefault(u => u.Email == user.Email).FirstName;
-                return View(article);
+                model.Article.Author = SD.Teacher;
+                model.Article.AuthorId = user.Id;
+                model.Teacher = _db.Teachers.FirstOrDefault(u => u.Email == user.Email);
+                model.Author = _db.Teachers.FirstOrDefault(u => u.Email == user.Email).FirstName;
+                model.Article.Id = _db.Articles.FirstOrDefault(u => u.AuthorId == user.Id).Id;
+                model.AuthorType = SD.Teacher;
+                return View(model);
             }
             else if (User.IsInRole(SD.Student))
             {
-                article.Author = SD.Student;
-                article.AuthorId = user.Id;
-                ViewBag.Poster = _db.Students.FirstOrDefault(u => u.Email == user.Email).FristName;
-                return View(article);
+                model.Article.Author = SD.Student;
+                model.Article.AuthorId = user.Id;
+                model.Student = _db.Students.FirstOrDefault(u => u.Email == user.Email);
+                model.Author = _db.Students.FirstOrDefault(u => u.Email == user.Email).FristName;
+                model.Article.Id = _db.Articles.FirstOrDefault(u => u.AuthorId == user.Id).Id;
+                model.AuthorType = SD.Student;
+                return View(model);
             }
             else
             {
-                article.Author = SD.Admin;
-                return View(article);
+                model.Author = SD.Admin;
+                return View(model);
             }
-
-            //var user = userManager.GetUserAsync(HttpContext.User);
-
-            //ViewBag.Id = user.Id;
-
-            //Article article = new Article();
-            //article.Author = "Admin";
-            //PostCreateViewModel model = new PostCreateViewModel();
-            //if (signInManager.IsSignedIn(User) && User.IsInRole("Student"))
-            //{
-            //    article.Author = "Student";
-            //}
-            //else if (signInManager.IsSignedIn(User) && User.IsInRole("Teacher"))
-            //{
-            //    article.Author = "Teacher";
-            //}
-            //return View(article);
 
         }
 
         [HttpPost]
-        public IActionResult Create(Article obj, IFormFile? file)
+        public IActionResult Create(PostCreateViewModel obj, IFormFile? file)
         {
             //obj.ImageUrl = file.FileName;
 
@@ -150,10 +144,30 @@ namespace StudentGuidence.Areas.Visitor.Controllers
                     {
                         file.CopyTo(fileStreams);
                     }
-                    obj.ImageUrl = @"\images\article\" + fileName + extension;
+                    obj.Article.ImageUrl = @"\images\article\" + fileName + extension;
                 }
 
-                _db.Articles.Add(obj);
+                if (obj.AuthorType == SD.Teacher)
+                {
+
+                    Teacher teacher = new Teacher();
+                    teacher = obj.Teacher;
+                    teacher.ArticleId = obj.Article.Id;
+                    _db.Teachers.Update(teacher);
+                    _db.SaveChanges();
+
+                }
+
+                else if (obj.AuthorType == SD.Student)
+                {
+                    Student student = new Student();
+                    student = obj.Student;
+                    student.ArticleId = obj.Article.Id;
+                    _db.Students.Update(student);
+                    _db.SaveChanges();
+                }
+                obj.Article.Id = 0;
+                _db.Articles.Add(obj.Article);
                 _db.SaveChanges();
 
                 return RedirectToAction("Post1", obj);

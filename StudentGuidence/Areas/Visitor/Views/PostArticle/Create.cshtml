@@ -1,20 +1,52 @@
-﻿@model StudentGuidence.Models.Article
+﻿@model StudentGuidence.Models.ViewModels.PostCreateViewModel
+@using StudentGuidence.Utility;
 @{
     ViewData["Title"] = "Create";
 }
 <h1 clsass="text-center py-5">Create Article</h1>
 
-@if (Model.AuthorId == null)
+@if (Model.Article.AuthorId == null)
 {
-    <h2>Poster: </h2> @Model.Author;
+    <h2>Poster: </h2> @Model.Author
 }
-else
+else if (Model.AuthorType == SD.Teacher)
 {
-    <h2>Name Of Poster: @ViewBag.Poster</h2>
+    <h2>Name Of Poster: @Model.Author</h2>
 }
 <form method="post" asp-controller="PostArticle" enctype="multipart/form-data" asp-action="Create" class="form-control form-control-lg h-100 mb-3">
+
+    @if (Model.AuthorType == SD.Teacher)
+    {
+        <input hidden asp-for="@Model.Teacher.Id" class="form-control form-control-lg border-primary" />
+        <input hidden asp-for="@Model.Teacher.FirstName" class="form-control form-control-lg border-primary" />
+        <input asp-for="@Model.Teacher.LastName" hidden />
+        <input asp-for="@Model.Teacher.Email" hidden />
+        <input asp-for="@Model.Teacher.Phone" hidden class="form-control form-control-lg border-primary" />
+        <input asp-for="@Model.Teacher.Degree" hidden class="form-control form-control-lg border-primary" />
+        <input asp-for="@Model.Teacher.Province" hidden class="form-control form-control-lg border-primary" />
+        <input asp-for="@Model.Teacher.ImageUrl" hidden class="form-control form-control-lg border-primary" />
+        <input asp-for="@Model.Teacher.District" hidden class="form-control form-control-lg border-primary" />
+        <input asp-for="@Model.Teacher.Faculty" hidden class="form-control form-control-lg border-primary" />
+        <input asp-for="@Model.Teacher.FacultyId" hidden class="form-control form-control-lg border-primary" />
+    }
+    else if(Model.AuthorType==SD.Student)
+    {
+        <input asp-for="@Model.Student.Id" hidden />
+        <input asp-for="@Model.Student.FristName" hidden />
+        <input asp-for="@Model.Student.LastName" hidden />
+        <input asp-for="@Model.Student.Article" hidden />
+        <input asp-for="@Model.Student.ArticleId" hidden />
+        <input asp-for="@Model.Student.DepartmentId" hidden />
+        <input asp-for="@Model.Student.Department" hidden />
+        <input asp-for="@Model.Student.District" hidden />
+        <input asp-for="@Model.Student.ImageUrl" hidden />
+        <input asp-for="@Model.Student.Email" hidden />
+        <input asp-for="@Model.Student.Province" hidden />
+        <input asp-for="@Model.Student.UniversityStartDate" hidden />
+    }
+    <input asp-for="@Model.Article.Id" hidden />
+    <input asp-for="@Model.AuthorType" hidden />
     <div>
-        
         <div class="row pb-2">
             <h2 class="text-primary">Create Article</h2>
         </div>
@@ -22,22 +54,23 @@ else
         <div class="row">
             <div class="col-6">
                 <div class="mb-3">
-                    <label asp-for="Title"></label>
-                    <input asp-for="Title" class="form-control form-control-lg border-primary" />
-                    <span asp-validation-for="Title" class="text-danger"></span>
+                    <label asp-for="@Model.Article.Title"></label>
+                    <input asp-for="@Model.Article.Title" class="form-control form-control-lg border-primary" />
+                    <span asp-validation-for="@Model.Article.Title" class="text-danger"></span>
                 </div>
+
             </div>
             <div class="col-6">
                 <div class="mb-3">
-                    <label asp-for="Author"></label>
-                    <input asp-for="Author" class="form-control form-control-lg border-primary" />
+                    <label asp-for="@Model.Article.Author"></label>
+                    <input asp-for="@Model.Article.Author" class="form-control form-control-lg border-primary" />
                 </div>
             </div>
-            <input asp-for="AuthorId" hidden/>
+            <input asp-for="@Model.Article.AuthorId" hidden />
         </div>
         <div class="mb-3">
-            <label asp-for="Description"></label>
-            <textarea class="form-control" rows="8" asp-for="Description"></textarea>
+            <label asp-for="@Model.Article.Description"></label>
+            <textarea class="form-control" rows="8" asp-for="@Model.Article.Description"></textarea>
         </div>
         @*<div class="mb-3">
                 <label asp-for="ImageUrl"></label>

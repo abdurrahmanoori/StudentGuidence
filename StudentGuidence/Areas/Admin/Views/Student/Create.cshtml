@@ -22,6 +22,11 @@
             <span asp-validation-for="LastName" class="text-danger"></span>
         </div>
 
+        <div class="mb-3 ">
+            <label asp-for="Email"></label>
+            <input asp-for="Email" class="form-control form-control-lg border-primary" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
 
         <div class="mb-3 ">
             <label asp-for="Province"></label>
@@ -53,11 +58,11 @@
             <span asp-validation-for="DepartmentId" class="text-danger"></span>
         </div>
 
-        <div class="mb-3">
+        @*<div class="mb-3">
             <label asp-for="ArticleId"></label>
             <select class="form-control" asp-for="ArticleId" asp-items="@(ViewBag.aritcleList)"></select>
             <span asp-validation-for="ArticleId" class="text-danger"></span>
-        </div>
+        </div>*@
 
         <button type="submit" class="btn btn-outline-success" style="width:150px">
             Create
