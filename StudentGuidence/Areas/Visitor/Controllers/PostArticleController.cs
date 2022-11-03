@@ -96,7 +96,7 @@ namespace StudentGuidence.Areas.Visitor.Controllers
                 Student = new Student(),
                 Article = new Article()
             };
-            
+
             //        model.Article = article;
             if (User.IsInRole(SD.Teacher))
             {
@@ -149,13 +149,12 @@ namespace StudentGuidence.Areas.Visitor.Controllers
 
                 if (obj.AuthorType == SD.Teacher)
                 {
-
                     Teacher teacher = new Teacher();
+
                     teacher = obj.Teacher;
                     teacher.ArticleId = obj.Article.Id;
                     _db.Teachers.Update(teacher);
                     _db.SaveChanges();
-
                 }
 
                 else if (obj.AuthorType == SD.Student)
@@ -170,23 +169,26 @@ namespace StudentGuidence.Areas.Visitor.Controllers
                 _db.Articles.Add(obj.Article);
                 _db.SaveChanges();
 
-                return RedirectToAction("Post1", obj);
+                //   return RedirectToAction("Post1", new { obj1=obj});
+                return View("Post1", obj);
             }
             return View(obj);
         }
 
         [HttpGet]
-        public async Task<IActionResult> Post1(Article article)
+        public async Task<IActionResult> Post1(PostCreateViewModel model1)
         {
+            Article article = new Article();
 
             PostDisplayViewModel model = new PostDisplayViewModel
             {
                 Article = article
             };
-            // Get the user from AspNetUser table
-            var user = await userManager.FindByIdAsync(article.AuthorId);
 
-            if (article.Author == SD.Teacher)//If the user is Teacher, then find the correspoding user from teacher table.
+            // Get the user from AspNetUser table
+            var user = await userManager.FindByIdAsync(model.Article.AuthorId);
+
+            if (model.Article.Author == SD.Teacher)//If the user is Teacher, then find the correspoding user from teacher table.
             {
                 Teacher teacher = _db.Teachers.FirstOrDefault(u => u.Email == user.Email);
                 model.Teacher = teacher;
