@@ -83,7 +83,7 @@ namespace StudentGuidence.Areas.Visitor.Controllers
         {
             var claimIdentity = (ClaimsIdentity)User.Identity;
             var claim = claimIdentity.FindFirst(ClaimTypes.NameIdentifier);
-            string userId = claim.Value;
+             string userId = claim.Value;
 
             ViewBag.Poster = null;
 
@@ -94,7 +94,7 @@ namespace StudentGuidence.Areas.Visitor.Controllers
             {
                 Teacher = new Teacher(),
                 Student = new Student(),
-                Article = new Article()
+                Article = new Article(),
             };
 
             //        model.Article = article;
@@ -104,8 +104,14 @@ namespace StudentGuidence.Areas.Visitor.Controllers
                 model.Article.AuthorId = user.Id;
                 model.Teacher = _db.Teachers.FirstOrDefault(u => u.Email == user.Email);
                 model.Author = _db.Teachers.FirstOrDefault(u => u.Email == user.Email).FirstName;
-                model.Article.Id = _db.Articles.FirstOrDefault(u => u.AuthorId == user.Id).Id;
                 model.AuthorType = SD.Teacher;
+                if (_db.Articles.FirstOrDefault(u => u.AuthorId == user.Id) == null)
+                {
+                    return View(model);
+                    //return NotFound("There is no related aritcle man");
+                }
+
+                model.Article.Id = _db.Articles.FirstOrDefault(u => u.AuthorId == user.Id).Id;
                 return View(model);
             }
             else if (User.IsInRole(SD.Student))
@@ -120,10 +126,10 @@ namespace StudentGuidence.Areas.Visitor.Controllers
             }
             else
             {
+                model.AuthorType = SD.Admin;
                 model.Author = SD.Admin;
                 return View(model);
             }
-
         }
 
         [HttpPost]
@@ -149,60 +155,86 @@ namespace StudentGuidence.Areas.Visitor.Controllers
 
                 if (obj.AuthorType == SD.Teacher)
                 {
+
+                    obj.Article.Id = 0;
+                    _db.Articles.Add(obj.Article);
+                    _db.SaveChanges();
+
+
+
                     Teacher teacher = new Teacher();
 
                     teacher = obj.Teacher;
-                    teacher.ArticleId = obj.Article.Id;
+
+                    //teacher.ArticleId = obj.Article.Id;
+                    teacher.ArticleId = _db.Articles.OrderByDescending(u => u.Id).First().Id;
                     _db.Teachers.Update(teacher);
                     _db.SaveChanges();
+                    return View("Post1", obj);
                 }
 
                 else if (obj.AuthorType == SD.Student)
                 {
+                    obj.Article.Id = 0;
+                    _db.Articles.Add(obj.Article);
+                    _db.SaveChanges();
+
                     Student student = new Student();
                     student = obj.Student;
-                    student.ArticleId = obj.Article.Id;
+                    student.ArticleId = _db.Articles.OrderByDescending(u => u.Id).First().Id;
                     _db.Students.Update(student);
                     _db.SaveChanges();
+                    return View("Post1", obj);
                 }
-                obj.Article.Id = 0;
-                _db.Articles.Add(obj.Article);
-                _db.SaveChanges();
+                
+                else
+                {
+                    var claimIdentity = (ClaimsIdentity)User.Identity;
+                    var claim = claimIdentity.FindFirst(ClaimTypes.NameIdentifier);
+                    string userId = claim.Value;
 
-                //   return RedirectToAction("Post1", new { obj1=obj});
-                return View("Post1", obj);
+                    obj.Article.Author = obj.AuthorType;
+                    obj.Article.AuthorId = userId;
+
+                    obj.Article.Id = 0;
+                    _db.Articles.Add(obj.Article);
+                    _db.SaveChanges();
+
+                    //   return RedirectToAction("Post1", new { obj1=obj});
+                    return View("Post1", obj);
+                }
             }
             return View(obj);
         }
 
-        [HttpGet]
-        public async Task<IActionResult> Post1(PostCreateViewModel model1)
-        {
-            Article article = new Article();
+        //[HttpGet]
+        //public async Task<IActionResult> Post1(PostCreateViewModel model1)
+        //{
+        //    Article article = new Article();
 
-            PostDisplayViewModel model = new PostDisplayViewModel
-            {
-                Article = article
-            };
+        //    PostDisplayViewModel model = new PostDisplayViewModel
+        //    {
+        //        Article = article
+        //    };
 
-            // Get the user from AspNetUser table
-            var user = await userManager.FindByIdAsync(model.Article.AuthorId);
+        //    // Get the user from AspNetUser table
+        //    var user = await userManager.FindByIdAsync(model.Article.AuthorId);
 
-            if (model.Article.Author == SD.Teacher)//If the user is Teacher, then find the correspoding user from teacher table.
-            {
-                Teacher teacher = _db.Teachers.FirstOrDefault(u => u.Email == user.Email);
-                model.Teacher = teacher;
-                model.ArticlesList = _db.Articles.Where(u => u.AuthorId == user.Id);
-            }
+        //    if (model.Article.Author == SD.Teacher)//If the user is Teacher, then find the correspoding user from teacher table.
+        //    {
+        //        Teacher teacher = _db.Teachers.FirstOrDefault(u => u.Email == user.Email);
+        //        model.Teacher = teacher;
+        //        model.ArticlesList = _db.Articles.Where(u => u.AuthorId == user.Id);
+        //    }
 
-            else if (article.Author == SD.Student)
-            {
-                Student student = _db.Students.FirstOrDefault(u => u.Email == user.Email);
-                model.Student = student;
-                model.ArticlesList = _db.Articles.Where(u => u.AuthorId == user.Id);
-            }
-            return View(model);
-        }
+        //    else if (article.Author == SD.Student)
+        //    {
+        //        Student student = _db.Students.FirstOrDefault(u => u.Email == user.Email);
+        //        model.Student = student;
+        //        model.ArticlesList = _db.Articles.Where(u => u.AuthorId == user.Id);
+        //    }
+        //    return View(model);
+        //}
 
     }
 }

@@ -9,10 +9,12 @@
 {
     <h2>Poster: </h2> @Model.Author
 }
+
 else if (Model.AuthorType == SD.Teacher)
 {
     <h2>Name Of Poster: @Model.Author</h2>
 }
+
 <form method="post" asp-controller="PostArticle" enctype="multipart/form-data" asp-action="Create" class="form-control form-control-lg h-100 mb-3">
 
     @if (Model.AuthorType == SD.Teacher)
@@ -29,6 +31,7 @@ else if (Model.AuthorType == SD.Teacher)
         <input asp-for="@Model.Teacher.Faculty" hidden class="form-control form-control-lg border-primary" />
         <input asp-for="@Model.Teacher.FacultyId" hidden class="form-control form-control-lg border-primary" />
     }
+
     else if(Model.AuthorType==SD.Student)
     {
         <input asp-for="@Model.Student.Id" hidden />
@@ -44,6 +47,7 @@ else if (Model.AuthorType == SD.Teacher)
         <input asp-for="@Model.Student.Province" hidden />
         <input asp-for="@Model.Student.UniversityStartDate" hidden />
     }
+
     <input asp-for="@Model.Article.Id" hidden />
     <input asp-for="@Model.AuthorType" hidden />
     <div>
