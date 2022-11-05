@@ -1,7 +1,12 @@
 ﻿@model StudentGuidence.Models.Student
+@{
+    ViewData["Title"] = "AddRegistrationDetail";
+}
+<h1>AddRegistrationDetail</h1>
+
 
 <sction class="contianer-fluid">
-    <p  class="display-5  text-center pt-5"> ثبت پاڼه </p>
+    <p class="display-5  text-center pt-5"> ثبت پاڼه </p>
     <div class="form-group ">
         <form class="form-control form-control-lg h-100 border-danger py-5 mb-3">
             <lable><p class="text-end">  :شخصی معلومات </p></lable>
@@ -14,27 +19,21 @@
                     <input asp-for="LastName" placeholder="  تخلص  " class="form-control form-control-lg border-primary" />
                     <span asp-validation-for="LastName"></span>
                 </div>
-                <div class="col">
-                    <input name="father name" placeholder="  پلار نوم  " class="form-control form-control-lg border-primary" />
-                </div>
             </div>
 
             <div class="row py-3">
                 <div class="col">
 
-                    <input type="text" name="Email" placeholder=" بریښنا لیک" class="form-control form-control-lg border-primary" />
-                </div>
-                <div class="col">
-                    <input type="password" name="password" placeholder=" پټ نوم " class="form-control form-control-lg border-primary" />
+                    <input asp-for="Email" placeholder=" بریښنا لیک" class="form-control form-control-lg border-primary" />
                 </div>
             </div>
             <div class="row py-3">
                 <div class="col">
-
                     <input type="text" name="Email" placeholder=" پوهنتون " class="form-control form-control-lg border-primary" />
                 </div>
                 <div class="col">
-                    <input type="text" name="password" placeholder=" پوهنځی " class="form-control form-control-lg border-primary" />
+                    @*<input type="text" name="password" placeholder=" پوهنځی " class="form-control form-control-lg border-primary" />*@
+                    <select asp-for="@Model.DepartmentId" asp-items="@ViewBag.departmentList" class="form-control"></select>
                 </div>
             </div>
             <div class="row py-3">
@@ -72,3 +71,4 @@
         <partial name="_ValidationScriptsPartial" />
     }
 }
+

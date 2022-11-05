@@ -36,6 +36,16 @@ namespace StudentGuidence.Controllers
             return View(_db.Universities.ToList());
         }
 
+        public IActionResult Faculty(int universityId)
+        {
+
+            return View();
+
+        }
+
+        
+        
+
         //================= Team Page ==================//
         public IActionResult Team()
         {

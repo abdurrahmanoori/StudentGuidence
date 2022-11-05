@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using StudentGuidenc.DataAccess;
 using StudentGuidence.Models;
 using StudentGuidence.Models.ViewModels;
@@ -114,6 +116,33 @@ namespace StudentGuidence.Areas.Identity.Controllers
             }
             return View(model);
         }
+
+        public async Task<IActionResult> AddRegistrationDetail()
+        {
+            var claimIdentity = (ClaimsIdentity)User.Identity;
+            var claim = claimIdentity.FindFirst(ClaimTypes.NameIdentifier);
+            string userId = claim.Value;
+
+            var user = await userManager.FindByIdAsync(userId);
+            Student student = _db.Students.FirstOrDefault(u => u.Email == user.Email);
+
+            ViewBag.departmentList = _db.Departments.ToList().Select(u =>
+            new SelectListItem
+            {
+                Text = u.Name,
+                Value = u.Id.ToString()
+            });
+
+            
+            return View(student);
+        }
+
+        [HttpPost]
+        public IActionResult AddRegistrationDetail(Student obj)
+        {
+            return View();
+        }
+
         [HttpGet]
         [AllowAnonymous]
         public IActionResult Login()

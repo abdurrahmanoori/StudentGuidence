@@ -33,10 +33,10 @@ namespace StudentGuidence.Areas.Admin.Controllers
         //    return RedirectToAction("Create")
         //}
 
-        public IActionResult Detail(int id)
-        {
-            return View(_db.Students.Find(id));
-        }
+        public IActionResult Detail(int id) => View(_db.Students.Find(id));
+        //{
+        //    return View(_db.Students.Find(id));
+        //}
 
         public IActionResult Index()
         {
