@@ -19,6 +19,10 @@
     <Compile Remove="Migrations\20221020013248_AddUserTypeToApplicationUserModel22.Designer.cs" />
     <Compile Remove="Migrations\20221026100425_RquiredAttributeRemovedFromStudentAndTeacher.cs" />
     <Compile Remove="Migrations\20221026100425_RquiredAttributeRemovedFromStudentAndTeacher.Designer.cs" />
+    <Compile Remove="Migrations\20221105150722_addFacultyAndUniversityColumnToStudent.cs" />
+    <Compile Remove="Migrations\20221105150722_addFacultyAndUniversityColumnToStudent.Designer.cs" />
+    <Compile Remove="Migrations\20221106014150_addForeigKeyName.cs" />
+    <Compile Remove="Migrations\20221106014150_addForeigKeyName.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

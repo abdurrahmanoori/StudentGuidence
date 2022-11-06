@@ -33,5 +33,14 @@ namespace StudentGuidence.Models
 
         [ForeignKey("ArticleId")]
         public Article Article { get; set; }
+
+        public int? FacultyId { get; set; }
+        [ForeignKey(name: "FacultyId")]
+        public Faculty Faculty { get; set; }
+        
+        public int? UniversityId { get; set; }
+        [ForeignKey(name:"UniversityId")]
+        public University University { get; set; }
+
     }
 }

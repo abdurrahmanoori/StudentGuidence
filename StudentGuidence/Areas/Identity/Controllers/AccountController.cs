@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using StudentGuidenc.DataAccess;
+using StudentGuidence.DataAccess.Data;
 using StudentGuidence.Models;
 using StudentGuidence.Models.ViewModels;
 using StudentGuidence.Utility;
@@ -20,13 +24,15 @@ namespace StudentGuidence.Areas.Identity.Controllers
         private readonly AppDbContext _db;
         private readonly UserManager<ApplicationUser> userManager;
         private readonly SignInManager<ApplicationUser> signInManager;
+        private readonly IWebHostEnvironment _iWebHostEnvironment;
 
         public AccountController(AppDbContext db, UserManager<ApplicationUser> userManager,
-            SignInManager<ApplicationUser> signInManager)
+            SignInManager<ApplicationUser> signInManager, IWebHostEnvironment webHostEnvironment)
         {
             _db = db;
             this.userManager = userManager;
             this.signInManager = signInManager;
+            _iWebHostEnvironment = webHostEnvironment;
         }
 
         //[AcceptVerbs("GET","POST")]
@@ -92,9 +98,13 @@ namespace StudentGuidence.Areas.Identity.Controllers
                 {
                     Student student = new Student
                     {
-                        Email = model.Email
+                        Email = model.Email,
+                        FacultyId=null,
+                        UniversityId=null
+                        
                     };
-                    _db.Students.Update(student);
+                    //student.FacultyId = 1008;
+                    _db.Students.Add(student);
                     _db.SaveChanges();
                 }
 
@@ -133,14 +143,77 @@ namespace StudentGuidence.Areas.Identity.Controllers
                 Value = u.Id.ToString()
             });
 
-            
+            ViewBag.universityList = _db.Universities.ToList().Select(u =>
+            new SelectListItem
+            {
+                Text = u.Name,
+                Value = u.Id.ToString()
+            });
+            ViewBag.facultyList = _db.Faculties.ToList().Select(u =>
+            new SelectListItem
+            {
+                Text = u.Name,
+                Value = u.Id.ToString()
+            });
+
             return View(student);
         }
 
+        //[HttpPost]
+        //public IActionResult AddRegistrationDetail(Student obj)
+        //{
+        //    return View();
+        //}
+
         [HttpPost]
-        public IActionResult AddRegistrationDetail(Student obj)
+        public IActionResult AddRegistrationDetail(Student student, IFormFile? file)
         {
-            return View();
+            Student student1 = new Student
+            {
+                Id = student.Id,
+                FristName = student.FristName,
+                LastName = student.LastName,
+                Email = student.Email,
+                Province = student.Province,
+                District = student.District,
+                ImageUrl = GetImageUrl(student),
+                UniversityStartDate = student.UniversityStartDate,
+                DepartmentId = student.DepartmentId,
+                ArticleId = student.ArticleId,
+                FacultyId=student.FacultyId,
+                UniversityId=student.UniversityId
+            };
+
+            if (ModelState.IsValid)
+            {
+                string wwwRootPath = _iWebHostEnvironment.WebRootPath;
+                if (file != null)
+                {
+                    string fileName = Guid.NewGuid().ToString();
+                    var uploads = Path.Combine(wwwRootPath, @"images\student");
+                    var extension = Path.GetExtension(file.FileName);
+                    if (student1.ImageUrl != null)
+                    {
+                        //LOGIC ABOUT DELETING OLD IMAGE
+                        var oldImagePath = Path.Combine(wwwRootPath, student1.ImageUrl.TrimStart('\\'));
+                        if (System.IO.File.Exists(oldImagePath))
+                        {
+                            System.IO.File.Delete(oldImagePath);
+                        }
+                    }
+
+                    using (var fileStreams = new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
+                    {
+                        file.CopyTo(fileStreams);
+                    }
+                    student1.ImageUrl = @"\images\student\" + fileName + extension;
+                }
+
+                _db.Students.Update(student1);
+                _db.SaveChanges();
+                return RedirectToAction("Index","Home",new { Area="Visitor"});
+            }
+            return View(student1);
         }
 
         [HttpGet]
@@ -186,7 +259,6 @@ namespace StudentGuidence.Areas.Identity.Controllers
         }
         //[HttpPost]
         [AllowAnonymous]
-        //[Authorize(Roles ="User")]
         public async Task<IActionResult> Logout()
         {
             await signInManager.SignOutAsync();
@@ -196,6 +268,16 @@ namespace StudentGuidence.Areas.Identity.Controllers
             });
             //return RedirectToAction("Login");
             //return Redirect("~Visitor/Home/Index");
+        }
+
+        public string GetImageUrl(Student student)
+        {
+            using (AppDbContext2 context = new AppDbContext2())
+            {
+                int id = student.Id;
+                return context.Students.Find(id).ImageUrl;
+            }
+
         }
 
         //public string CheckUser(string userType)

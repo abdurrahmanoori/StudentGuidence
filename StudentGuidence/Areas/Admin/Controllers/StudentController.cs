@@ -77,7 +77,7 @@ namespace StudentGuidence.Areas.Admin.Controllers
         public IActionResult Create(Student student, IFormFile file)
         {
 
-            student.ImageUrl = file.FileName;
+            //student.ImageUrl = file.FileName;
 
             if (ModelState.IsValid)
             {
@@ -142,7 +142,7 @@ namespace StudentGuidence.Areas.Admin.Controllers
                 Email=student.Email,
                 Province = student.Province,
                 District = student.District,
-                ImageUrl = student.ImageUrl,
+                ImageUrl = GetImageUrl(student),
                 UniversityStartDate = student.UniversityStartDate,
                 DepartmentId = student.DepartmentId,
                 ArticleId = student.ArticleId
