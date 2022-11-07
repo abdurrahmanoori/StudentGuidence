@@ -1,7 +1,131 @@
-﻿
+﻿@model IEnumerable<StudentGuidence.Models.Faculty>
 @{
     ViewData["Title"] = "Faculty";
 }
+@* University Picture Showing Section *@
+<section>
+    <div class="container">
+        <a href="#">
+            <div>
+                <marquee behavior="scroll" direction="right"><p class="display-3 text-center text-dark">ته ښه راغلاست  <label class="rounded"> ننګرهار پوهنتون</label></p></marquee>
+            </div>
+            <div class="card mb-3">
+                <img src="@Model.ElementAtOrDefault(0).University.ImageUrl" style="height:500px;opacity:3;transition:.5s ease;backface-visibility:hidden;" class="card-img-top">
+                <div class="card-body text-end">
+                    <div class="row">
+                        <div class="col-8 text-end">
+                            <h5><label>@Model.ElementAtOrDefault(0).University.Name</label></h5>
+                            <h5><label>@Model.ElementAtOrDefault(0).University.Establishment.ToString("d") </label></h5>
+                        </div>
+                        <div class="col-4 text-end">
+                            <h5><label>:  د پوهنتون نوم</label></h5>
+                            <h5><label>:  د پوهنتون جوړیدوتاریخ </label></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</section>
+@*Faculties Pictures Showing Section *@
+<section>
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            @foreach (var faculty in Model)
+            {
+            <a href="#" class="">
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="@faculty.ImageUrl" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="text-center text-secondary"><h4>ته ښه راغلاست  <label class="rounded">@faculty.Name</label></h4></p>
+                        </div>
+                        @*<div class="card-footer">
+                            <small class="text-muted">د تاریخ ښودنه</small>
+                        </div>*@
+                    </div>
+                </div>
+            </a>
+            }
+            
+        </div>
+    </div>
+</section>
 
-<h1>Faculty list</h1>
+@*@model IEnumerable<StudentGuidence.Models.Faculty>
+    @{
+        ViewData["Title"] = "Faculty";
+    }
+    <h1>Faculty list</h1>
 
+    <section class="bg-light p-0">
+        <div class="container p-5">
+
+            <div class="card text-bg-dark">
+                <img src="~/templateImage/Department of Software Engineering.jpg" class="card-img" alt="...">
+                <div class="card-img-overlay text-center" lang="ar" dir="rtl">
+                    <div class="card-img-overlay" style="background: rgb(0, 0, 0);background: rgba(0, 0, 0, 0.5);color: #f1f1f1;">
+                        <h3><b>د ډیټابیس څخه ډیټا راخستل</b></h3>
+                        <p><b>دغه څانګه چې د کمپیوټر ساینس یو برخه ده. نو اړینه ده چې عمق د زده کړی ته یی ځان ورسوه.</b></p>
+                    </div>
+                </div>
+            </div>
+            <hr class="bg-black" />
+            <hr class="bg-danger" />
+            <hr class="bg-success" />
+            @foreach (Faculty faculty in Model)
+            {
+            <div class="row" lang="ar" dir="rtl">
+                <div class="col-md-6 fw-bold">
+                    <h5>د څانګې نوم: </h5>
+                    <h5>د څانګې تاریخ: </h5>
+                    <h5>د څانګې اولیه مواد</h5>
+                </div>
+                <div class="col-md-6 fw-normal">
+                    <h5>@faculty.Name</h5>
+                    <h5>@faculty.History</h5>
+                    <h5>@faculty.PreRequirment</h5>
+                </div>
+            </div>
+            }
+        </div>
+    </section>
+
+    <section class="bg-light p-0 mt-5 mb-5">
+        <div class="container">
+            <div lang="ar" dir="rtl">
+                <h5 class="card-title"> سافټویر انجنیرنګ څانګه  </h5>
+                <p class="card-text">
+                    سافټویر انجنیرنګ څانګه یو د مهمو څانګو د کمپیوټر څخه ده چې ټول اساس یی د يو پروګرام په ښه کولو کې تر ټولو مهم رول لوبوي.
+                    البته دغه برخه د یو پروګرام په جوړولو کی ده لازم موادو په راجمعه کولو, د هغه ډیزاین کول او هغه ته یو ښه پروګرام لیکل دی.
+                </p>
+                <p class="card-text"><small class="text-muted">تاریخ</small></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light p-0">
+        <div class="container" lang="ar" dir="rtl">
+
+
+            <div class="section-title">
+                <h5> د سافټویر څانګې د استادانو او محصلینو مقالې </h5>
+                <p>تاسو د دغه ځایه کولای شې د محترمو استادانو بیلابیلو علمی او ساینسې لیکنو ته لاس پیدا کړی.</p>
+            </div>
+
+            <table class="table table-light table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">د سافټویر څانګې استادانو مقالې</th>
+                        <th scope="col">د سافټویر څانګې د محصلینو  مقالې</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="#" class="link-primary">Mark</a></td>
+                        <td><a href="#" class="link-primary">Mark</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>*@

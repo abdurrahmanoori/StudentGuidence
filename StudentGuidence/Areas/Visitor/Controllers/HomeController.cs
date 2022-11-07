@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using StudentGuidenc.DataAccess;
 //using StudentGuidence.Models;
@@ -21,11 +22,12 @@ namespace StudentGuidence.Controllers
         {
             _db = db;
         }
- 
+
         public IActionResult TestShow()
         {
             return View();
         }
+
         public IActionResult Index()
         {
             return View();
@@ -38,13 +40,10 @@ namespace StudentGuidence.Controllers
 
         public IActionResult Faculty(int universityId)
         {
-
-            return View();
-
+            //var faculties= _db.Faculties.ToList().Where(u => u.UniversityId == universityId);
+            var faculties = _db.Faculties.Where(u => u.UniversityId == universityId).Include(u=>u.University).ToList();
+            return View(faculties);
         }
-
-        
-        
 
         //================= Team Page ==================//
         public IActionResult Team()

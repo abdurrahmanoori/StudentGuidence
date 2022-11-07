@@ -280,9 +280,6 @@ namespace StudentGuidence.Areas.Identity.Controllers
 
         }
 
-        //public string CheckUser(string userType)
-        //{
-
-        //}
+     
     }
 }

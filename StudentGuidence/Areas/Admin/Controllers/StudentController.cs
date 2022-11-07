@@ -33,7 +33,15 @@ namespace StudentGuidence.Areas.Admin.Controllers
         //    return RedirectToAction("Create")
         //}
 
-        public IActionResult Detail(int id) => View(_db.Students.Find(id));
+        public IActionResult Detail(int id)
+        {
+            
+
+            return View(_db.Students.Include(u => u.University).Include(
+                u => u.Faculty).Include(u => u.Department).FirstOrDefault(u => u.Id == id));
+                
+        }
+            //=> View(_db.Students.Find(id));
         //{
         //    return View(_db.Students.Find(id));
         //}
@@ -55,19 +63,6 @@ namespace StudentGuidence.Areas.Admin.Controllers
                       Value = u.Id.ToString()
                   }
                 );
-            //ViewBag.aritcleList = _db.Articles.ToList().Select(u =>
-            // new SelectListItem
-            // {
-            //     Text = u.Title,
-            //     Value = u.Id.ToString()
-            // });
-
-            //ViewBag.universityList = _db.Universities.ToList().Select(u =>
-            //new SelectListItem
-            //{
-            //    Text = u.Name,
-            //    Value = u.Id.ToString()
-            //});
             return View();
         }
 
@@ -139,7 +134,7 @@ namespace StudentGuidence.Areas.Admin.Controllers
                 Id = student.Id,
                 FristName = student.FristName,
                 LastName = student.LastName,
-                Email=student.Email,
+                Email = student.Email,
                 Province = student.Province,
                 District = student.District,
                 ImageUrl = GetImageUrl(student),
@@ -188,7 +183,7 @@ namespace StudentGuidence.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            Student student= _db.Students.Find(id);
+            Student student = _db.Students.Find(id);
             if (student != null)
             {
                 ViewBag.departmentList = _db.Departments.Select(u => new SelectListItem
@@ -200,7 +195,7 @@ namespace StudentGuidence.Areas.Admin.Controllers
                   new SelectListItem
                   {
                       Text = u.Title,
-                      Value=u.Id.ToString()
+                      Value = u.Id.ToString()
                   });
                 return View(student);
             }
@@ -212,7 +207,7 @@ namespace StudentGuidence.Areas.Admin.Controllers
         [ActionName("Delete")]
         public IActionResult DeletePost(int id)
         {
-            Student student= _db.Students.Find(id);
+            Student student = _db.Students.Find(id);
             string wwwRootPath = _iWebHostEnvironment.WebRootPath;
 
             if (student.ImageUrl != null)

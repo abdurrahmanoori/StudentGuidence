@@ -13,9 +13,13 @@ namespace StudentGuidence.DataAccess.Data
             optionsBuilder.UseSqlServer("server=.; Database=StudentGuidenceDb; Trusted_Connection=True;");
         }
         public DbSet<Faculty> Faculties { get; set; }
+
         public DbSet<Article> Articles { get; set; }
 
+        public DbSet<Department> Departments { get; set; }
+
         public DbSet<Student> Students { get; set; }
+
         public DbSet<Teacher> Teachers { get; set; }
 
         public DbSet<University> Universities { get; set; }

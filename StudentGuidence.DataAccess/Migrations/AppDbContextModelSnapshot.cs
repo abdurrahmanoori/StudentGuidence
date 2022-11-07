@@ -318,12 +318,17 @@ namespace StudentGuidence.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("UniversityId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("FacultyId");
 
                     b.HasIndex("Name")
                         .IsUnique();
+
+                    b.HasIndex("UniversityId");
 
                     b.ToTable("Departments");
                 });
@@ -567,6 +572,10 @@ namespace StudentGuidence.DataAccess.Migrations
                         .HasForeignKey("FacultyId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("StudentGuidence.Models.University", "University")
+                        .WithMany()
+                        .HasForeignKey("UniversityId");
                 });
 
             modelBuilder.Entity("StudentGuidence.Models.Faculty", b =>

@@ -24,6 +24,13 @@
             <textarea asp-for="PreRequirment" rows="7" class="form-control form-control-lg border-primary"></textarea>
             <span asp-validation-for="PreRequirment" class="text-danger"></span>
         </div>
+        
+        <div class="mb-3">
+            <label asp-for="UniversityId"></label>
+            <select class="form-control" asp-for="UniversityId" asp-items="@(ViewBag.univesityList)"></select>
+            <span asp-validation-for="UniversityId" class="text-danger"></span>
+        </div>
+
         <div class="mb-3">
             <label asp-for="FacultyId"></label>
             <select class="form-control" asp-for="FacultyId" asp-items="@(ViewBag.facultyList)"></select>

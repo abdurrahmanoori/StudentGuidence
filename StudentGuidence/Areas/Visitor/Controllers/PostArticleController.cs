@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using StudentGuidenc.DataAccess;
+using StudentGuidence.DataAccess.Data;
 using StudentGuidence.Models;
 using StudentGuidence.Models.ViewModels;
 using StudentGuidence.Utility;
@@ -83,7 +84,7 @@ namespace StudentGuidence.Areas.Visitor.Controllers
         {
             var claimIdentity = (ClaimsIdentity)User.Identity;
             var claim = claimIdentity.FindFirst(ClaimTypes.NameIdentifier);
-             string userId = claim.Value;
+            string userId = claim.Value;
 
             ViewBag.Poster = null;
 
@@ -181,12 +182,21 @@ namespace StudentGuidence.Areas.Visitor.Controllers
 
                     Student student = new Student();
                     student = obj.Student;
+
+                    AppDbContext2 context2 = new AppDbContext2();
+
+                    // Get the student and related University, Faculty and Departemnt names.
+                    obj.Student = context2.Students.Include(
+                        u => u.University).Include(u => u.Faculty).Include(
+                        u => u.Department).FirstOrDefault(u => u.Id == obj.Student.Id);
+
+
                     student.ArticleId = _db.Articles.OrderByDescending(u => u.Id).First().Id;
                     _db.Students.Update(student);
                     _db.SaveChanges();
                     return View("Post1", obj);
                 }
-                
+
                 else
                 {
                     var claimIdentity = (ClaimsIdentity)User.Identity;

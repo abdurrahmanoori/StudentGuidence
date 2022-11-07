@@ -134,28 +134,32 @@
         </div>
         <h1 id="sub"> دلته د هغه پوهنتونونو په تړاو ټول معلومات ترلاسه کولای شي چي د کانکور امتحان له لاري یی انتخابوی</h1>
     </div>
-    <section id="portfolio" class="portfolio sections-bg">
-        <div class="container-fluid" data-aos="fade-up">
-            <div class="row gy-4 portfolio-container">
+@*    <form method="post" asp-action="Faculty">*@
+        <section id="portfolio" class="portfolio sections-bg">
+            <div class="container-fluid" data-aos="fade-up">
+                <div class="row gy-4 portfolio-container">
 
 
-                @foreach (var university in Model)
-                {
-                    <div class="col-xl-4 col-md-6 portfolio-item filter-app">
-                        <div class="portfolio-wrap">
-                            <a asp-controller="Home" asp-action="Faculty" asp-route-universityId="@university.Id" data-gallery="portfolio-gallery-app" class="glightbox">
-                                <img src="@university.ImageUrl" class="img-fluid" alt="">
-                            </a>
-                            <div class="portfolio-info">
-                                <h2><a asp-action="Faculty" asp-route-id="@university.Id" title="More Details"><b>@university.Name</b></a></h2>
-                                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                    @foreach (var university in Model)
+                    {
+                        <div class="col-xl-4 col-md-6 portfolio-item filter-app">
+                            <div class="portfolio-wrap">
+                                <a asp-area="Visitor" asp-controller="Home" asp-action="Faculty" data-gallery="portfolio-gallery-app" class="glightbox">
+                                    <img src="@university.ImageUrl" class="img-fluid" alt="">
+                                </a>
+                                <div class="portfolio-info">
+                                    @*<h2><button type="submit" asp-route-id="@university.Id" title="More Details"><b>@university.Name</b></button></h2>*@
+                                    <h2><a asp-action="Faculty" asp-route-universityId="@university.Id" title="More Details"><b>@university.Name</b></a></h2>
+                                    <p>Lorem ipsum, dolor sit amet consectetur</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                }
+                    }
+
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+  @*  </form>*@
 </body>
 </html>
 

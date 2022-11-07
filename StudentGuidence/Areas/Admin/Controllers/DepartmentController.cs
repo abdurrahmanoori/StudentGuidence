@@ -30,12 +30,20 @@ namespace StudentGuidence.Areas.Admin.Controllers
         //GET Create
         public IActionResult Create()
         {
-            ViewBag.departmentList = _db.Faculties.ToList().Select(u =>
+            ViewBag.facultyList = _db.Faculties.ToList().Select(u =>
              new SelectListItem
              {
                  Text = u.Name,
                  Value = u.Id.ToString()
              });
+
+            ViewBag.universityList = _db.Universities.ToList().Select(u => new
+             SelectListItem
+            {
+                Text = u.Name,
+                Value = u.Id.ToString()
+            });
+
             return View();
         }
 
@@ -52,6 +60,7 @@ namespace StudentGuidence.Areas.Admin.Controllers
             }
             return View(department);
         }
+
         //GET Edit
         public IActionResult Edit(int id)
         {
@@ -70,8 +79,16 @@ namespace StudentGuidence.Areas.Admin.Controllers
                 Text = u.Name,
                 Value = u.Id.ToString()
             });
+
+            ViewBag.univesityList = _db.Universities.ToList().Select(u => new
+            SelectListItem
+            {
+                Text = u.Name,
+                Value = u.Id.ToString()
+            });
             return View(department);
         }
+
         //POST Edit
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -97,6 +114,12 @@ namespace StudentGuidence.Areas.Admin.Controllers
             if (department != null)
             {
                 ViewBag.facultyList = _db.Faculties.Select(u => new SelectListItem
+                {
+                    Text = u.Name,
+                    Value = u.Id.ToString()
+                });
+
+                ViewBag.universityList = _db.Universities.Select(u => new SelectListItem
                 {
                     Text = u.Name,
                     Value = u.Id.ToString()
