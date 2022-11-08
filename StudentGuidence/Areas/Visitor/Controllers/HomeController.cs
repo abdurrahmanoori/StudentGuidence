@@ -4,12 +4,14 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using StudentGuidenc.DataAccess;
 //using StudentGuidence.Models;
 using StudentGuidence.Models;
+using StudentGuidence.Models.ViewModels;
 
 namespace StudentGuidence.Controllers
 {
@@ -17,10 +19,12 @@ namespace StudentGuidence.Controllers
     public class HomeController : Controller
     {
         private readonly AppDbContext _db;
+        private readonly UserManager<ApplicationUser> userManager;
 
-        public HomeController(AppDbContext db)
+        public HomeController(AppDbContext db, UserManager<ApplicationUser> userManager)
         {
             _db = db;
+            this.userManager = userManager;
         }
 
         public IActionResult TestShow()
@@ -33,17 +37,42 @@ namespace StudentGuidence.Controllers
             return View();
         }
 
-        public IActionResult Universities()
-        {
-            return View(_db.Universities.ToList());
-        }
+        public IActionResult Universities() => View(_db.Universities.ToList());
 
         public IActionResult Faculty(int universityId)
         {
             //var faculties= _db.Faculties.ToList().Where(u => u.UniversityId == universityId);
-            var faculties = _db.Faculties.Where(u => u.UniversityId == universityId).Include(u=>u.University).ToList();
+            var faculties = _db.Faculties.Where(u => u.UniversityId == universityId).Include(u => u.University).ToList();
             return View(faculties);
         }
+
+        public IActionResult Department(int id)
+        {
+            DepartmentListViewModel model = new DepartmentListViewModel();
+
+            model.Departments = _db.Departments.Where(u => u.FacultyId == id).Include(u => u.Faculty);
+
+            model.Articles = _db.Articles.ToList();
+
+            return View(model);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         //================= Team Page ==================//
         public IActionResult Team()

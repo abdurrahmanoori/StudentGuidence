@@ -60,23 +60,42 @@ namespace StudentGuidence.Areas.Visitor.Controllers
             return View(_db.Teachers.Include(u => u.Article).ToList());
         }
 
-        public async Task<IActionResult> TeacherDetail(int id)
+        public async Task<IActionResult> TeacherDetail(int? id, string? aspNetUserId)
         {
-            Teacher teacher = _db.Teachers.Find(id); // Find teacher Id in Teacher table.
-
-            var user = await userManager.FindByEmailAsync(teacher.Email);// as Email attribut is common is aspNetUser and Teacher
-            // tables we found aspNetUser using email property of Teacher table.
-
-            List<Article> ArtList = _db.Articles.Where(u => u.AuthorId == user.Id).ToList(); // We can find articles of a specefic user using 
-            // AuthorId property in Article. which is again common in aspNetUser table.
-
-            TeacherDetailViewModel model = new TeacherDetailViewModel
+            if (Convert.ToBoolean(id))
             {
-                Teacher = teacher,
-                ArticlesList = ArtList
+
+                Teacher teacher = _db.Teachers.Find(id); // Find teacher Id in Teacher table.
+
+                var user = await userManager.FindByEmailAsync(teacher.Email);// as Email attribut is common is aspNetUser and Teacher
+                                                                             // tables we found aspNetUser using email property of Teacher table.
+
+                List<Article> ArtList = _db.Articles.Where(u => u.AuthorId == user.Id).ToList(); // We can find articles of a specefic user using 
+                                                                                                 // AuthorId property in Article. which is again common in aspNetUser table.
+
+               TeacherDetailViewModel model = new TeacherDetailViewModel
+                {
+                    Teacher = teacher,
+                    ArticlesList = ArtList
+                };
+                return View(model);
+            }
+            
+            var user1 =  await userManager.FindByIdAsync(aspNetUserId);
+            Teacher teacher1 = _db.Teachers.FirstOrDefault(u => u.Email == user1.Email);
+            
+            List<Article> articles = _db.Articles.Where(u => u.AuthorId == user1.Id).ToList();
+
+            var artlist = articles.OrderByDescending(u => u.Id).ToList();
+
+            TeacherDetailViewModel model1 = new TeacherDetailViewModel
+            {
+                Teacher = teacher1,
+                ArticlesList = artlist
             };
 
-            return View(model);
+            return View(model1);
+            //_db.Teachers.FirstOrDefault(u=>u.Email)
         }
 
         [HttpGet]

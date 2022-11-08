@@ -1,9 +1,9 @@
-﻿@model StudentGuidence.Models.Student
+﻿@model StudentGuidence.Models.Teacher
 @{
-    ViewData["Title"] = "AddRegistrationDetail";
+    ViewData["Title"] = "AddRegistrationDetail4Teacher";
 }
-<h1>AddRegistrationDetail</h1>
 
+<h1>AddRegistrationDetail4Teacher</h1>
 
 <sction class="contianer-fluid">
     <p class="display-5  text-center pt-5"> ثبت پاڼه </p>
@@ -13,18 +13,38 @@
             <lable><p class="text-end">  :شخصی معلومات </p></lable>
             <div class="row py-4">
                 <div class="col">
-                    <input asp-for="FristName" placeholder="  نوم  " class="form-control form-control-lg border-primary" />
-                    <span asp-validation-for="FristName" class="text-danger"></span>
+                    <label asp-for="FirstName" class="form-label"></label>
+                    <input asp-for="FirstName" placeholder="  نوم  " class="form-control form-control-lg border-primary" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
                 </div>
                 <div class="col">
+                    <label asp-for="LastName" class="form-label"></label>
                     <input asp-for="LastName" placeholder="  تخلص  " class="form-control form-control-lg border-primary" />
                     <span asp-validation-for="LastName" class="text-danger"></span>
                 </div>
             </div>
+
             <div class="row py-3">
                 <div class="col">
+                    <label asp-for="Degree" class="form-label"></label>
+                    <input asp-for="Degree" placeholder="" class="form-control form-control-lg border-primary" />
+                    <span asp-validation-for="Degree" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row py-3">
+                <div class="col">
+                    <label asp-for="Email" class="form-label"></label>
                     <input asp-for="Email" placeholder=" بریښنا لیک" class="form-control form-control-lg border-primary" />
                     <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row py-3">
+                <div class="col">
+                    <label asp-for="Phone" class="form-label"></label>
+                    <input asp-for="Phone" placeholder="" class="form-control form-control-lg border-primary" />
+                    <span asp-validation-for="Phone" class="text-danger"></span>
                 </div>
             </div>
 
@@ -45,43 +65,12 @@
             </div>
 
             <div class="row py-3">
+                
                 <div class="col">
-                    @*<input type="text" name="Email" placeholder=" پوهنتون " class="form-control form-control-lg border-primary" />*@
-                    <select asp-for="@Model.UniversityId" asp-items="@ViewBag.universityList" class="form-control"></select>
-                </div>
-                <div class="col">
-
                     <select asp-for="@Model.FacultyId" asp-items="@ViewBag.facultyList" class="form-control"></select>
                 </div>
-                <div class="col">
-                    @*<input type="text" name="password" placeholder=" پوهنځی " class="form-control form-control-lg border-primary" />*@
-                    <select asp-for="@Model.DepartmentId" asp-items="@ViewBag.departmentList" class="form-control"></select>
-                </div>
             </div>
             <div class="row py-3">
-                @*<div class="col-6">
-                <p class="text-end"><b> : صنف </b></p>
-                <select class="border border-primary form-control-lg border border-primary">
-                    <option>            لمړی            </option>
-                    <option>            دوهم            </option>
-                    <option>            دریم            </option>
-                    <option>            څلورم           </option>
-                </select>
-            </div>*@
-                @*<div class="col-6">
-                <p class="text-end"><b> : سمستر </b></p>
-                <select class="border border-primary form-control-lg ">
-                    <option><b> لمړی </b></option>
-                    <option><b> دوهم </b></option>
-                </select>
-            </div>*@
-            </div>
-            <div class="row py-3">
-                <div class="col">
-                    <label asp-for="UniversityStartDate"></label>
-                    <input type="date" asp-for="UniversityStartDate" class="form-control form-control-lg border-primary" />
-                    <span asp-validation-for="UniversityStartDate"></span>
-                </div>
             </div>
             <div class=" col-3">
                 <input type="submit" class="btn btn-primary" value="Update" />
@@ -95,4 +84,5 @@
         <partial name="_ValidationScriptsPartial" />
     }
 }
+
 

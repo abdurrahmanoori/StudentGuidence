@@ -1,0 +1,139 @@
+﻿@model StudentGuidence.Models.ViewModels.DepartmentListViewModel
+@using StudentGuidence.Utility
+@{
+    ViewData["Title"] = "Faculty";
+}
+
+<section class="bg-light p-0">
+    <div class="container p-5">
+        <div class="card text-bg-dark">
+            <img src="@Model.Departments.ElementAtOrDefault(0).Faculty.ImageUrl" class="card-img" alt="...">
+            <div class="card-img-overlay text-center" lang="ar" dir="rtl">
+                <div class="card-img-overlay" style="background: rgb(0, 0, 0);background: rgba(0, 0, 0, 0.5);color: #f1f1f1;">
+                    <h3><b>د ډیټابیس څخه ډیټا راخستل</b></h3>
+                    <p><b>دغه څانګه چې د کمپیوټر ساینس یو برخه ده. نو اړینه ده چې عمق د زده کړی ته یی ځان ورسوه.</b></p>
+                </div>
+            </div>
+        </div>
+        <hr class="bg-black" />
+        <hr class="bg-danger" />
+        <hr class="bg-success" />
+    </div>
+</section>
+
+@foreach (Department department in Model.Departments)
+{
+    <div class="container">
+        <div class="row" lang="ar" dir="rtl">
+            <div class="col-md-6 fw-bold">
+                <h5>د څانګې نوم: </h5>
+                <h5>د څانګې تاریخ: </h5>
+                <h5>د څانګې اولیه مواد</h5>
+            </div>
+            <div class="col-md-6 fw-normal">
+                <h5>@department.Name</h5>
+                <h5>@department.History</h5>
+                <h5>@department.PreRequirment</h5>
+            </div>
+        </div>
+
+
+        <section class="bg-light p-0 mt-5 mb-5">
+            <div class="container">
+                <div lang="ar" dir="rtl">
+                    <h5 class="card-title"> سافټویر انجنیرنګ څانګه  </h5>
+                    <p class="card-text">
+                        سافټویر انجنیرنګ څانګه یو د مهمو څانګو د کمپیوټر څخه ده چې ټول اساس یی د يو پروګرام په ښه کولو کې تر ټولو مهم رول لوبوي.
+                        البته دغه برخه د یو پروګرام په جوړولو کی ده لازم موادو په راجمعه کولو, د هغه ډیزاین کول او هغه ته یو ښه پروګرام لیکل دی.
+                    </p>
+                    <p class="card-text"><small class="text-muted">تاریخ</small></p>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+}
+
+
+<section class="bg-light p-0 mb-5">
+    <div class="container" lang="ar" dir="rtl">
+        <div class="section-title">
+            <h5> د کمپوتر ساینس د استادانو او محصلینو مقالې </h5>
+            <p>تاسو د دغه ځایه کولای شې د محترمو استادانو بیلابیلو علمی او ساینسې لیکنو ته لاس پیدا کړی.</p>
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                <table class="table table-light table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">د کمپوتر ساینس  آدمین مقالې</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (Article article in Model.Articles)
+                        {
+                            if (article.Author == SD.Admin)
+                            {
+                                <tr>
+                                    <td><a href="#" class="link-primary">@article.Title</a></td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-4">
+                <table class="table table-light table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">د کمپوتر ساینس استادانو مقالې</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (Article article in Model.Articles)
+                        {
+                            if (article.Author == SD.Teacher)
+                            {
+                                <tr>
+                                    <td>
+                                        <a asp-area="Visitor" asp-controller="PostArticle" asp-action="TeacherDetail"
+                                           asp-route-aspNetUserId="@article.AuthorId" class="link-primary">@article.Title</a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-4">
+                <table class="table table-light table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">د کمپوتر ساینس څانګې د محصلینو  مقالې</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (Article article in Model.Articles)
+                        {
+                            if (article.Author == SD.Student)
+                            {
+                                <tr>
+                                    <td><a href="#" class="link-primary">@article.Title</a></td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</section>

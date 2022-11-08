@@ -99,9 +99,9 @@ namespace StudentGuidence.Areas.Identity.Controllers
                     Student student = new Student
                     {
                         Email = model.Email,
-                        FacultyId=null,
-                        UniversityId=null
-                        
+                        FacultyId = null,
+                        UniversityId = null
+
                     };
                     //student.FacultyId = 1008;
                     _db.Students.Add(student);
@@ -126,8 +126,77 @@ namespace StudentGuidence.Areas.Identity.Controllers
             }
             return View(model);
         }
+    
+        public async Task<IActionResult> AddRegistrationDetail4Teacher()//For Teacher
+        {
+            var claimIdentity = (ClaimsIdentity)User.Identity;
+            var claim = claimIdentity.FindFirst(ClaimTypes.NameIdentifier);
+            string userId = claim.Value;
 
-        public async Task<IActionResult> AddRegistrationDetail()
+            var user = await userManager.FindByIdAsync(userId);
+            Teacher teacher = _db.Teachers.FirstOrDefault(u => u.Email == user.Email);
+
+            ViewBag.facultyList = _db.Faculties.ToList().Select(u =>
+            new SelectListItem
+            {
+                Text = u.Name,
+                Value = u.Id.ToString()
+            });
+
+            return View(teacher);
+        }
+
+        [HttpPost]
+        public IActionResult AddRegistrationDetail4Teacher(Teacher teacher, IFormFile? file)
+        {
+            Teacher teacher1= new Teacher
+            {
+                Id = teacher.Id,
+                FirstName = teacher.FirstName,
+                LastName = teacher.LastName,
+                Degree=teacher.Degree,
+                Email = teacher.Email,
+                Phone=teacher.Phone,
+                Province = teacher.Province,
+                District = teacher.District,
+                ImageUrl = GetImageUrl(teacher),
+                ArticleId = teacher.ArticleId,
+                FacultyId = teacher.FacultyId,
+            };
+
+            if (ModelState.IsValid)
+            {
+                string wwwRootPath = _iWebHostEnvironment.WebRootPath;
+                if (file != null)
+                {
+                    string fileName = Guid.NewGuid().ToString();
+                    var uploads = Path.Combine(wwwRootPath, @"images\teacher");
+                    var extension = Path.GetExtension(file.FileName);
+                    if (teacher1.ImageUrl != null)
+                    {
+                        //LOGIC ABOUT DELETING OLD IMAGE
+                        var oldImagePath = Path.Combine(wwwRootPath, teacher1.ImageUrl.TrimStart('\\'));
+                        if (System.IO.File.Exists(oldImagePath))
+                        {
+                            System.IO.File.Delete(oldImagePath);
+                        }
+                    }
+
+                    using (var fileStreams = new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
+                    {
+                        file.CopyTo(fileStreams);
+                    }
+                    teacher1.ImageUrl = @"\images\teacher\" + fileName + extension;
+                }
+
+                _db.Teachers.Update(teacher1);
+                _db.SaveChanges();
+                return RedirectToAction("Index", "Home", new { Area = "Visitor" });
+            }
+            return View(teacher1);
+        }
+
+        public async Task<IActionResult> AddRegistrationDetail()//For Student
         {
             var claimIdentity = (ClaimsIdentity)User.Identity;
             var claim = claimIdentity.FindFirst(ClaimTypes.NameIdentifier);
@@ -159,12 +228,6 @@ namespace StudentGuidence.Areas.Identity.Controllers
             return View(student);
         }
 
-        //[HttpPost]
-        //public IActionResult AddRegistrationDetail(Student obj)
-        //{
-        //    return View();
-        //}
-
         [HttpPost]
         public IActionResult AddRegistrationDetail(Student student, IFormFile? file)
         {
@@ -180,8 +243,8 @@ namespace StudentGuidence.Areas.Identity.Controllers
                 UniversityStartDate = student.UniversityStartDate,
                 DepartmentId = student.DepartmentId,
                 ArticleId = student.ArticleId,
-                FacultyId=student.FacultyId,
-                UniversityId=student.UniversityId
+                FacultyId = student.FacultyId,
+                UniversityId = student.UniversityId
             };
 
             if (ModelState.IsValid)
@@ -211,7 +274,7 @@ namespace StudentGuidence.Areas.Identity.Controllers
 
                 _db.Students.Update(student1);
                 _db.SaveChanges();
-                return RedirectToAction("Index","Home",new { Area="Visitor"});
+                return RedirectToAction("Index", "Home", new { Area = "Visitor" });
             }
             return View(student1);
         }
@@ -280,6 +343,14 @@ namespace StudentGuidence.Areas.Identity.Controllers
 
         }
 
-     
+        public string GetImageUrl(Teacher teacher)
+        {
+            using (AppDbContext2 context = new AppDbContext2())
+            {
+                int id = teacher.Id;
+                return context.Teachers.Find(id).ImageUrl;
+            }
+
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<StudentGuidence.Models.Faculty>
 @{
-    ViewData["Title"] = "Faculty";
+    ViewData["Title"] = "FacultyList";
 }
 @* University Picture Showing Section *@
 <section>
@@ -33,7 +33,7 @@
         <div class="row row-cols-1 row-cols-md-3 g-4">
             @foreach (var faculty in Model)
             {
-            <a href="#" class="">
+            <a asp-action="Department" asp-route-id="@faculty.Id" class="">
                 <div class="col">
                     <div class="card h-100">
                         <img src="@faculty.ImageUrl" class="card-img-top" alt="...">

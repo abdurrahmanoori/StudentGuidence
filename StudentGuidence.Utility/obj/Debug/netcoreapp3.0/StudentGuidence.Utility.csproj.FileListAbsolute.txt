@@ -1,8 +1,8 @@
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence.Utility\bin\Debug\netcoreapp3.0\StudentGuidence.Utility.deps.json
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence.Utility\bin\Debug\netcoreapp3.0\StudentGuidence.Utility.dll
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence.Utility\bin\Debug\netcoreapp3.0\StudentGuidence.Utility.pdb
-C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence.Utility\obj\Debug\netcoreapp3.0\StudentGuidence.Utility.csprojAssemblyReference.cache
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence.Utility\obj\Debug\netcoreapp3.0\StudentGuidence.Utility.AssemblyInfoInputs.cache
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence.Utility\obj\Debug\netcoreapp3.0\StudentGuidence.Utility.AssemblyInfo.cs
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence.Utility\obj\Debug\netcoreapp3.0\StudentGuidence.Utility.dll
 C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence.Utility\obj\Debug\netcoreapp3.0\StudentGuidence.Utility.pdb
+C:\Users\Abdurrahman\source\repos\StudentGuidence\StudentGuidence.Utility\obj\Debug\netcoreapp3.0\StudentGuidence.Utility.csprojAssemblyReference.cache
