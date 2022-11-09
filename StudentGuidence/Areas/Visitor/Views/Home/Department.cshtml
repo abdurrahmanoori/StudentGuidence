@@ -21,6 +21,90 @@
     </div>
 </section>
 
+<div class="my-3 row">
+    <div class="col-6">
+
+        @*<table class="table table-light table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">د کمپوتر ساینس څانګې د محصلین  </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (Article article in Model.Articles)
+                    {
+                        if (article.Author == SD.Student)
+                        {
+                            <tr>
+                                <td>
+                                    <a asp-area="Visitor" asp-controller="PostArticle" asp-action="StudentDetail"
+                                       asp-route-aspNetUserId="@article.AuthorId" class="link-primary">@article.Title</a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>*@
+
+    </div>
+
+    <div class="row my-3">
+
+        <div class="col-4">
+            <table class="table table-light table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">د کمپوتر ساینس څانګې د محصلین  </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (Student obj in Model.Student)
+                    {
+                        <tr>
+                            <td>
+                                <a asp-area="Visitor" asp-controller="PostArticle" asp-action="StudentDetail"
+                                   asp-route-studentId="@obj.Id" class="link-primary">@(obj.FristName + " " + obj.LastName)</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-4">
+            <table class="table table-light table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">د کمپوتر ساینس څانګې د استادان  </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(Teacher obj in Model.Teacher)
+                    {
+                        <tr>
+                            <td>
+                                <a asp-area="Visitor" asp-controller="PostArticle" asp-action="TeacherDetail"
+                                   asp-route-id="@obj.Id" class="link-primary">@(obj.FirstName + " " + obj.LastName)</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+
+        <div class="col-4">
+
+        </div>
+    </div>
+
+
+
+</div>
+
+
+
 @foreach (Department department in Model.Departments)
 {
     <div class="container">
@@ -126,7 +210,10 @@
                             if (article.Author == SD.Student)
                             {
                                 <tr>
-                                    <td><a href="#" class="link-primary">@article.Title</a></td>
+                                    <td>
+                                        <a asp-area="Visitor" asp-controller="PostArticle" asp-action="StudentDetail"
+                                           asp-route-aspNetUserId="@article.AuthorId" class="link-primary">@article.Title</a>
+                                    </td>
                                 </tr>
                             }
                         }

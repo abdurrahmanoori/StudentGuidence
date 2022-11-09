@@ -11,7 +11,7 @@ namespace StudentGuidence.Models.ViewModels
         
       //  public ApplicationUser ApplicationUserTeacher { get; set; }
 
-        public IQueryable ArticlesList { get; set; }
+        public List<Article> ArticlesList { get; set; }
 
     }
 }

@@ -46,13 +46,17 @@ namespace StudentGuidence.Controllers
             return View(faculties);
         }
 
-        public IActionResult Department(int id)
+        public IActionResult Department(int id)// Faculty id
         {
             DepartmentListViewModel model = new DepartmentListViewModel();
 
             model.Departments = _db.Departments.Where(u => u.FacultyId == id).Include(u => u.Faculty);
 
             model.Articles = _db.Articles.ToList();
+
+            model.Student = _db.Students.Where(u => u.FacultyId == id).ToList();
+
+            model.Teacher = _db.Teachers.Where(u => u.FacultyId == id).ToList();
 
             return View(model);
         }
