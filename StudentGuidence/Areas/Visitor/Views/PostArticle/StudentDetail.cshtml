@@ -12,7 +12,8 @@
                     <div class="col-3 text-start">
                         @foreach (Article article in Model.ArticlesList)
                         {
-                            <a class="btn btn-secondary m-2 rounded-circle text-white">@article.Title</a>
+                            <a asp-area="Visitor" asp-controller="PostArticle" asp-action="StudentDetail"
+                               asp-route-articleId="@article.Id" class="btn btn-secondary m-2 rounded-circle text-white">@article.Title</a>
                             count++;
                         }
                     </div>
@@ -20,12 +21,12 @@
                         <div class="row">
                             <div>
                                 @* <p class="text-center"><b>د مقالو عنوانونه  &nbsp; &nbsp;  (د مقالو تاریخ)</b></p>*@
-                                <p class="text-center"><b>@Model.ArticlesList.ElementAtOrDefault(--count).Title &nbsp; &nbsp;  @Model.ArticlesList.ElementAtOrDefault(--count).DateOfIssue.ToString("d")</b></p>
-                                <img src="~/images/teacher/040.jpg" class="text-center rounded" style="width:500px;height:400px;background-position-x:200px;" />
+                                <p class="text-center"><b>@Model.DisplayArticle.Title &nbsp; &nbsp;  @Model.DisplayArticle.DateOfIssue.ToString("d")</b></p>
+                                <img src="@Model.DisplayArticle.ImageUrl" class="text-center rounded" style="width:500px;height:400px;background-position-x:200px;" />
                             </div>
                             <div class="text-end " lang="ar" dir="rtl" id="floatingTextarea2" style="width:500px;height:500px">
                                 <p>
-                                    @Model.ArticlesList.ElementAtOrDefault(--count).Description;
+                                    @Model.DisplayArticle.Description;
                                 </p>
                             </div>
                         </div>
@@ -39,7 +40,7 @@
 
                 <div class="row">
                     <div>
-                        <img src="~/images/teacher/040.jpg" class="rounded-circle" style="width:200px;height:200px; margin-left:100px;" />
+                        <img src="@Model.Student.ImageUrl" class="rounded-circle" style="width:200px;height:200px; margin-left:100px;" />
                     </div>
                     <div class="mt-3">
                         <div class="row">

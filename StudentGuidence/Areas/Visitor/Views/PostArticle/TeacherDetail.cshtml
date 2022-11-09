@@ -20,12 +20,13 @@
                         <div class="row">
                             <div>
                                 @* <p class="text-center"><b>د مقالو عنوانونه  &nbsp; &nbsp;  (د مقالو تاریخ)</b></p>*@
-                                <p class="text-center"><b>@Model.ArticlesList.ElementAtOrDefault(--count).Title &nbsp; &nbsp;  @Model.ArticlesList.ElementAtOrDefault(--count).DateOfIssue</b></p>
-                                <img src="@Model.ArticlesList.ElementAtOrDefault(--count).ImageUrl" class="text-center rounded" style="width:500px;height:400px;background-position-x:200px;" />
+                                @*                                <p class="text-center"><b>@Model.ArticlesList.ElementAtOrDefault(--count).Title &nbsp; &nbsp;  @Model.ArticlesList.ElementAtOrDefault(--count).DateOfIssue.ToString("d")</b></p>*@
+                                <p class="text-center"><b>@Model.DisplayArticle.Title &nbsp; &nbsp;  @Model.DisplayArticle.DateOfIssue.ToString("d")</b></p>
+                                <img src="@Model.DisplayArticle.ImageUrl" class="text-center rounded" style="width:500px;height:400px;background-position-x:200px;" />
                             </div>
                             <div class="text-end " lang="ar" dir="rtl" id="floatingTextarea2" style="width:500px;height:500px">
                                 <p>
-                                    @Model.ArticlesList.ElementAtOrDefault(--count).Description;
+                                    @Model.DisplayArticle.Description;
                                 </p>
                             </div>
                         </div>
@@ -34,12 +35,9 @@
             </div>
 
             @* Right Side has finished *@
-
             <div class="col-4">
-
                 <div class="row">
                     <div>
-                        @*<img src="~/images/teacher/040.jpg" class="rounded-circle" style="width:200px;height:200px; margin-left:100px;" />*@
                         <img src="@Model.Teacher.ImageUrl" class="rounded-circle" style="width:200px;height:200px; margin-left:100px;" />
                     </div>
                     <div class="mt-3">

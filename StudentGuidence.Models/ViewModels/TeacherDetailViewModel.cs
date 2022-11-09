@@ -11,5 +11,7 @@ namespace StudentGuidence.Models.ViewModels
         
         public List<Article> ArticlesList { get; set; }
 
+        public Article DisplayArticle { get; set; }
+
     }
 }

@@ -80,7 +80,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach(Teacher obj in Model.Teacher)
+                    @foreach (Teacher obj in Model.Teacher)
                     {
                         <tr>
                             <td>
@@ -186,7 +186,7 @@
                                 <tr>
                                     <td>
                                         <a asp-area="Visitor" asp-controller="PostArticle" asp-action="TeacherDetail"
-                                           asp-route-aspNetUserId="@article.AuthorId" class="link-primary">@article.Title</a>
+                                           asp-route-articleId="@article.Id" class="link-primary">@article.Title</a>
                                     </td>
                                 </tr>
                             }
