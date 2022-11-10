@@ -12,7 +12,8 @@
                     <div class="col-3 text-start">
                         @foreach (Article article in Model.ArticlesList)
                         {
-                            <a class="btn btn-secondary m-2 rounded-circle text-white">@article.Title</a>
+                            <a asp-area="Visitor" asp-controller="PostArticle" asp-action="TeacherDetail"
+                               asp-route-articleId="@article.Id" asp-route-id="null" class="btn btn-secondary m-2 rounded-circle text-white">@article.Title</a>
                             count++;
                         }
                     </div>

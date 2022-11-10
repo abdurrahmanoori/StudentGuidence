@@ -35,17 +35,12 @@ namespace StudentGuidence.Areas.Visitor.Controllers
             _iWebHostEnvironment = webHostEnvironment;
         }
 
-
-
-
-
-
         public async Task<IActionResult> StudentDetail(int? studentId, int? articleId)
         {
             if (Convert.ToBoolean(studentId))
             {
                 var stuList = _db.Students.Where(u => u.Id == studentId).Include(u => u.University).Include(f => f.Faculty).Include(d => d.Department);
-               
+
                 Student student = stuList.FirstOrDefault(u => u.Id == studentId);
 
                 var user = await userManager.FindByEmailAsync(student.Email);// as Email attribut is common is aspNetUser and Student
@@ -59,7 +54,7 @@ namespace StudentGuidence.Areas.Visitor.Controllers
                 {
                     Student = student,
                     ArticlesList = ArtList,
-                    DisplayArticle=lastArticle
+                    DisplayArticle = lastArticle
                 };
 
                 return View(model);
@@ -75,19 +70,22 @@ namespace StudentGuidence.Areas.Visitor.Controllers
             List<Article> articles = _db.Articles.Where(u => u.AuthorId == user1.Id).ToList();
 
             var artlist = articles.OrderByDescending(u => u.Id).ToList();
-            
+
 
             StudentDetailViewModel model1 = new StudentDetailViewModel
             {
                 Student = student1,
                 ArticlesList = artlist,
-                DisplayArticle= article
+                DisplayArticle = article
             };
 
             return View(model1);
         }
 
-        public async Task<IActionResult> TeacherDetail(int? id, int? articleId)// 'id' comes from Visitor/Home/Department.cshtml
+
+
+
+        public async Task<IActionResult> TeacherDetail(int? id, int? articleId)// 'id' is teacher id comes from Visitor/Home/Department.cshtml
         {                                                                            // 'articleId' comes from Visitor/Home/Department
             if (Convert.ToBoolean(id))
             {
@@ -110,6 +108,7 @@ namespace StudentGuidence.Areas.Visitor.Controllers
                 return View(model);
             }
 
+
             Article article = _db.Articles.Find(articleId);
 
             var user1 = await userManager.FindByIdAsync(article.AuthorId);
@@ -123,10 +122,13 @@ namespace StudentGuidence.Areas.Visitor.Controllers
             {
                 Teacher = teacher1,
                 ArticlesList = artlist,
-                DisplayArticle= article
+                DisplayArticle = article
             };
             return View(model1);
         }
+
+
+
 
 
         [HttpGet]
@@ -167,17 +169,21 @@ namespace StudentGuidence.Areas.Visitor.Controllers
                     return View(model);
                     //return NotFound("There is no related aritcle man");
                 }
-
-                model.Article.Id = _db.Articles.FirstOrDefault(u => u.AuthorId == user.Id).Id;
+                if (_db.Articles.Where(u => u.AuthorId == user.Id).Any())// Wether user has any article or not
+                    model.Article.Id = _db.Articles.FirstOrDefault(u => u.AuthorId == user.Id).Id;
                 return View(model);
             }
+
             else if (User.IsInRole(SD.Student))
             {
                 model.Article.Author = SD.Student;
                 model.Article.AuthorId = user.Id;
                 model.Student = _db.Students.FirstOrDefault(u => u.Email == user.Email);
                 model.Author = _db.Students.FirstOrDefault(u => u.Email == user.Email).FristName;
-                model.Article.Id = _db.Articles.FirstOrDefault(u => u.AuthorId == user.Id).Id;
+
+
+                if (_db.Articles.Where(u => u.AuthorId == user.Id).Any())// Wether user has any article or not
+                    model.Article.Id = _db.Articles.FirstOrDefault(u => u.AuthorId == user.Id).Id;
                 model.AuthorType = SD.Student;
                 return View(model);
             }
@@ -301,6 +307,5 @@ namespace StudentGuidence.Areas.Visitor.Controllers
         //    }
         //    return View(model);
         //}
-
     }
 }
